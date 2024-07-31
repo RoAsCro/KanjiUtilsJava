@@ -1,0 +1,4 @@
+self\roashe\kanutils\backend\TestApplicationConfiguration.class
+self\roashe\kanutils\backend\dao\PasswordDao.class
+self\roashe\kanutils\backend\Main.class
+self\roashe\kanutils\backend\dao\PasswordDaoDbImpl.class
