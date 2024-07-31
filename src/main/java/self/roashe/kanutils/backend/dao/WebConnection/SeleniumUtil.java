@@ -68,8 +68,10 @@ public class SeleniumUtil {
         List<String> flashcardLinks = driver.findElements(By.className(ELEM_DETAILS))
                 .stream().map(anchor -> anchor.getAttribute(HREF))
                 .toList();
-
+        int count = 0;
         for (String url : flashcardLinks) {
+            count++;
+            System.out.println("Getting set " + count + "...");
             // /srs/details?srs=[flashcard set reference]
             driver.get(url);
 

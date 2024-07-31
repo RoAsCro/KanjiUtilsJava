@@ -30,4 +30,11 @@ public class Word {
     public void setReadings(List<String> readings) {
         this.readings = readings;
     }
+
+    @Override
+    public String toString() {
+        return "Japanese - " + this.japanese + "\n" +
+                "Readings - " + this.readings + "\n" +
+                "English" + this.english;
+    }
 }
