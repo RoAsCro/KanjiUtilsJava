@@ -5,6 +5,7 @@ import java.util.List;
 public class Word {
     private String japanese;
     private List<String> english;
+    private List<String> readings;
 
     public String getJapanese() {
         return japanese;
@@ -20,5 +21,13 @@ public class Word {
 
     public void setEnglish(List<String> english) {
         this.english = english;
+    }
+
+    public List<String> getReadings() {
+        return readings;
+    }
+
+    public void setReadings(List<String> readings) {
+        this.readings = readings;
     }
 }
