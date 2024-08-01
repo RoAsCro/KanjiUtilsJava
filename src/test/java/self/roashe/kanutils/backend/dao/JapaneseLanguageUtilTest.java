@@ -54,4 +54,16 @@ public class JapaneseLanguageUtilTest {
         Assertions.assertTrue(matcher.matches());
         Assertions.assertFalse(pattern.matcher("English").matches());
     }
+
+    @Test
+    public void testJapaneseMatchingNoJapaneseNonOnlyMode() {
+        String testString = "eigonosyouda";
+        Assertions.assertFalse(JapaneseLanguageUtil.containsJapanese(testString, false));
+    }
+
+    @Test
+    public void testRepetitionMark() {
+        String testString = "々";
+        Assertions.assertTrue(JapaneseLanguageUtil.containsJapanese(testString, true));
+    }
 }

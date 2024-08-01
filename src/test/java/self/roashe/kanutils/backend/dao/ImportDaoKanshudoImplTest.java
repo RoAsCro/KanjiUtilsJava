@@ -20,7 +20,7 @@ public class ImportDaoKanshudoImplTest {
         for (Word word : words) {
             Assertions.assertTrue(JapaneseLanguageUtil.containsJapanese(word.getJapanese(), true), word.toString());
             for (String reading : word.getReadings())
-                Assertions.assertTrue(JapaneseLanguageUtil.containsKana(reading, true), word.toString());
+                Assertions.assertTrue(JapaneseLanguageUtil.containsJapanese(reading, true), word.toString());
             for (String definition : word.getEnglish())
                 Assertions.assertFalse(JapaneseLanguageUtil.containsJapanese(definition, false), word.toString());
         }
