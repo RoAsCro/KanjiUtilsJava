@@ -45,4 +45,13 @@ public class JapaneseLanguageUtilTest {
         Assertions.assertTrue(matcher.matches());
         Assertions.assertFalse(pattern.matcher("リンゴ").matches());
     }
+
+    @Test
+    public void testJapanesePattern() {
+        String testString = "みず鳥リンゴ";
+        Pattern pattern = Pattern.compile(JapaneseLanguageUtil.JAPANESE_REGEX);
+        Matcher matcher = pattern.matcher(testString);
+        Assertions.assertTrue(matcher.matches());
+        Assertions.assertFalse(pattern.matcher("English").matches());
+    }
 }
