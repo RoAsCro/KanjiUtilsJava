@@ -10,6 +10,8 @@ public class WordMapper implements RowMapper<Word> {
 
     @Override
     public Word mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return null;
+        Word word = new Word();
+        word.setJapanese(rs.getString("japanese-word"));
+        return word;
     }
 }
