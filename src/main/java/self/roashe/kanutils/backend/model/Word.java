@@ -6,6 +6,7 @@ public class Word {
     private String japanese;
     private List<String> english;
     private List<String> readings;
+    private int id;
 
     public String getJapanese() {
         return japanese;
@@ -36,5 +37,13 @@ public class Word {
         return "Japanese - " + this.japanese + "\n" +
                 "Readings - " + this.readings + "\n" +
                 "English" + this.english;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

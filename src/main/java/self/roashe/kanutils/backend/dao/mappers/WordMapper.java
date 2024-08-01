@@ -11,7 +11,8 @@ public class WordMapper implements RowMapper<Word> {
     @Override
     public Word mapRow(ResultSet rs, int rowNum) throws SQLException {
         Word word = new Word();
-        word.setJapanese(rs.getString("japanese-word"));
+        word.setJapanese(rs.getString("word"));
+        word.setId(rs.getInt("jpId"));
         return word;
     }
 }
