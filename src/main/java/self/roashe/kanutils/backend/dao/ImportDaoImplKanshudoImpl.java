@@ -1,5 +1,6 @@
 package self.roashe.kanutils.backend.dao;
 
+import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 import self.roashe.kanutils.backend.dao.WebConnection.SeleniumUtil;
 import self.roashe.kanutils.backend.model.Word;
 
@@ -43,18 +44,13 @@ public class ImportDaoImplKanshudoImpl implements ImportDao {
         String vocabWord = entry.substring(0, endOfVocabWord);
         word.setJapanese(vocabWord);
 
-        System.out.println(entry);
-        Pattern pattern = Pattern.compile("[a-zA-Z]|[(-]");
-        Matcher matcher = pattern.matcher(entry);
-        matcher.find();
-        int englishIndex = matcher.start();
-
-        String readings = entry.substring(endOfVocabWord + 1, englishIndex);
-        word.setReadings(Arrays.stream(readings.split(" "))
+        String back = entry.substring(endOfVocabWord + 1);
+        word.setReadings(Arrays.stream(back.split(" "))
+                .filter(s -> JapaneseLanguageUtil.containsJapanese(s, true))
                 .map(String::strip)
                 .toList());
 
-        String english = entry.substring(englishIndex);
+        String english = back.replaceAll(JapaneseLanguageUtil.JAPANESE_REGEX, "");
         word.setEnglish(Arrays.stream(english.split("; ")).toList());
 
         return word;

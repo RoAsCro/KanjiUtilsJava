@@ -4,11 +4,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class JapaneseLanguageUtil {
-    public static final String HIRAGANA_REGEX = "[ぁ-ゖ]*";
-    public static final String KATAKANA_REGEX = "[゠-ヿ]*";
-    public static final String KANA_REGEX = "[ぁ-ゖ゠-ヿ]*";
-    public static final String KANJI_REGEX = "[㐀-䶵一-鿋豈-頻]*";
-    public static final String JAPANESE_REGEX = "[ぁ-ゖ゠-ヿ㐀-䶵一-鿋豈-頻]*";
+    public static final String HIRAGANA_REGEX = "[ぁ-ゖ]+";
+    public static final String KATAKANA_REGEX = "[゠-ヿ]+";
+    public static final String KANA_REGEX = "[ぁ-ゖ゠-ヿ]+";
+    public static final String KANJI_REGEX = "[㐀-䶵一-鿋豈-頻]+";
+    public static final String JAPANESE_REGEX = "[ぁ-ゖ゠-ヿ㐀-䶵一-鿋豈-頻]+";
 
     public static boolean containsHiragana(String text, boolean only) {
         return matchPattern(text, HIRAGANA_REGEX, only);
