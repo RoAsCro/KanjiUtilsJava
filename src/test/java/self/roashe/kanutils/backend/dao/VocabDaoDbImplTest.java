@@ -9,6 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import self.roashe.kanutils.backend.TestApplicationConfiguration;
+import self.roashe.kanutils.backend.model.Word;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,7 +34,7 @@ class VocabDaoDbImplTest {
                         "values('水')");
         Integer wordId =
                 jdbc.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
-        System.out.println(wordId);
+
         jdbc.update("INSERT INTO definition(japaneseword_jpId, definition) " +
                 "values(?, 'water')",
                 wordId);
@@ -60,7 +63,26 @@ class VocabDaoDbImplTest {
 
     @Test
     void testGetAll() {
-        
+        List<Word> wordList = dao.getWords();
+        Assertions.assertTrue(wordList
+                .stream()
+                .anyMatch(d -> d.getJapanese().equals("水")));
+        Assertions.assertEquals(2, wordList.size());
+    }
+
+    @Test
+    void testGet() {
+        Word word = dao.getWord("水");
+        Assertions.assertNotNull(word);
+        Assertions.assertEquals("水", word.getJapanese());
+        Assertions.assertEquals(List.of("みず"), word.getReadings());
+        Assertions.assertEquals(List.of("water"), word.getEnglish());
+    }
+
+    @Test
+    void testGetDoesNotExist() {
+        Word word = dao.getWord("海");
+        Assertions.assertNull(word);
     }
 
 }
