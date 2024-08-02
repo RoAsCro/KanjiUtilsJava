@@ -33,7 +33,7 @@ public class SeleniumUtil {
 
 
     public static void main(String[] args) {
-        getFlashcards(args[0], args[1], args[3]);
+        getFlashcards(args[0], args[1], args[2]);
     }
 
     public static String getFlashcards(String username, String password, String geckoLocation) {
