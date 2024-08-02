@@ -1,6 +1,7 @@
 package self.roashe.kanutils.backend.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Word {
     private String japanese;
@@ -45,5 +46,20 @@ public class Word {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Word w) {
+            return w.japanese.equals(this.japanese)
+                    && w.readings.equals(this.readings)
+                    && w.english.equals(this.english);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.japanese, this.english, this.readings);
     }
 }

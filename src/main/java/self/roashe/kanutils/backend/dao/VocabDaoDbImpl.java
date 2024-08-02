@@ -21,8 +21,8 @@ public class VocabDaoDbImpl implements VocabDao {
         List<Word> words = this.jdbc.query(SELECT_ALL_WORDS, new WordMapper());
 
         for (Word word : words) {
-            addReadings(word);
-            addEnglish(word);
+            pullReadings(word);
+            pullEnglish(word);
         }
 
         return words;
@@ -35,8 +35,8 @@ public class VocabDaoDbImpl implements VocabDao {
 
         try {
             Word word = this.jdbc.queryForObject(SELECT_WORD, new WordMapper(), jpWord);
-            addReadings(word);
-            addEnglish(word);
+            pullReadings(word);
+            pullEnglish(word);
             return word;
         } catch (DataAccessException e) {
             return null;
@@ -46,16 +46,48 @@ public class VocabDaoDbImpl implements VocabDao {
 
     @Override
     public void addWord(Word word) {
+        final String ADD_WORD = "INSERT INTO japaneseword(word) " +
+                "values(?)";
+        this.jdbc.update(ADD_WORD,
+                word.getJapanese());
+        int id = this.jdbc.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
+        word.setId(id);
+        addReadings(word);
+        addDefinitions(word);
+    }
+
+    private void addDefinitions(Word word) {
+        final String ADD_WORD = "INSERT INTO definition(definition, japaneseword_jpId) " +
+                "values(?, ?)";
+        int id = word.getId();
+        for (String definition : word.getEnglish()) {
+            this.jdbc.update(ADD_WORD,
+                    definition,
+                    id);
+        }
     }
 
     private void addReadings(Word word) {
+        final String ADD_WORD = "INSERT INTO reading(reading, japaneseword_jpId) " +
+                "values(?, ?)";
+        int id = word.getId();
+        for (String reading : word.getReadings()) {
+            this.jdbc.update(ADD_WORD,
+                    reading,
+                    id);
+        }
+
+    }
+
+
+    private void pullReadings(Word word) {
         final String SELECT_READINGS = "SELECT reading FROM reading " +
                 "WHERE japaneseword_jpId = ?";
         List<String> readings = this.jdbc.queryForList(SELECT_READINGS, String.class, word.getId());
         word.setReadings(readings);
     }
 
-    private void addEnglish(Word word) {
+    private void pullEnglish(Word word) {
         final String SELECT_DEFINITIONS = "SELECT definition FROM definition " +
                 "WHERE japaneseword_jpId = ?";
         List<String> definitions = this.jdbc.queryForList(SELECT_DEFINITIONS, String.class, word.getId());

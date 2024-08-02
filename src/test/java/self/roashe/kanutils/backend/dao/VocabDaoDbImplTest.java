@@ -47,7 +47,7 @@ class VocabDaoDbImplTest {
                 "values('叫ぶ')");
         wordId =
                 jdbc.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
-        System.out.println(wordId);
+
         jdbc.update("INSERT INTO definition(japaneseword_jpId, definition) " +
                         "values(?, 'cry out')",
                 wordId);
@@ -83,6 +83,18 @@ class VocabDaoDbImplTest {
     void testGetDoesNotExist() {
         Word word = dao.getWord("海");
         Assertions.assertNull(word);
+    }
+
+    @Test
+    void testAdd() {
+        Word word = new Word();
+        word.setJapanese("是非");
+        word.setReadings(List.of("ぜひ"));
+        word.setEnglish(List.of("Very much", "Right and wrong"));
+        dao.addWord(word);
+        Word retrievedWord = dao.getWord("是非");
+        Assertions.assertNotNull(retrievedWord);
+        Assertions.assertEquals(word, retrievedWord);
     }
 
 }
