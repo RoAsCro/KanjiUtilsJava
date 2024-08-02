@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 public class SeleniumUtil {
 
@@ -67,7 +68,7 @@ public class SeleniumUtil {
         driver.get(URL_KANSHUDO + URL_FLASHCARDS);
         List<String> flashcardLinks = driver.findElements(By.className(ELEM_DETAILS))
                 .stream().map(anchor -> anchor.getAttribute(HREF))
-                .toList();
+                .collect(Collectors.toList());
         int count = 0;
         for (String url : flashcardLinks) {
             count++;

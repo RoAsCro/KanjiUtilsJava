@@ -50,7 +50,8 @@ public class Word {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Word w) {
+        if (obj instanceof Word) {
+            Word w = (Word) obj;
             return w.japanese.equals(this.japanese)
                     && w.readings.equals(this.readings)
                     && w.english.equals(this.english);

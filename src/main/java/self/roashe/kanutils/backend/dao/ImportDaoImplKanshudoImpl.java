@@ -1,5 +1,6 @@
 package self.roashe.kanutils.backend.dao;
 
+import org.springframework.stereotype.Repository;
 import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 import self.roashe.kanutils.backend.dao.WebConnection.SeleniumUtil;
 import self.roashe.kanutils.backend.model.Word;
@@ -14,7 +15,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import java.util.stream.Collectors;
+@Repository
 public class ImportDaoImplKanshudoImpl implements ImportDao {
 
     private static final String GRAMMAR_WARNING = "(text of grammar points is not available for download)";
@@ -26,7 +28,7 @@ public class ImportDaoImplKanshudoImpl implements ImportDao {
                 "C:\\Users\\rolly\\Documents\\geckodriver-v0.34.0-win64\\geckodriver.exe");
         List<String> listVocab = stringToList(rawVocab);
 
-        List<Word> wordList = listVocab.stream().map(this::stringToWord).toList();
+        List<Word> wordList = listVocab.stream().map(this::stringToWord).collect(Collectors.toList());
 
         return wordList;
     }
@@ -34,7 +36,7 @@ public class ImportDaoImplKanshudoImpl implements ImportDao {
     private List<String> stringToList(String allVocab) {
         return Arrays.stream(allVocab.split("\n"))
                 .filter(s -> !s.contains(GRAMMAR_WARNING))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     private Word stringToWord(String entry){
@@ -48,10 +50,10 @@ public class ImportDaoImplKanshudoImpl implements ImportDao {
         word.setReadings(Arrays.stream(back.split(" "))
                 .filter(s -> JapaneseLanguageUtil.containsJapanese(s, true))
                 .map(String::strip)
-                .toList());
+                .collect(Collectors.toList()));
 
         String english = back.replaceAll(JapaneseLanguageUtil.JAPANESE_REGEX, "");
-        word.setEnglish(Arrays.stream(english.split("; ")).toList());
+        word.setEnglish(Arrays.stream(english.split("; ")).collect(Collectors.toList()));
 
         return word;
     }
