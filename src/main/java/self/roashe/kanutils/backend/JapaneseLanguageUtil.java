@@ -1,14 +1,18 @@
 package self.roashe.kanutils.backend;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.IntStream;
 
 public class JapaneseLanguageUtil {
     public static final char FIRST_HIRAGANA = 'ぁ';
     public static final char LAST_HIRAGANA = 'ゖ';
     public static final char FIRST_KATAKANA = '゠';
     public static final char LAST_KATAKANA = 'ヿ';
+
+    private static final int KANA_DIFF = 96;
 
     public static final String HIRAGANA_REGEX = "[" + FIRST_HIRAGANA + "-" + LAST_HIRAGANA + "]+";
     public static final String KATAKANA_REGEX = "[" + FIRST_KATAKANA + "-" + LAST_KATAKANA + "]+";
@@ -37,12 +41,34 @@ public class JapaneseLanguageUtil {
         return matchPattern(text, JAPANESE_REGEX, only);
     }
 
+    /**
+     * Tests that the kana in one String is equivalent to the kana of another. Returns true if so, otherwise false.
+     * <p></p>
+     * The text can contain non-kana characters, but may produce false positives for these.
+     * @param expected the first String
+     * @param actual the second String
+     * @return true if the kana in the texts are equivalent, false otherwise
+     */
     public static boolean kanaEquivalence(String expected, String actual) {
+        if (expected.length() != actual.length()) {
+            return false;
+        }
+
         if (expected.equals(actual)) {
             return true;
         }
-        System.out.println(actual.chars());
-//        Arrays.stream(actual.split("")).map(s -> )
+
+        Iterator<Integer> actualIter = actual.chars().iterator();
+        Iterator<Integer> expectedIter = expected.chars().iterator();
+
+        while (actualIter.hasNext() && expectedIter.hasNext()) {
+            int i = actualIter.next();
+            int j = expectedIter.next();
+            if (i != j && Math.abs(i - j) !=  KANA_DIFF) {
+                return false;
+            }
+        }
+
         return true;
     }
 

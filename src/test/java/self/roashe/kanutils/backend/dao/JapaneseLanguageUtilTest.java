@@ -78,7 +78,47 @@ public class JapaneseLanguageUtilTest {
     }
 
     @Test
-    public void testTest() {
-        System.out.println(0+'ゖ');
+    public void testKanaEquivalenceA(){
+        Assertions.assertTrue(JapaneseLanguageUtil.kanaEquivalence("あ", "ア"));
+    }
+
+    @Test
+    public void testKanaEquivalenceAFalse(){
+        Assertions.assertFalse(JapaneseLanguageUtil.kanaEquivalence("あ", "ク"));
+    }
+
+    @Test
+    public void testKanaEquivalenceSame(){
+        Assertions.assertTrue(JapaneseLanguageUtil.kanaEquivalence("あ", "あ"));
+    }
+
+    @Test
+    public void testKanaEquivalenceSameFalse(){
+        Assertions.assertFalse(JapaneseLanguageUtil.kanaEquivalence("あ", "く"));
+    }
+
+    @Test
+    public void testKanaEquivalenceAReverse(){
+        Assertions.assertTrue(JapaneseLanguageUtil.kanaEquivalence("ア", "あ"));
+    }
+
+    @Test
+    public void testKanaEquivalenceN(){
+        Assertions.assertTrue(JapaneseLanguageUtil.kanaEquivalence("ん", "ン"));
+    }
+
+    @Test
+    public void testKanaEquivalenceNReverse(){
+        Assertions.assertTrue(JapaneseLanguageUtil.kanaEquivalence("ン", "ん"));
+    }
+
+    @Test
+    public void testKanaEquivalenceMultiCharacter(){
+        Assertions.assertTrue(JapaneseLanguageUtil.kanaEquivalence("たのしみます", "タノシミマス"));
+    }
+
+    @Test
+    public void testKanaEquivalenceMultiCharacterDifferentTypes(){
+        Assertions.assertTrue(JapaneseLanguageUtil.kanaEquivalence("たノしみマす", "タのしミまス"));
     }
 }
