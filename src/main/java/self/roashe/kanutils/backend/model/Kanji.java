@@ -3,6 +3,7 @@ package self.roashe.kanutils.backend.model;
 import java.util.List;
 
 public class Kanji {
+    private int id;
     private char kanji;
     private List<String> kunReadings;
     private List<String> onReadings;
@@ -38,5 +39,13 @@ public class Kanji {
 
     public void setEnglish(List<String> english) {
         this.english = english;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

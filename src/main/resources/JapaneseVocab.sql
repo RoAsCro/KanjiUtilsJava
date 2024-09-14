@@ -72,7 +72,7 @@ ENGINE = InnoDB;
 -- Table `japanese-vocab`.`kunreading`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `japanese-vocab`.`kunreading` (
-  `kunID` INT NOT NULL,
+  `kunID` INT NOT NULL AUTO_INCREMENT,
   `reading` VARCHAR(10) NULL,
   PRIMARY KEY (`kunID`),
   UNIQUE INDEX `reading_UNIQUE` (`reading` ASC) VISIBLE)
@@ -105,7 +105,7 @@ ENGINE = InnoDB;
 -- Table `japanese-vocab`.`onreading`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `japanese-vocab`.`onreading` (
-  `onID` INT NOT NULL,
+  `onID` INT NOT NULL AUTO_INCREMENT,
   `reading` VARCHAR(10) NULL,
   PRIMARY KEY (`onID`),
   UNIQUE INDEX `reading_UNIQUE` (`reading` ASC) VISIBLE)
@@ -138,7 +138,7 @@ ENGINE = InnoDB;
 -- Table `japanese-vocab`.`kanjimeaning`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `japanese-vocab`.`kanjimeaning` (
-  `kanjimeaningID` INT NOT NULL,
+  `kanjimeaningID` INT NOT NULL AUTO_INCREMENT,
   `meaning` VARCHAR(45) NULL,
   `kanji_kanjiID` INT NOT NULL,
   PRIMARY KEY (`kanjimeaningID`, `kanji_kanjiID`),
