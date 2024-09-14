@@ -35,7 +35,9 @@ public class KanjiDaoDbImpl implements KanjiDao{
         this.jdbc.update(ADD_KANJI, kanjiAsString);
         Integer kanjiID = this.jdbc.queryForObject(GET_LAST_ID, Integer.class);
         kanji.setId(kanjiID);
-        insertKun(kanji);
+        insertReading(kanji, kanji.getKunReadings(), "kun");
+        insertReading(kanji, kanji.getOnReadings(), "on");
+        
 
     }
 
@@ -94,27 +96,27 @@ public class KanjiDaoDbImpl implements KanjiDao{
         kanji.setEnglish(english);
     }
 
-    private void insertKun(Kanji kanji) {
-        for (String reading : kanji.getKunReadings()) {
+    private void insertReading(Kanji kanji, List<String> readings, String type) {
+        for (String reading : readings) {
             int id;
-            final String GET_KUN = "SELECT kunID FROM kunreading " +
+            final String GET_READING = "SELECT "+ type +"ID FROM " + type + "reading " +
                     "WHERE reading = ?";
 
-            List<Integer> readings = this.jdbc.queryForList(GET_KUN, Integer.class, reading);
-            if (!readings.isEmpty()) {
-                id = readings.get(0);
+            List<Integer> singleReading = this.jdbc.queryForList(GET_READING, Integer.class, reading);
+            if (!singleReading.isEmpty()) {
+                id = singleReading.get(0);
             } else {
-                final String INSERT_KUN = "INSERT INTO kunreading(reading) VALUES(?)";
-                jdbc.update(INSERT_KUN, reading);
+                final String INSERT_READING = "INSERT INTO " + type + "reading(reading) VALUES(?)";
+                jdbc.update(INSERT_READING, reading);
                 id = this.jdbc.queryForObject(GET_LAST_ID, Integer.class);
             }
 
-            final String INSERT_KANJI_HAS_KUN = "INSERT INTO kanji_has_kun(kunreading_kunID, kanji_kanjiID) " +
+            final String INSERT_KANJI_HAS_READING = "INSERT INTO kanji_has_" + type + "("
+                    + type + "reading_" + type + "ID, kanji_kanjiID) " +
                     "VALUES(?, ?)";
 
-            this.jdbc.update(INSERT_KANJI_HAS_KUN, id, kanji.getId());
+            this.jdbc.update(INSERT_KANJI_HAS_READING, id, kanji.getId());
         }
-
     }
 
 }
