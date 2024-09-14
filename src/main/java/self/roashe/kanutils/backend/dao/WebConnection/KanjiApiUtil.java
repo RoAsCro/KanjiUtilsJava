@@ -1,6 +1,5 @@
 package self.roashe.kanutils.backend.dao.WebConnection;
 
-import com.mysql.cj.xdevapi.JsonArray;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,7 +10,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,7 +23,7 @@ public class KanjiApiUtil {
     private static final String JSON_KUN = "kun_readings";
     private static final String JSON_ON = "on_readings";
 
-    public static Kanji getKanji(char kanjiChar) throws IOException, InterruptedException, JSONException {
+    public static Kanji getKanji(char kanjiChar) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(ENDPOINT + kanjiChar))
                 .method(GET, HttpRequest.BodyPublishers.noBody())
@@ -38,8 +36,13 @@ public class KanjiApiUtil {
             throw new IOException(response.toString());
         }
 
-        JSONObject json = new JSONObject(response.body());
-        Kanji kanji = mapJSON(json);
+        Kanji kanji;
+        try {
+            JSONObject json = new JSONObject(response.body());
+             kanji = mapJSON(json);
+        } catch (JSONException e) {
+            throw new IOException("Kanji not found.");
+        }
         return kanji;
 
     }
