@@ -37,8 +37,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
         kanji.setId(kanjiID);
         insertReading(kanji, kanji.getKunReadings(), "kun");
         insertReading(kanji, kanji.getOnReadings(), "on");
-        
-
+        insertMeanings(kanji);
     }
 
     @Override
@@ -116,6 +115,14 @@ public class KanjiDaoDbImpl implements KanjiDao{
                     "VALUES(?, ?)";
 
             this.jdbc.update(INSERT_KANJI_HAS_READING, id, kanji.getId());
+        }
+    }
+
+    private void insertMeanings(Kanji kanji) {
+        for (String meaning : kanji.getEnglish()) {
+            final String INSERT_MEANING = "INSERT INTO kanjimeaning(kanji_kanjiID, meaning) " +
+                    "VALUES(?, ?)";
+            jdbc.update(INSERT_MEANING, kanji.getId(), meaning);
         }
     }
 

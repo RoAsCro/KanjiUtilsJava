@@ -105,6 +105,7 @@ class KanjiDaoDbImplTest {
         kanji.setOnReadings(onReadings);
 
         List<String> meanings = List.of("day", "sun");
+        kanji.setEnglish(meanings);
         this.dao.addKanji(kanji);
         List<Kanji> getAll = dao.getAllKanji();
         Kanji retrievedKanji = this.dao.getAllKanji()
@@ -116,7 +117,7 @@ class KanjiDaoDbImplTest {
 
         assertEquals(kunReadings, retrievedKanji.getKunReadings());
         assertEquals(onReadings, retrievedKanji.getOnReadings());
-//        assertEquals(meanings, kanji.getEnglish());
+        assertEquals(meanings, retrievedKanji.getEnglish());
     }
 
 }
