@@ -15,6 +15,8 @@ import java.util.stream.Collectors;
 @Repository
 public class KanjiDaoDbImpl implements KanjiDao{
 
+    private final String GET_LAST_ID = "SELECT LAST_INSERT_ID()";
+
     @Autowired
     private JdbcTemplate jdbc;
 
@@ -31,7 +33,9 @@ public class KanjiDaoDbImpl implements KanjiDao{
 
         final String ADD_KANJI = "INSERT INTO kanji(kanji) VALUES(?)";
         this.jdbc.update(ADD_KANJI, kanjiAsString);
-
+        Integer kanjiID = this.jdbc.queryForObject(GET_LAST_ID, Integer.class);
+        kanji.setId(kanjiID);
+        insertKun(kanji);
 
     }
 
@@ -39,7 +43,6 @@ public class KanjiDaoDbImpl implements KanjiDao{
     public List<Kanji> getAllKanji() {
         final String GET_KANJI = "SELECT * FROM kanji";
         List<Kanji> kanjiList = this.jdbc.query(GET_KANJI, new KanjiMapper());
-
         for (Kanji kanji : kanjiList) {
             constructKanji(kanji);
         }
@@ -70,7 +73,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
 
     private void getKunReadings(Kanji kanji) {
         final String GET_KUN = "SELECT reading FROM kunreading " +
-                "INNER JOIN kanji_has_kun ON kunreading_kunID " +
+                "INNER JOIN kanji_has_kun ON kunreading_kunID = kunID " +
                 "WHERE kanji_kanjiID = ?";
         List<String> readings = this.jdbc.queryForList(GET_KUN, String.class, kanji.getId());
         kanji.setKunReadings(readings);
@@ -78,7 +81,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
 
     private void getOnReadings(Kanji kanji) {
         final String GET_KUN = "SELECT reading FROM onreading " +
-                "INNER JOIN kanji_has_on ON onreading_onID " +
+                "INNER JOIN kanji_has_on ON onreading_onID = onID " +
                 "WHERE kanji_kanjiID = ?";
         List<String> readings = this.jdbc.queryForList(GET_KUN, String.class, kanji.getId());
         kanji.setOnReadings(readings);
@@ -89,6 +92,29 @@ public class KanjiDaoDbImpl implements KanjiDao{
                 "WHERE kanji_kanjiID = ?";
         List<String> english = this.jdbc.queryForList(GET_MEANING, String.class, kanji.getId());
         kanji.setEnglish(english);
+    }
+
+    private void insertKun(Kanji kanji) {
+        for (String reading : kanji.getKunReadings()) {
+            int id;
+            final String GET_KUN = "SELECT kunID FROM kunreading " +
+                    "WHERE reading = ?";
+
+            List<Integer> readings = this.jdbc.queryForList(GET_KUN, Integer.class, reading);
+            if (!readings.isEmpty()) {
+                id = readings.get(0);
+            } else {
+                final String INSERT_KUN = "INSERT INTO kunreading(reading) VALUES(?)";
+                jdbc.update(INSERT_KUN, reading);
+                id = this.jdbc.queryForObject(GET_LAST_ID, Integer.class);
+            }
+
+            final String INSERT_KANJI_HAS_KUN = "INSERT INTO kanji_has_kun(kunreading_kunID, kanji_kanjiID) " +
+                    "VALUES(?, ?)";
+
+            this.jdbc.update(INSERT_KANJI_HAS_KUN, id, kanji.getId());
+        }
+
     }
 
 }

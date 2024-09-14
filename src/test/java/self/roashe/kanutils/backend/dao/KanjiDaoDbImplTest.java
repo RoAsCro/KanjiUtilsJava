@@ -86,8 +86,37 @@ class KanjiDaoDbImplTest {
     public void testAddDoesNotExist(){
         Kanji kanji = new Kanji();
         kanji.setKanji('日');
+        kanji.setKunReadings(List.of());
+        kanji.setOnReadings(List.of());
+        kanji.setEnglish(List.of());
         this.dao.addKanji(kanji);
         assertEquals(3, this.dao.getAllKanji().size());
+    }
+
+    @Test
+    public void testValuesAdded(){
+        Kanji kanji = new Kanji();
+        kanji.setKanji('日');
+
+        List<String> kunReadings = List.of("ひ", "にち");
+        kanji.setKunReadings(kunReadings);
+
+        List<String> onReadings = List.of("タチ", "ニ");
+        kanji.setOnReadings(onReadings);
+
+        List<String> meanings = List.of("day", "sun");
+        this.dao.addKanji(kanji);
+        List<Kanji> getAll = dao.getAllKanji();
+        Kanji retrievedKanji = this.dao.getAllKanji()
+                .stream()
+                .filter(k -> kanji.getKanji() == k.getKanji())
+                .findAny()
+                .orElse(null);
+        assertNotNull(retrievedKanji);
+
+        assertEquals(kunReadings, retrievedKanji.getKunReadings());
+        assertEquals(onReadings, retrievedKanji.getOnReadings());
+//        assertEquals(meanings, kanji.getEnglish());
     }
 
 }
