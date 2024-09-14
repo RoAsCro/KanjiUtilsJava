@@ -46,7 +46,6 @@ public class SeleniumUtil {
         options.addArguments("-headless");
 
         WebDriver driver = new FirefoxDriver(options);
-//        WebDriver driver = new HtmlUnitDriver();
 
         // /users/sign_in
         driver.get(URL_KANSHUDO + URL_LOGIN);
