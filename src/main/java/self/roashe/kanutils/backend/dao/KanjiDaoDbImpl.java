@@ -27,6 +27,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
 
         for (Kanji kanji : kanjiList) {
             getKunReadings(kanji);
+            getOnReadings(kanji);
         }
 
         return kanjiList;
@@ -53,6 +54,14 @@ public class KanjiDaoDbImpl implements KanjiDao{
                 "WHERE kanji_kanjiID = ?";
         List<String> readings = this.jdbc.queryForList(GET_KUN, String.class, kanji.getId());
         kanji.setKunReadings(readings);
+    }
+
+    private void getOnReadings(Kanji kanji) {
+        final String GET_KUN = "SELECT reading FROM onreading " +
+                "INNER JOIN kanji_has_on ON onreading_onID " +
+                "WHERE kanji_kanjiID = ?";
+        List<String> readings = this.jdbc.queryForList(GET_KUN, String.class, kanji.getId());
+        kanji.setOnReadings(readings);
     }
 
 }

@@ -59,6 +59,8 @@ class KanjiDaoDbImplTest {
         Kanji fueru = kanji.stream().filter(k -> k.getKanji() == '増').findAny().orElse(null);
         assertNotNull(fueru);
         assertEquals(List.of("ふ.える"), fueru.getKunReadings());
+        assertEquals(List.of("ゾウ"), fueru.getOnReadings());
+        assertEquals(List.of("add"), fueru.getEnglish());
     }
 
 }
