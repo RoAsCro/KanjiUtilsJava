@@ -16,22 +16,21 @@ public class KanjiApiUtil {
     private static final String GET = "GET";
 
     public static String getKanji(char kanji) throws IOException, InterruptedException, JSONException {
-        throw new IOException();
-//        HttpRequest request = HttpRequest.newBuilder()
-//                .uri(URI.create(ENDPOINT + kanji))
-//                .method(GET, HttpRequest.BodyPublishers.noBody())
-//                .build();
-//
-//        HttpResponse<String> response =
-//                HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-//
-//        if (response.statusCode() != OKAY) {
-//            throw new IOException(response.toString());
-//        }
-//
-////        JSONObject json = new JSONObject(request.toString() + response.body());
-//
-//        return response.toString();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(ENDPOINT + kanji))
+                .method(GET, HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        HttpResponse<String> response =
+                HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+        if (response.statusCode() != OKAY) {
+            throw new IOException(response.toString());
+        }
+
+        JSONObject json = new JSONObject(response.body());
+
+        return response.toString();
 
     }
 }
