@@ -63,4 +63,26 @@ class KanjiDaoDbImplTest {
         assertEquals(List.of("add"), fueru.getEnglish());
     }
 
+    @Test
+    public void testGetAllMissingParts(){
+        List<Kanji> kanji = this.dao.getAllKanji();
+        assertEquals(2, kanji.size());
+        Kanji mizu = kanji.stream().filter(k -> k.getKanji() == '水').findAny().orElse(null);
+        assertNotNull(mizu);
+        assertEquals(List.of(), mizu.getOnReadings());
+        assertEquals(List.of(), mizu.getKunReadings());
+        assertEquals(List.of(), mizu.getEnglish());
+    }
+
+    @Test
+    public void testAddExists(){
+        Kanji kanji = new Kanji();
+        kanji.setKanji('増');
+        this.dao.addKanji(kanji);
+        assertEquals(2, this.dao.getAllKanji().size());
+    }
+
+    @Test
+    public 
+
 }

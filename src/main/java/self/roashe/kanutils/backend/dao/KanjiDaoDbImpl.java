@@ -3,11 +3,14 @@ package self.roashe.kanutils.backend.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 import self.roashe.kanutils.backend.dao.mappers.KanjiMapper;
 import self.roashe.kanutils.backend.model.Kanji;
 import self.roashe.kanutils.backend.model.Word;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class KanjiDaoDbImpl implements KanjiDao{
@@ -16,7 +19,19 @@ public class KanjiDaoDbImpl implements KanjiDao{
     private JdbcTemplate jdbc;
 
     @Override
-    public void addKanji(String textContainingKanji) {
+    public void addKanji(Kanji kanji) {
+        final String GET_KANJI = "SELECT kanji FROM kanji " +
+                "WHERE kanji = ?";
+
+        String kanjiAsString = kanji.getKanji() + "";
+        List<String> found = this.jdbc.queryForList(GET_KANJI, String.class, kanjiAsString);
+        if (!found.isEmpty()) {
+            return;
+        }
+
+        final String ADD_KANJI = "INSERT INTO kanji(kanji) VALUES(?)";
+        this.jdbc.update(ADD_KANJI, kanjiAsString);
+
 
     }
 
@@ -26,9 +41,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
         List<Kanji> kanjiList = this.jdbc.query(GET_KANJI, new KanjiMapper());
 
         for (Kanji kanji : kanjiList) {
-            getKunReadings(kanji);
-            getOnReadings(kanji);
-            getEnglish(kanji);
+            constructKanji(kanji);
         }
 
         return kanjiList;
@@ -47,6 +60,12 @@ public class KanjiDaoDbImpl implements KanjiDao{
     @Override
     public List<Word> getWordsByKanji(char kanji) {
         return List.of();
+    }
+
+    private void constructKanji(Kanji kanji) {
+        getEnglish(kanji);
+        getKunReadings(kanji);
+        getOnReadings(kanji);
     }
 
     private void getKunReadings(Kanji kanji) {
