@@ -1,23 +1,33 @@
 package self.roashe.kanutils.backend.dao.WebConnection;
 
+import com.mysql.cj.xdevapi.JsonArray;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import self.roashe.kanutils.backend.model.Kanji;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class KanjiApiUtil {
 
     private static final int OKAY = 200;
     private static final String ENDPOINT = "https://kanjiapi.dev/v1/kanji/";
     private static final String GET = "GET";
+    private static final String JSON_ENG = "meanings";
+    private static final String JSON_KANJI = "kanji";
+    private static final String JSON_KUN = "kun_readings";
+    private static final String JSON_ON = "on_readings";
 
-    public static String getKanji(char kanji) throws IOException, InterruptedException, JSONException {
+    public static Kanji getKanji(char kanjiChar) throws IOException, InterruptedException, JSONException {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(ENDPOINT + kanji))
+                .uri(URI.create(ENDPOINT + kanjiChar))
                 .method(GET, HttpRequest.BodyPublishers.noBody())
                 .build();
 
@@ -29,8 +39,26 @@ public class KanjiApiUtil {
         }
 
         JSONObject json = new JSONObject(response.body());
+        Kanji kanji = mapJSON(json);
+        return kanji;
 
-        return response.toString();
+    }
 
+    private static Kanji mapJSON(JSONObject json) throws JSONException {
+        Kanji kanji = new Kanji();
+        kanji.setKanji(json.getString(JSON_KANJI).charAt(0));
+        kanji.setKunReadings(jsonIndexToList(JSON_KUN, json));
+        kanji.setOnReadings(jsonIndexToList(JSON_ON, json));
+        kanji.setEnglish(jsonIndexToList(JSON_ENG, json));
+        return kanji;
+    }
+
+    private static List<String> jsonIndexToList(String index, JSONObject json) throws JSONException {
+        JSONArray array = json.getJSONArray(index);
+        List<String> stringList = new LinkedList<>();
+        for (int i = 0 ; i < array.length() ; i++) {
+            stringList.add(array.getString(i));
+        }
+        return stringList;
     }
 }
