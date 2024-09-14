@@ -83,6 +83,11 @@ class KanjiDaoDbImplTest {
     }
 
     @Test
-    public 
+    public void testAddDoesNotExist(){
+        Kanji kanji = new Kanji();
+        kanji.setKanji('日');
+        this.dao.addKanji(kanji);
+        assertEquals(3, this.dao.getAllKanji().size());
+    }
 
 }
