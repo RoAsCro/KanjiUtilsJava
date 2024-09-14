@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import self.roashe.kanutils.backend.dao.ImportDao;
 import self.roashe.kanutils.backend.dao.VocabDao;
+import self.roashe.kanutils.backend.model.Kanji;
 import self.roashe.kanutils.backend.model.Word;
 
 import java.util.List;
@@ -26,5 +27,10 @@ public class VocabServiceImpl implements VocabService {
     @Override
     public List<Word> getAllVocab() {
         return this.vocabDao.getWords();
+    }
+
+    @Override
+    public List<Kanji> getAllKanji() {
+        return List.of();
     }
 }

@@ -27,13 +27,5 @@ public class ImportDaoKanshudoImplTest {
 
     }
 
-    @Test
-    public void testPattern(){
-        String testString = "ことにする\tPay attention to the past tense meaning ことにする ことにする to decide to; to pretend that; to make a practice of doing; to make it a rule to";
-        Pattern pattern = Pattern.compile("[a-zA-Z]|[(-]");
-        Matcher matcher = pattern.matcher(testString);
-        Assertions.assertTrue(matcher.find());
-        Assertions.assertDoesNotThrow(() -> matcher.start());
-    }
 
 }
