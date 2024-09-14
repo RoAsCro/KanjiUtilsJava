@@ -9,6 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import self.roashe.kanutils.backend.TestApplicationConfiguration;
+import self.roashe.kanutils.backend.model.Kanji;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,6 +43,8 @@ class KanjiDaoDbImplTest {
         jdbc.update("INSERT INTO kanjimeaning(meaning, kanji_kanjiID) VALUES(?, ?)", "add", kanjiID);
         jdbc.update("INSERT INTO kanji_has_kun(kanji_kanjiID, kunreading_kunID) VALUES(?, ?)", kanjiID, kunID);
         jdbc.update("INSERT INTO kanji_has_on(kanji_kanjiID, onreading_onID) VALUES(?, ?)", kanjiID, onID);
+
+        jdbc.update("INSERT INTO kanji(kanji) VALUES(?)", "水");
     }
 
     @Test
@@ -49,7 +54,11 @@ class KanjiDaoDbImplTest {
 
     @Test
     public void testGetAll(){
-        
+        List<Kanji> kanji = this.dao.getAllKanji();
+        assertEquals(2, kanji.size());
+        Kanji fueru = kanji.stream().filter(k -> k.getKanji() == '増').findAny().orElse(null);
+        assertNotNull(fueru);
+        assertEquals(List.of("ふ.える"), fueru.getKunReadings());
     }
 
 }
