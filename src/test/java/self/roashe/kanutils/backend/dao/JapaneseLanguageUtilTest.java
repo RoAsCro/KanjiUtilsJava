@@ -7,6 +7,8 @@ import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static self.roashe.kanutils.backend.JapaneseLanguageUtil.*;
+
 public class JapaneseLanguageUtilTest {
 
     @Test
@@ -19,9 +21,11 @@ public class JapaneseLanguageUtilTest {
 
     }
 
+
+
     @Test
     public void testKanaPattern() {
-        String testString = "みずリンゴ";
+        String testString = FIRST_HIRAGANA + "みずリンゴ" + LAST_KATAKANA;
         Pattern pattern = Pattern.compile(JapaneseLanguageUtil.KANA_REGEX);
         Matcher matcher = pattern.matcher(testString);
         Assertions.assertTrue(matcher.matches());
@@ -30,7 +34,7 @@ public class JapaneseLanguageUtilTest {
 
     @Test
     public void testKatakanaPattern() {
-        String testString = "リンゴ";
+        String testString = FIRST_KATAKANA +  "リンゴ" + LAST_KATAKANA;
         Pattern pattern = Pattern.compile(JapaneseLanguageUtil.KATAKANA_REGEX);
         Matcher matcher = pattern.matcher(testString);
         Assertions.assertTrue(matcher.matches());
@@ -39,7 +43,7 @@ public class JapaneseLanguageUtilTest {
 
     @Test
     public void testHiraganaPattern() {
-        String testString = "みず";
+        String testString = FIRST_HIRAGANA + "みず" + LAST_HIRAGANA;
         Pattern pattern = Pattern.compile(JapaneseLanguageUtil.HIRAGANA_REGEX);
         Matcher matcher = pattern.matcher(testString);
         Assertions.assertTrue(matcher.matches());
@@ -48,7 +52,7 @@ public class JapaneseLanguageUtilTest {
 
     @Test
     public void testJapanesePattern() {
-        String testString = "みず鳥リンゴ";
+        String testString = FIRST_HIRAGANA + "みず鳥リンゴ" + LAST_KATAKANA;
         Pattern pattern = Pattern.compile(JapaneseLanguageUtil.JAPANESE_REGEX);
         Matcher matcher = pattern.matcher(testString);
         Assertions.assertTrue(matcher.matches());
@@ -62,8 +66,19 @@ public class JapaneseLanguageUtilTest {
     }
 
     @Test
+    public void testJapaneseMatchingNoJapaneseNonOnlyModeTrue() {
+        String testString = "eigonosyoudaく";
+        Assertions.assertTrue(JapaneseLanguageUtil.containsJapanese(testString, false));
+    }
+
+    @Test
     public void testRepetitionMark() {
         String testString = "々";
         Assertions.assertTrue(JapaneseLanguageUtil.containsJapanese(testString, true));
+    }
+
+    @Test
+    public void testTest() {
+        System.out.println(0+'ゖ');
     }
 }
