@@ -42,6 +42,14 @@ public class JapaneseLanguageUtilTest {
     }
 
     @Test
+    public void testFu() {
+        String testString = "ふ";
+        Pattern pattern = Pattern.compile(JapaneseLanguageUtil.KATAKANA_REGEX);
+        Matcher matcher = pattern.matcher(testString);
+        Assertions.assertFalse(matcher.matches());
+    }
+
+    @Test
     public void testHiraganaPattern() {
         String testString = FIRST_HIRAGANA + "みず" + LAST_HIRAGANA;
         Pattern pattern = Pattern.compile(JapaneseLanguageUtil.HIRAGANA_REGEX);
@@ -124,8 +132,8 @@ public class JapaneseLanguageUtilTest {
 
     @Test
     public void testSwapKana(){
-        Assertions.assertEquals("アカタlナラハン", JapaneseLanguageUtil.hiraganise("あかたlならはん"));
-        Assertions.assertEquals("abza--かやぁおいaak=", JapaneseLanguageUtil.katakanise("abza--カヤァオイaak="));
+        Assertions.assertEquals("アカタlナオラハン", JapaneseLanguageUtil.hiraganise("あかたlなオらはん"));
+        Assertions.assertEquals("abza--かふやぁおいaak=", JapaneseLanguageUtil.katakanise("abza--カふヤァオイaak="));
     }
 
 }

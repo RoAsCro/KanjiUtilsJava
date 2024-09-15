@@ -83,7 +83,7 @@ public class JapaneseLanguageUtil {
     }
 
     private static String swapKana(String text, boolean hiragana) {
-        String regex = hiragana ? HIRAGANA_REGEX : KANA_REGEX;
+        String regex = hiragana ? HIRAGANA_REGEX : KATAKANA_REGEX;
         int multiplier = hiragana ? 1 : -1;
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
