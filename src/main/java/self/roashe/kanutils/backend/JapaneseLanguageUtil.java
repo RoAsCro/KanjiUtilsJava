@@ -75,21 +75,27 @@ public class JapaneseLanguageUtil {
     }
 
     public static String hiraganise(String text) {
-        final String HIRAGANA = "[あ-ん]+";
-        final String KATAKANA = "[ア-ン]+";
-        Pattern pattern = Pattern.compile("[あ-ん]+");
+        return swapKana(text, true);
+    }
+
+    public static String katakanise(String text) {
+        return swapKana(text, false);
+    }
+
+    private static String swapKana(String text, boolean hiragana) {
+        String regex = hiragana ? HIRAGANA_REGEX : KANA_REGEX;
+        int multiplier = hiragana ? 1 : -1;
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
         while(matcher.find()) {
             String foundText = matcher.group();
             String newText = foundText
                     .chars()
-                    .mapToObj(c -> ((char)(c+KANA_DIFF)) + "")
+                    .mapToObj(c -> ((char)(c + (KANA_DIFF * multiplier))) + "")
                     .collect(Collectors.joining());
             text = text.replaceAll(foundText, newText);
         }
 
-
-        String notKana = "[^あ-んア-ン]+";
         return text;
     }
 

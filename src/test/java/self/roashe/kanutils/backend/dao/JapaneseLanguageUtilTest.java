@@ -123,9 +123,9 @@ public class JapaneseLanguageUtilTest {
     }
 
     @Test
-    public void test(){
-        System.out.println(JapaneseLanguageUtil.hiraganise("a"));
-        System.out.println(JapaneseLanguageUtil.hiraganise("aあぶ"));
-        System.out.println(JapaneseLanguageUtil.hiraganise("あaんきにmafaw:{あ"));
+    public void testSwapKana(){
+        Assertions.assertEquals("アカタlナラハン", JapaneseLanguageUtil.hiraganise("あかたlならはん"));
+        Assertions.assertEquals("abza--かやぁおいaak=", JapaneseLanguageUtil.katakanise("abza--カヤァオイaak="));
     }
+
 }
