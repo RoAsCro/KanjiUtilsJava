@@ -121,4 +121,11 @@ public class JapaneseLanguageUtilTest {
     public void testKanaEquivalenceMultiCharacterDifferentTypes(){
         Assertions.assertTrue(JapaneseLanguageUtil.kanaEquivalence("たノしみマす", "タのしミまス"));
     }
+
+    @Test
+    public void test(){
+        System.out.println(JapaneseLanguageUtil.hiraganise("a"));
+        System.out.println(JapaneseLanguageUtil.hiraganise("aあぶ"));
+        System.out.println(JapaneseLanguageUtil.hiraganise("あaんきにmafaw:{あ"));
+    }
 }

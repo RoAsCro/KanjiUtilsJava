@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class JapaneseLanguageUtil {
@@ -20,6 +21,7 @@ public class JapaneseLanguageUtil {
             FIRST_KATAKANA + "-" + LAST_KATAKANA + "]+";
     public static final String KANJI_REGEX = "[㐀-䶵一-鿋豈-頻]+";
     public static final String JAPANESE_REGEX = "[ぁ-ゖ゠-ヿ㐀-䶵一-鿋豈-頻々]+";
+    public static final String NOT_KANA_REGEX = "[^あ-んア-ン]+";
 
     public static boolean containsHiragana(String text, boolean only) {
         return matchPattern(text, HIRAGANA_REGEX, only);
@@ -72,9 +74,29 @@ public class JapaneseLanguageUtil {
         return true;
     }
 
+    public static String hiraganise(String text) {
+        final String HIRAGANA = "[あ-ん]+";
+        final String KATAKANA = "[ア-ン]+";
+        Pattern pattern = Pattern.compile("[あ-ん]+");
+        Matcher matcher = pattern.matcher(text);
+        while(matcher.find()) {
+            String foundText = matcher.group();
+            String newText = foundText
+                    .chars()
+                    .mapToObj(c -> ((char)(c+KANA_DIFF)) + "")
+                    .collect(Collectors.joining());
+            text = text.replaceAll(foundText, newText);
+        }
+
+
+        String notKana = "[^あ-んア-ン]+";
+        return text;
+    }
+
     private static boolean matchPattern(String text, String regex, boolean only) {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
+
         return only ? matcher.matches() : matcher.find();
     }
 
