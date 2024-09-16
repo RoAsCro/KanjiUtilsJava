@@ -9,6 +9,7 @@ import self.roashe.kanutils.backend.model.Kanji;
 import self.roashe.kanutils.backend.model.Word;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -63,7 +64,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
                 "INNER JOIN kanji_has_kun ON kanji_kanjiID = kanjiID " +
                 "INNER JOIN kunreading ON kunreading_kunID = kunID " +
                 "WHERE reading = ?";
-        Set<Kanji> kanji = Set.copyOf(jdbc.query(KANJI_BY_KUN_READING, new KanjiMapper(),
+        Set<Kanji> kanji = new HashSet<>(jdbc.query(KANJI_BY_KUN_READING, new KanjiMapper(),
                 JapaneseLanguageUtil.hiraganise(reading)));
 
         final String KANJI_BY_ON_READING = "SELECT * FROM kanji " +

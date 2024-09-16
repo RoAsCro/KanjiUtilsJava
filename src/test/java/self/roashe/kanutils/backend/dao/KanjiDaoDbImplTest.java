@@ -122,8 +122,16 @@ class KanjiDaoDbImplTest {
 
     @Test
     public void testGetByKun() {
-        this.dao.getKanjiByReading("ふ.える");
+        List<Kanji> kanjiList = this.dao.getKanjiByReading("ふ.える");
+        assertEquals(1, kanjiList.size());
+        Kanji kanji = kanjiList.get(0);
+        assertEquals('増', kanji.getKanji());
+    }
 
+    @Test
+    public void testGetByKunKatakana() {
+        Kanji kanji = this.dao.getKanjiByReading("フ.エル").get(0);
+        assertEquals('増', kanji.getKanji());
     }
 
 }

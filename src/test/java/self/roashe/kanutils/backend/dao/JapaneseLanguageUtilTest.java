@@ -132,8 +132,8 @@ public class JapaneseLanguageUtilTest {
 
     @Test
     public void testSwapKana(){
-        Assertions.assertEquals("アカタlナオラハン", JapaneseLanguageUtil.hiraganise("あかたlなオらはん"));
-        Assertions.assertEquals("abza--かふやぁおいaak=", JapaneseLanguageUtil.katakanise("abza--カふヤァオイaak="));
+        Assertions.assertEquals("アカタlナオラハン", JapaneseLanguageUtil.katakanise("あかたlなオらはん"));
+        Assertions.assertEquals("abza--かふやぁおいaak=", JapaneseLanguageUtil.hiraganise("abza--カふヤァオイaak="));
     }
 
 }
