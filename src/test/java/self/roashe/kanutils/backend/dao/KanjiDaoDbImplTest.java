@@ -130,7 +130,41 @@ class KanjiDaoDbImplTest {
 
     @Test
     public void testGetByKunKatakana() {
-        Kanji kanji = this.dao.getKanjiByReading("フ.エル").get(0);
+        List<Kanji> kanjiList =  this.dao.getKanjiByReading("フ.エル");
+        assertEquals(1, kanjiList.size());
+        Kanji kanji = kanjiList.get(0);
+        assertEquals('増', kanji.getKanji());
+    }
+
+    @Test
+    public void testGetByKunMixedCharacters() {
+        List<Kanji> kanjiList =  this.dao.getKanjiByReading("フ.えル");
+        assertEquals(1, kanjiList.size());
+        Kanji kanji = kanjiList.get(0);
+        assertEquals('増', kanji.getKanji());
+    }
+
+    @Test
+    public void testGetByOn() {
+        List<Kanji> kanjiList = this.dao.getKanjiByReading("ゾウ");
+        assertEquals(1, kanjiList.size());
+        Kanji kanji = kanjiList.get(0);
+        assertEquals('増', kanji.getKanji());
+    }
+
+    @Test
+    public void testGetByOnHiragana() {
+        List<Kanji> kanjiList = this.dao.getKanjiByReading("ぞう");
+        assertEquals(1, kanjiList.size());
+        Kanji kanji = kanjiList.get(0);
+        assertEquals('増', kanji.getKanji());
+    }
+
+    @Test
+    public void testGetByOnMixedCharacters() {
+        List<Kanji> kanjiList = this.dao.getKanjiByReading("ゾう");
+        assertEquals(1, kanjiList.size());
+        Kanji kanji = kanjiList.get(0);
         assertEquals('増', kanji.getKanji());
     }
 
