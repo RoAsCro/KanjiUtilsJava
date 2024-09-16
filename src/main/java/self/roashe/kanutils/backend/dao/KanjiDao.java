@@ -8,7 +8,6 @@ import java.util.List;
 public interface KanjiDao {
     void addKanji(Kanji kanji);
     List<Kanji> getAllKanji();
-    List<Kanji> getKanjiInString(String text);
     List<Kanji> getKanjiByReading(String reading);
     List<Word> getWordsByKanji(char kanji);
 }

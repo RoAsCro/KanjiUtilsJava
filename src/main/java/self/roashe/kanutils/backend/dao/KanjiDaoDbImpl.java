@@ -54,11 +54,6 @@ public class KanjiDaoDbImpl implements KanjiDao{
     }
 
     @Override
-    public List<Kanji> getKanjiInString(String text) {
-        return List.of();
-    }
-
-    @Override
     public List<Kanji> getKanjiByReading(String reading) {
         final String KANJI_BY_KUN_READING = "SELECT * FROM kanji " +
                 "INNER JOIN kanji_has_kun ON kanji_kanjiID = kanjiID " +
