@@ -120,4 +120,10 @@ class KanjiDaoDbImplTest {
         assertEquals(meanings, retrievedKanji.getEnglish());
     }
 
+    @Test
+    public void testGetByKun() {
+        this.dao.getKanjiByReading("ふ.える");
+
+    }
+
 }

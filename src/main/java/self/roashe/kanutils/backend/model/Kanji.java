@@ -1,6 +1,7 @@
 package self.roashe.kanutils.backend.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Kanji {
     private int id;
@@ -48,4 +49,22 @@ public class Kanji {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Kanji) {
+            Kanji kanji = (Kanji) o;
+            return kanji.kanji == this.kanji &&
+                    kanji.english.equals(this.english) &&
+                    kanji.kunReadings.equals(this.kunReadings) &&
+                    kanji.onReadings.equals(this.onReadings);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.kanji, this.english, this.kunReadings, this.onReadings);
+    }
+
 }
