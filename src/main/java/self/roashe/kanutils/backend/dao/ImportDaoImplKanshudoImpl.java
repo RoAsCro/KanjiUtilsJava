@@ -2,19 +2,11 @@ package self.roashe.kanutils.backend.dao;
 
 import org.springframework.stereotype.Repository;
 import self.roashe.kanutils.backend.JapaneseLanguageUtil;
-import self.roashe.kanutils.backend.dao.WebConnection.SeleniumUtil;
+import self.roashe.kanutils.backend.dao.web_utilities.SeleniumUtil;
 import self.roashe.kanutils.backend.model.Word;
-
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 @Repository
 public class ImportDaoImplKanshudoImpl implements ImportDao {

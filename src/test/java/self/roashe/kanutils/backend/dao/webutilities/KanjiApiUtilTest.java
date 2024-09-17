@@ -1,9 +1,9 @@
-package self.roashe.kanutils.backend.dao;
+package self.roashe.kanutils.backend.dao.webutilities;
 
 import org.json.JSONException;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import self.roashe.kanutils.backend.dao.WebConnection.KanjiApiUtil;
+import self.roashe.kanutils.backend.dao.web_utilities.KanjiApiUtil;
 import self.roashe.kanutils.backend.model.Kanji;
 
 import java.io.FileNotFoundException;

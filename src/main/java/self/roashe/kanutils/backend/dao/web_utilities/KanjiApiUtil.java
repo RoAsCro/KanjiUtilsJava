@@ -1,4 +1,4 @@
-package self.roashe.kanutils.backend.dao.WebConnection;
+package self.roashe.kanutils.backend.dao.web_utilities;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -3,7 +3,7 @@ package self.roashe.kanutils.backend.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import self.roashe.kanutils.backend.dao.KanjiDao;
-import self.roashe.kanutils.backend.dao.WebConnection.KanjiApiUtil;
+import self.roashe.kanutils.backend.dao.web_utilities.KanjiApiUtil;
 import self.roashe.kanutils.backend.model.Kanji;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 

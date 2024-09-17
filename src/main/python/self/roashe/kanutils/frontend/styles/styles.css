@@ -1,0 +1,17 @@
+.container {
+    background-color: navy;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.container > * {
+    flex: auto;
+}
+
+
+.box {
+    background-color: salmon;
+}

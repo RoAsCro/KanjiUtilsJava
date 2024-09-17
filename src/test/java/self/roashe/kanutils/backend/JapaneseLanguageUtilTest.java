@@ -1,8 +1,7 @@
-package self.roashe.kanutils.backend.dao;
+package self.roashe.kanutils.backend;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

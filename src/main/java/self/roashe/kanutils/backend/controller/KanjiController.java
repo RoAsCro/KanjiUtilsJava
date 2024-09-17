@@ -18,6 +18,7 @@ public class KanjiController {
 
     @GetMapping("/all")
     public List<Kanji> getKanji() {
+        this.service.getKanji().forEach(k -> System.out.println(k.getKanji()));
         return this.service.getKanji();
     }
 }
