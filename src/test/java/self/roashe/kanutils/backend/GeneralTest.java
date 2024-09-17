@@ -15,4 +15,6 @@ public class GeneralTest {
         System.out.println(Set.copyOf(List.of("A", "B")).hashCode());
         System.out.println(Set.copyOf(List.of("B", "A")).hashCode());
     }
+
+
 }
