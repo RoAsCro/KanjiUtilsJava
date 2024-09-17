@@ -24,8 +24,8 @@ public class KanjiServiceImpl implements KanjiService {
         for (char k : kanjiArray) {
             Kanji kanjiToAdd;
             try {
-                kanjiToAdd = KanjiApiUtil.getKanjiFromAPI(k);
-            } catch (IOException | InterruptedException e) {
+                kanjiToAdd = KanjiApiUtil.getKanjiFromInternalFile(k);
+            } catch (IOException e) {
                 throw new KanjiIOException("Kanji Coulld Not Be  Found");
             }
             this.dao.addKanji(kanjiToAdd);

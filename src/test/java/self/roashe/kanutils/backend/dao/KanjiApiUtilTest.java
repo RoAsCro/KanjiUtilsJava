@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.junit.jupiter.api.Test;
 import self.roashe.kanutils.backend.dao.WebConnection.KanjiApiUtil;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -48,6 +49,16 @@ public class KanjiApiUtilTest {
                 KanjiApiUtil.getKanjiFromAPI('角').getEnglish());
 
 
+    }
+
+    @Test
+    void testGetKanjiFromFile() throws IOException, JSONException {
+        assertEquals('角', KanjiApiUtil.getKanjiFromInternalFile('角').getKanji());
+    }
+
+    @Test
+    void testGetKanjiFromFileNonKanji() throws FileNotFoundException, JSONException {
+        assertThrows(IOException.class, () -> KanjiApiUtil.getKanjiFromInternalFile('e'));
     }
 
 }

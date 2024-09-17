@@ -5,6 +5,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import self.roashe.kanutils.backend.model.Kanji;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -12,8 +15,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class KanjiApiUtil {
+
+    private static JSONObject fullAPI;
 
     private static final int OKAY = 200;
     private static final String ENDPOINT = "https://kanjiapi.dev/v1/kanji/";
@@ -22,6 +28,8 @@ public class KanjiApiUtil {
     private static final String JSON_KANJI = "kanji";
     private static final String JSON_KUN = "kun_readings";
     private static final String JSON_ON = "on_readings";
+
+    private static final String JSON_FILE_LOCATION = "src/main/resources/kanjiapi_full.json";
 
     @Deprecated
     public static Kanji getKanjiFromAPI(char kanjiChar) throws IOException, InterruptedException {
@@ -48,6 +56,32 @@ public class KanjiApiUtil {
         }
         return kanji;
 
+    }
+
+    public static Kanji getKanjiFromInternalFile(char kanjiChar) throws IOException {
+        try {
+            if (fullAPI == null) {
+                importJson();
+            }
+        } catch (JSONException e) {
+            throw new IOException("Kanji API file not found");
+        }
+        try {
+            return mapJSON(fullAPI.getJSONObject("kanjis").getJSONObject("" + kanjiChar));
+        } catch (JSONException e) {
+            throw new IOException("Kanji not found");
+        }
+    }
+
+    private static void importJson() throws FileNotFoundException, JSONException {
+        Scanner scanner = new Scanner(
+                new BufferedReader(
+                        new FileReader(JSON_FILE_LOCATION)));
+        StringBuilder stringBuilder = new StringBuilder();
+        while (scanner.hasNext()) {
+            stringBuilder.append(scanner.next());
+        }
+        fullAPI = new JSONObject(stringBuilder.toString());
     }
 
     private static Kanji mapJSON(JSONObject json) throws JSONException {

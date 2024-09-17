@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83089241-5286-483e-839b-a96bf14d121f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/WebConnection/KanjiApiUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/WebConnection/KanjiApiUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/KanjiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/KanjiServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/KanjiApiUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/KanjiApiUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/service/KanjiServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/service/KanjiServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +37,8 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.GeneralTest.testCollections.executor": "Run",
+    "JUnit.KanjiApiUtilTest.testGetKanjiFromFile.executor": "Run",
+    "JUnit.KanjiApiUtilTest.testGetKanjiFromFileNonKanji.executor": "Run",
     "JUnit.KanjiDaoDbImplTest.executor": "Run",
     "JUnit.KanjiDaoDbImplTest.testAddDoesNotExist.executor": "Run",
     "JUnit.KanjiDaoDbImplTest.testAddExists.executor": "Debug",
@@ -65,7 +66,7 @@
       <recent name="C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.KanjiApiUtilTest.testGetKanjiFromFileNonKanji">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.Main" />
       <module name="KanUtils" />
@@ -79,23 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeneralTest.testCollections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KanUtils" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.GeneralTest" />
-      <option name="METHOD_NAME" value="testCollections" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VocabDaoDbImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KanjiApiUtilTest.testGetKanjiFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KanUtils" />
       <extension name="coverage">
         <pattern>
@@ -104,8 +89,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.VocabDaoDbImplTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.KanjiApiUtilTest" />
+      <option name="METHOD_NAME" value="testGetKanjiFromFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KanjiApiUtilTest.testGetKanjiFromFileNonKanji" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KanUtils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.KanjiApiUtilTest" />
+      <option name="METHOD_NAME" value="testGetKanjiFromFileNonKanji" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KanjiApiUtilTest.testGetKanjiFromFileNonKanji" />
+        <item itemvalue="JUnit.KanjiApiUtilTest.testGetKanjiFromFile" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.self.roashe.kanutils.backend in KanUtils" />
         <item itemvalue="JUnit.VocabDaoDbImplTest.testAddExists" />
-        <item itemvalue="JUnit.GeneralTest.testCollections" />
-        <item itemvalue="JUnit.VocabDaoDbImplTest" />
       </list>
     </recent_temporary>
   </component>
