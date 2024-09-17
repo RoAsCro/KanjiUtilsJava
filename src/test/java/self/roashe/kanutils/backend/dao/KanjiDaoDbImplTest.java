@@ -23,7 +23,7 @@ class KanjiDaoDbImplTest {
     JdbcTemplate jdbc;
 
     @Autowired
-    KanjiDao dao;
+    KanjiDaoDbImpl dao;
 
     @BeforeEach
     void setUp() {
@@ -45,6 +45,7 @@ class KanjiDaoDbImplTest {
         jdbc.update("INSERT INTO kanji_has_on(kanji_kanjiID, onreading_onID) VALUES(?, ?)", kanjiID, onID);
 
         jdbc.update("INSERT INTO kanji(kanji) VALUES(?)", "水");
+        dao.clearLocalData();
     }
 
     @Test

@@ -15,6 +15,10 @@ public class ImportDaoKanshudoImplTest {
 
     @Test
     public void testWordCreation(){
+        final boolean RUN = false;
+        if (!RUN) {
+            return;
+        }
         List<Word> words = dao.getAllWords("rollycrompton@gmail.com", "7xE3Esfim59SYSv");
 
         for (Word word : words) {

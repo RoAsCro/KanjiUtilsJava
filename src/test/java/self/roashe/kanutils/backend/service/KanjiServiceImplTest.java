@@ -36,6 +36,7 @@ class KanjiServiceImplTest {
         jdbc.update("DELETE FROM kanji");
         jdbc.update("DELETE FROM kunreading");
         jdbc.update("DELETE FROM onreading");
+        dao.clearLocalData();
     }
 
     @Test

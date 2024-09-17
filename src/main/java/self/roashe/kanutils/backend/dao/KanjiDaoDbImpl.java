@@ -8,47 +8,43 @@ import self.roashe.kanutils.backend.dao.mappers.KanjiMapper;
 import self.roashe.kanutils.backend.model.Kanji;
 import self.roashe.kanutils.backend.model.Word;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Repository
 public class KanjiDaoDbImpl implements KanjiDao{
 
-    private final String GET_LAST_ID = "SELECT LAST_INSERT_ID()";
+    private static final String GET_LAST_ID = "SELECT LAST_INSERT_ID()";
+
+    private final Map<Character, Kanji> kanjiMap = new HashMap<>();
 
     @Autowired
     private JdbcTemplate jdbc;
 
     @Override
     public void addKanji(Kanji kanji) {
-        final String GET_KANJI = "SELECT kanji FROM kanji " +
-                "WHERE kanji = ?";
-
-        String kanjiAsString = kanji.getKanji() + "";
-        List<String> found = this.jdbc.queryForList(GET_KANJI, String.class, kanjiAsString);
-        if (!found.isEmpty()) {
+        getAllKanji();
+        if (this.kanjiMap.containsKey(kanji.getKanji())) {
             return;
         }
+        this.kanjiMap.put(kanji.getKanji(), kanji);
 
-        final String ADD_KANJI = "INSERT INTO kanji(kanji) VALUES(?)";
-        this.jdbc.update(ADD_KANJI, kanjiAsString);
-        Integer kanjiID = this.jdbc.queryForObject(GET_LAST_ID, Integer.class);
-        kanji.setId(kanjiID);
-        insertReading(kanji, kanji.getKunReadings(), "kun");
-        insertReading(kanji, kanji.getOnReadings(), "on");
-        insertMeanings(kanji);
     }
 
     @Override
     public List<Kanji> getAllKanji() {
-        final String GET_KANJI = "SELECT * FROM kanji";
-        List<Kanji> kanjiList = this.jdbc.query(GET_KANJI, new KanjiMapper());
-        for (Kanji kanji : kanjiList) {
-            constructKanji(kanji);
+        List<Kanji> kanjiList;
+        if (this.kanjiMap.isEmpty()) {
+            final String GET_KANJI = "SELECT * FROM kanji";
+            kanjiList   = this.jdbc.query(GET_KANJI, new KanjiMapper());
+            for (Kanji kanji : kanjiList) {
+                constructKanji(kanji);
+                this.kanjiMap.put(kanji.getKanji(), kanji);
+            }
+
         }
+        kanjiList = List.copyOf(this.kanjiMap.values());
+
 
         return kanjiList;
     }
@@ -80,6 +76,24 @@ public class KanjiDaoDbImpl implements KanjiDao{
     @Override
     public List<Word> getWordsByKanji(char kanji) {
         return List.of();
+    }
+
+    @Override
+    public void export() {
+        for (Kanji kanji : this.kanjiMap.values()) {
+            final String ADD_KANJI = "INSERT INTO kanji(kanji) VALUES(?)";
+            this.jdbc.update(ADD_KANJI, kanji.getId() + "");
+            Integer kanjiID = this.jdbc.queryForObject(GET_LAST_ID, Integer.class);
+            kanji.setId(kanjiID);
+            insertReading(kanji, kanji.getKunReadings(), "kun");
+            insertReading(kanji, kanji.getOnReadings(), "on");
+            insertMeanings(kanji);
+        }
+    }
+
+    @Override
+    public void clearLocalData() {
+        this.kanjiMap.clear();
     }
 
     private void constructKanji(Kanji kanji) {

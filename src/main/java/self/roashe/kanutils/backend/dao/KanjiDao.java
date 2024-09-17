@@ -10,4 +10,6 @@ public interface KanjiDao {
     List<Kanji> getAllKanji();
     List<Kanji> getKanjiByReading(String reading);
     List<Word> getWordsByKanji(char kanji);
+    void export();
+    void clearLocalData();
 }

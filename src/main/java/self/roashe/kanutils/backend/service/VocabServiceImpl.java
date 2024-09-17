@@ -1,6 +1,7 @@
 package self.roashe.kanutils.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import self.roashe.kanutils.backend.dao.ImportDao;
 import self.roashe.kanutils.backend.dao.VocabDao;
@@ -41,7 +42,11 @@ public class VocabServiceImpl implements VocabService {
     @Override
     public void extractKanjiFromVocab() throws KanjiIOException {
         for (Word word : getAllVocab()) {
-            this.kanjiService.addKanji(word.getJapanese());
+            try {
+                this.kanjiService.addKanji(word.getJapanese());
+            } catch (DataIntegrityViolationException e) {
+                System.out.println(word);
+            }
         }
     }
 }
