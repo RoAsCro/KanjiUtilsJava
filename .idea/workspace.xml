@@ -74,7 +74,20 @@
       <recent name="C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.backend in KanUtils">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.Main" />
+      <module name="KanUtils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="self.roashe.kanutils.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KanjiApiUtilTest.testGetKanjiFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KanUtils" />
       <extension name="coverage">
@@ -86,22 +99,6 @@
       <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.KanjiApiUtilTest" />
       <option name="METHOD_NAME" value="testGetKanjiFromFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KanjiApiUtilTest.testGetKanjiFromFileNonKanji" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KanUtils" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.KanjiApiUtilTest" />
-      <option name="METHOD_NAME" value="testGetKanjiFromFileNonKanji" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.backend in KanUtils" />
         <item itemvalue="JUnit.KanjiApiUtilTest.testGetKanjiFromFile" />
         <item itemvalue="JUnit.KanjiApiUtilTest.testGetKanjiFromFileVSAPI" />
         <item itemvalue="JUnit.KanjiServiceImplTest.testAddKanjiMixedText" />
-        <item itemvalue="JUnit.KanjiApiUtilTest.testGetKanjiFromFileNonKanji" />
       </list>
     </recent_temporary>
   </component>
