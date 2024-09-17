@@ -21,7 +21,7 @@ class VocabDaoDbImplTest {
     @Autowired
     JdbcTemplate jdbc;
     @Autowired
-    VocabDao dao;
+    VocabDaoDbImpl dao;
 
 
     @BeforeEach
@@ -54,6 +54,7 @@ class VocabDaoDbImplTest {
         jdbc.update("INSERT INTO reading(japaneseword_jpId, reading) " +
                         "values(?, 'さけぶ')",
                 wordId);
+        dao.clearLocalData();
     }
 
     @Test
@@ -95,6 +96,25 @@ class VocabDaoDbImplTest {
         Word retrievedWord = dao.getWord("是非");
         Assertions.assertNotNull(retrievedWord);
         Assertions.assertEquals(word, retrievedWord);
+    }
+
+    @Test
+    void testAddExists(){
+        Word word = new Word();
+        word.setJapanese("是非");
+        word.setReadings(List.of("ぜひ"));
+        word.setEnglish(List.of("Very much", "Right and wrong"));
+        System.out.println(word.hashCode());
+        dao.addWord(word);
+        word = new Word();
+        word.setJapanese("是非");
+        word.setReadings(List.of("ぜひ"));
+        word.setEnglish(List.of("Right and wrong", "Very much"));
+        dao.addWord(word);
+        System.out.println(word.hashCode());
+
+
+
     }
 
 }

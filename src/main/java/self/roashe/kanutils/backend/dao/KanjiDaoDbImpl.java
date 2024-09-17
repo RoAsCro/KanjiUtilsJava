@@ -80,6 +80,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
 
     @Override
     public void export() {
+        // TODO consider deletion as a function
         for (Character character : this.newKanji) {
             Kanji kanji = this.kanjiMap.get(character);
             final String ADD_KANJI = "INSERT INTO kanji(kanji) VALUES(?)";

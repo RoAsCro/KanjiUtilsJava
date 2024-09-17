@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import self.roashe.kanutils.backend.dao.mappers.WordMapper;
 import self.roashe.kanutils.backend.model.Word;
 
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class VocabDaoDbImpl implements VocabDao {
@@ -15,17 +15,22 @@ public class VocabDaoDbImpl implements VocabDao {
     @Autowired
     private JdbcTemplate jdbc;
 
+    private final Set<Word> wordSet = new HashSet<>();
+
     @Override
     public List<Word> getWords() {
-        final String SELECT_ALL_WORDS = "SELECT * FROM japaneseword";
-        List<Word> words = this.jdbc.query(SELECT_ALL_WORDS, new WordMapper());
+        if (this.wordSet.isEmpty()) {
+            final String SELECT_ALL_WORDS = "SELECT * FROM japaneseword";
+            List<Word> words = this.jdbc.query(SELECT_ALL_WORDS, new WordMapper());
 
-        for (Word word : words) {
-            pullReadings(word);
-            pullEnglish(word);
+            for (Word word : words) {
+                pullReadings(word);
+                pullEnglish(word);
+            }
+            this.wordSet.addAll(words);
         }
 
-        return words;
+        return List.copyOf(this.wordSet);
     }
 
     @Override
@@ -43,9 +48,12 @@ public class VocabDaoDbImpl implements VocabDao {
         }
     }
 
-
     @Override
     public void addWord(Word word) {
+        getWords();
+        if (!this.wordSet.add(word)) {
+            return;
+        }
         final String ADD_WORD = "INSERT INTO japaneseword(word) " +
                 "values(?)";
         this.jdbc.update(ADD_WORD,
@@ -54,6 +62,10 @@ public class VocabDaoDbImpl implements VocabDao {
         word.setId(id);
         addReadings(word);
         addDefinitions(word);
+    }
+
+    public void clearLocalData() {
+        this.wordSet.clear();
     }
 
     private void addDefinitions(Word word) {
@@ -78,7 +90,6 @@ public class VocabDaoDbImpl implements VocabDao {
         }
 
     }
-
 
     private void pullReadings(Word word) {
         final String SELECT_READINGS = "SELECT reading FROM reading " +
