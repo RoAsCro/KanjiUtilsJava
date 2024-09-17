@@ -37,4 +37,9 @@ public class KanjiServiceImpl implements KanjiService {
         }
     }
 
+    @Override
+    public void export() {
+        this.dao.export();
+    }
+
 }

@@ -41,12 +41,19 @@ public class VocabServiceImpl implements VocabService {
 
     @Override
     public void extractKanjiFromVocab() throws KanjiIOException {
-        for (Word word : getAllVocab()) {
+        List<Word> vocab = getAllVocab();
+        int count = 0;
+        for (Word word : vocab) {
             try {
+                count++;
+                System.out.println(count + "/" + vocab.size());
+                System.out.println(word);
                 this.kanjiService.addKanji(word.getJapanese());
             } catch (DataIntegrityViolationException e) {
+                System.out.println("ERROR");
                 System.out.println(word);
             }
         }
+        this.kanjiService.export();
     }
 }
