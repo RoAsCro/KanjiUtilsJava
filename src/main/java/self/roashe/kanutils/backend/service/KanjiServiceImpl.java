@@ -8,6 +8,7 @@ import self.roashe.kanutils.backend.model.Kanji;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 
 import java.io.IOException;
+import java.util.List;
 
 import static self.roashe.kanutils.backend.JapaneseLanguageUtil.KANJI_REGEX;
 @Service
@@ -35,6 +36,11 @@ public class KanjiServiceImpl implements KanjiService {
     @Override
     public void export() {
         this.dao.export();
+    }
+
+    @Override
+    public List<Kanji> getKanji() {
+        return this.dao.getAllKanji();
     }
 
 }

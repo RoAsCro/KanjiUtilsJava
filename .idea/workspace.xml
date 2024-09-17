@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="83089241-5286-483e-839b-a96bf14d121f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/GeneralTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/GeneralTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/KanjiApiUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/KanjiApiUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/service/KanjiServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/service/KanjiServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/WebConnection/KanjiApiUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/WebConnection/KanjiApiUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/KanjiServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/KanjiServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/self/roashe/kanutils/backend/dao/KanjiApiUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/self/roashe/kanutils/backend/dao/KanjiApiUtilTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/self/roashe/kanutils/backend/service/KanjiServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/self/roashe/kanutils/backend/service/KanjiServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/KanjiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/KanjiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/KanjiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/KanjiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/KanjiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/KanjiServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
