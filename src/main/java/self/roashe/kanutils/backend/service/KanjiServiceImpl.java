@@ -2,18 +2,13 @@ package self.roashe.kanutils.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 import self.roashe.kanutils.backend.dao.KanjiDao;
 import self.roashe.kanutils.backend.dao.WebConnection.KanjiApiUtil;
 import self.roashe.kanutils.backend.model.Kanji;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
+
 import static self.roashe.kanutils.backend.JapaneseLanguageUtil.KANJI_REGEX;
 @Service
 public class KanjiServiceImpl implements KanjiService {
@@ -29,7 +24,7 @@ public class KanjiServiceImpl implements KanjiService {
         for (char k : kanjiArray) {
             Kanji kanjiToAdd;
             try {
-                kanjiToAdd = KanjiApiUtil.getKanji(k);
+                kanjiToAdd = KanjiApiUtil.getKanjiFromAPI(k);
             } catch (IOException | InterruptedException e) {
                 throw new KanjiIOException("Kanji Coulld Not Be  Found");
             }

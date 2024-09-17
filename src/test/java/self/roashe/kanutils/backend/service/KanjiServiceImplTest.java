@@ -51,7 +51,7 @@ class KanjiServiceImplTest {
         List<Kanji> kanjiList = dao.getAllKanji();
         assertEquals(1, kanjiList.size());
         Kanji kanji = kanjiList.get(0);
-        assertEquals(KanjiApiUtil.getKanji('水'), kanji);
+        assertEquals(KanjiApiUtil.getKanjiFromAPI('水'), kanji);
     }
 
     @Test
@@ -60,8 +60,8 @@ class KanjiServiceImplTest {
         List<Kanji> kanjiList = dao.getAllKanji();
         assertEquals(2, kanjiList.size());
 
-        assertEquals(List.of(KanjiApiUtil.getKanji('水'),
-                KanjiApiUtil.getKanji('日')),
+        assertEquals(List.of(KanjiApiUtil.getKanjiFromAPI('水'),
+                KanjiApiUtil.getKanjiFromAPI('日')),
                 dao.getAllKanji());
     }
 
@@ -78,8 +78,8 @@ class KanjiServiceImplTest {
         List<Kanji> kanjiList = dao.getAllKanji();
         assertEquals(2, kanjiList.size());
 
-        assertEquals(List.of(KanjiApiUtil.getKanji('水'),
-                        KanjiApiUtil.getKanji('日')),
+        assertEquals(List.of(KanjiApiUtil.getKanjiFromAPI('水'),
+                        KanjiApiUtil.getKanjiFromAPI('日')),
                 dao.getAllKanji());
     }
 

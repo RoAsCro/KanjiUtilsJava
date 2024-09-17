@@ -23,7 +23,8 @@ public class KanjiApiUtil {
     private static final String JSON_KUN = "kun_readings";
     private static final String JSON_ON = "on_readings";
 
-    public static Kanji getKanji(char kanjiChar) throws IOException, InterruptedException {
+    @Deprecated
+    public static Kanji getKanjiFromAPI(char kanjiChar) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(ENDPOINT + kanjiChar))
                 .method(GET, HttpRequest.BodyPublishers.noBody())
@@ -35,6 +36,8 @@ public class KanjiApiUtil {
         if (response.statusCode() != OKAY) {
             throw new IOException(response.toString());
         }
+
+
 
         Kanji kanji;
         try {

@@ -14,38 +14,38 @@ public class KanjiApiUtilTest {
 
     @Test
     void testNoException() throws JSONException, InterruptedException, IOException {
-        assertDoesNotThrow(() -> KanjiApiUtil.getKanji('角'));
+        assertDoesNotThrow(() -> KanjiApiUtil.getKanjiFromAPI('角'));
     }
 
     @Test
     void testReturnsNotNull() throws JSONException, IOException, InterruptedException {
-        assertNotNull(KanjiApiUtil.getKanji('角'));
+        assertNotNull(KanjiApiUtil.getKanjiFromAPI('角'));
     }
 
     @Test
     void testThrowsWhenNotFound() {
-        assertThrows(IOException.class, () -> KanjiApiUtil.getKanji('k'));
+        assertThrows(IOException.class, () -> KanjiApiUtil.getKanjiFromAPI('k'));
     }
 
     @Test
     void testThrowsWhenNotFoundKana() {
-        assertThrows(IOException.class, () -> KanjiApiUtil.getKanji('く'));
+        assertThrows(IOException.class, () -> KanjiApiUtil.getKanjiFromAPI('く'));
     }
 
     @Test
     void testKanjiCorrect() throws IOException, InterruptedException {
         // Kanji
-        assertEquals('角', KanjiApiUtil.getKanji('角').getKanji());
+        assertEquals('角', KanjiApiUtil.getKanjiFromAPI('角').getKanji());
 
         // Kun
-        assertEquals(List.of("かど", "つの"), KanjiApiUtil.getKanji('角').getKunReadings());
+        assertEquals(List.of("かど", "つの"), KanjiApiUtil.getKanjiFromAPI('角').getKunReadings());
 
         // On
-        assertEquals(List.of("カク"), KanjiApiUtil.getKanji('角').getOnReadings());
+        assertEquals(List.of("カク"), KanjiApiUtil.getKanjiFromAPI('角').getOnReadings());
 
         // English
         assertEquals(List.of("angle", "antlers", "corner", "horn", "square"),
-                KanjiApiUtil.getKanji('角').getEnglish());
+                KanjiApiUtil.getKanjiFromAPI('角').getEnglish());
 
 
     }
