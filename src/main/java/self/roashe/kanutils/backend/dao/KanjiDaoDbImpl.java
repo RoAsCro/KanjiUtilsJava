@@ -16,6 +16,8 @@ public class KanjiDaoDbImpl implements KanjiDao{
 
     private static final String GET_LAST_ID = "SELECT LAST_INSERT_ID()";
 
+    private final Set<Character> newKanji = new HashSet<>();
+
     private final Map<Character, Kanji> kanjiMap = new HashMap<>();
 
     @Autowired
@@ -24,11 +26,9 @@ public class KanjiDaoDbImpl implements KanjiDao{
     @Override
     public void addKanji(Kanji kanji) {
         getAllKanji();
-        if (this.kanjiMap.containsKey(kanji.getKanji())) {
-            return;
+        if (this.kanjiMap.put(kanji.getKanji(), kanji) == null){
+            newKanji.add(kanji.getKanji());
         }
-        this.kanjiMap.put(kanji.getKanji(), kanji);
-
     }
 
     @Override
@@ -36,7 +36,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
         List<Kanji> kanjiList;
         if (this.kanjiMap.isEmpty()) {
             final String GET_KANJI = "SELECT * FROM kanji";
-            kanjiList   = this.jdbc.query(GET_KANJI, new KanjiMapper());
+            kanjiList = this.jdbc.query(GET_KANJI, new KanjiMapper());
             for (Kanji kanji : kanjiList) {
                 constructKanji(kanji);
                 this.kanjiMap.put(kanji.getKanji(), kanji);
@@ -80,9 +80,10 @@ public class KanjiDaoDbImpl implements KanjiDao{
 
     @Override
     public void export() {
-        for (Kanji kanji : this.kanjiMap.values()) {
+        for (Character character : this.newKanji) {
+            Kanji kanji = this.kanjiMap.get(character);
             final String ADD_KANJI = "INSERT INTO kanji(kanji) VALUES(?)";
-            this.jdbc.update(ADD_KANJI, kanji.getId() + "");
+            this.jdbc.update(ADD_KANJI, kanji.getKanji() + "");
             Integer kanjiID = this.jdbc.queryForObject(GET_LAST_ID, Integer.class);
             kanji.setId(kanjiID);
             insertReading(kanji, kanji.getKunReadings(), "kun");
@@ -94,6 +95,7 @@ public class KanjiDaoDbImpl implements KanjiDao{
     @Override
     public void clearLocalData() {
         this.kanjiMap.clear();
+        this.newKanji.clear();
     }
 
     private void constructKanji(Kanji kanji) {

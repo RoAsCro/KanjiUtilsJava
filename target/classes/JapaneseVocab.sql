@@ -63,7 +63,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `japanese-vocab`.`kanji` (
   `kanjiID` INT NOT NULL AUTO_INCREMENT,
-  `kanji` VARCHAR(1) NULL,
+  `kanji` VARCHAR(1) NULL UNIQUE,
   PRIMARY KEY (`kanjiID`))
 ENGINE = InnoDB;
 

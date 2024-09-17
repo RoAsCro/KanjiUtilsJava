@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import self.roashe.kanutils.backend.TestApplicationConfiguration;
+import self.roashe.kanutils.backend.dao.mappers.KanjiMapper;
 import self.roashe.kanutils.backend.model.Kanji;
 
 import java.util.List;
@@ -168,5 +169,26 @@ class KanjiDaoDbImplTest {
         Kanji kanji = kanjiList.get(0);
         assertEquals('増', kanji.getKanji());
     }
+
+    @Test
+    public void testExport() {
+        Kanji kanji = new Kanji();
+        kanji.setKanji('日');
+        kanji.setKunReadings(List.of());
+        kanji.setOnReadings(List.of());
+        kanji.setEnglish(List.of());
+        this.dao.addKanji(kanji);
+        assertEquals(3, this.dao.getAllKanji().size());
+        final String GET_KANJI = "SELECT * FROM kanji";
+        List<Kanji> kanjiList = this.jdbc.query(GET_KANJI, new KanjiMapper());
+        assertEquals(2, kanjiList.size());
+        this.dao.export();
+        kanjiList = this.jdbc.query(GET_KANJI, new KanjiMapper());
+        assertEquals(3, kanjiList.size());
+
+    }
+
+    @Test
+    public void testDelte(){}
 
 }
