@@ -6,6 +6,7 @@ import self.roashe.kanutils.backend.dao.ImportDao;
 import self.roashe.kanutils.backend.dao.VocabDao;
 import self.roashe.kanutils.backend.model.Kanji;
 import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 
 import java.util.List;
 
@@ -17,6 +18,9 @@ public class VocabServiceImpl implements VocabService {
 
     @Autowired
     VocabDao vocabDao;
+
+    @Autowired
+    KanjiService kanjiService;
 
     @Override
     public void importAndStore(String username, String password) {
@@ -32,5 +36,12 @@ public class VocabServiceImpl implements VocabService {
     @Override
     public List<Kanji> getAllKanji() {
         return List.of();
+    }
+
+    @Override
+    public void extractKanjiFromVocab() throws KanjiIOException {
+        for (Word word : getAllVocab()) {
+            this.kanjiService.addKanji(word.getJapanese());
+        }
     }
 }

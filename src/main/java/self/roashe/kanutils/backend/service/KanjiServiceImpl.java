@@ -36,4 +36,5 @@ public class KanjiServiceImpl implements KanjiService {
             this.dao.addKanji(kanjiToAdd);
         }
     }
+
 }

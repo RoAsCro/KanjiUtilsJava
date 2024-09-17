@@ -3,6 +3,7 @@ package self.roashe.kanutils.backend.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 import self.roashe.kanutils.backend.service.VocabService;
 
 import java.util.List;
@@ -21,6 +22,15 @@ public class VocabController {
     @GetMapping("/vocab")
     public List<Word> getWords(){
         return this.vocabService.getAllVocab();
+    }
+
+    @GetMapping("/kanjiextract")
+    public void extractKanji() {
+        try {
+            this.vocabService.extractKanjiFromVocab();
+        } catch (KanjiIOException ignored) {
+            //TODO
+        }
     }
 
 }
