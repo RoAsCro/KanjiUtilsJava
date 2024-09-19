@@ -29,7 +29,13 @@ const map3 = new Map([
 
 const latin = new RegExp("[a-z]", "u");
 
-function kanaConvert(text) {
+function kanaConvert(text){
+
+
+    
+}
+
+function kanaConvertOld(text) {
     let currentString = "";
     let returnString = "";
     for (let i = 0 ; i < text.length ; i++) {
@@ -88,12 +94,6 @@ function kanaConvert(text) {
             returnString = returnString.concat(addition, retrieved);
             currentString = "";
         }  else {
-            // let charTwo = currentString.charAt(1);
-            // if (charOne === "n" && currentString.length === 2 && charTwo !== "y") {
-            //     toAdd = "ん";
-            //     currentString = charTwo;
-
-            // }
             returnString = returnString.concat(toAdd);
         }
 
