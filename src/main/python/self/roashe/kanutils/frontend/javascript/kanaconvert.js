@@ -55,7 +55,7 @@ function kanaConvertNew(text){
         let partB = found.slice(half, size);
 
         let replacementText = found.replace(partA, map3.get(partA)).replace(partB, map2.get(partB));
-        return replacementText;
+        text = text.replace(found, replacementText);
     }
     // let array2 = regex1.exec(test);
     // while ((array = regex1.exec(test)) !== null) {
@@ -70,7 +70,7 @@ function kanaConvertNew(text){
     //     return replacementText;
     // }
 
-    // return text.replace(three, map3.get(text.charAt(0)).concat(map2.get(text.slice(1, 3))));
+    return text;
 }
 
 function kanaConvert(text) {
