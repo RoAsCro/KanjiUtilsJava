@@ -32,22 +32,29 @@ function kanaConvert(text) {
     for (let i = 0 ; i < text.length ; i++) {
         currentString = currentString.concat(text.charAt(i));
         let retrieved = map.get(currentString);
-        if (retrieved !== undefined) {
-            returnString = returnString.concat(retrieved);
-            currentString = "";
-        } else if (currentString.length === 3) {
+        let addition = "";
+
+        if (currentString.length === 3) {
             let charOne = currentString.charAt(0);
             let charTwo = currentString.charAt(1);
             let charThree = currentString.charAt(2);
+            let suffix = currentString.slice(1, 3);
             if (charOne === charTwo) {
-                let sliced = currentString.slice(1, 2);
-                retrieved = map.get(currentString.slice(1, 3));
-                if (retrieved !== undefined) {
-                    returnString = returnString.concat("っ", retrieved);
-                    currentString = "";
-                }
+                addition = "っ";
+                retrieved = map.get(suffix);
+                // if (retrieved !== undefined) {
+                //     returnString = returnString.concat("っ", retrieved);
+                //     currentString = "";
+                // }
+            } else {
+                addition = charOne;
+                retrieved = map.get(suffix);
             }
         }
+        if (retrieved !== undefined) {
+            returnString = returnString.concat(addition, retrieved);
+            currentString = "";
+        }  
 
     }
     return returnString;

@@ -22,3 +22,7 @@ test("Converts nn to ん", () => {
 test("Converts dda to っだ", () => {
     expect(kanaConvert("dda")).toBe("っだ");
 })
+
+test("Converts gda to gだ", () => {
+    expect(kanaConvert("gda")).toBe("gだ");
+})
