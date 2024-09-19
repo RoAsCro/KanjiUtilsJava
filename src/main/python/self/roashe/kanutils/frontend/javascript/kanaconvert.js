@@ -42,6 +42,11 @@ function kanaConvert(text) {
             if (charOne === charTwo) {
                 addition = "っ";
                 retrieved = map.get(suffix);
+            } else if (charTwo === "y" && map3.has(charOne) && map2.has(suffix)) {
+                addition = map3.get(charOne);
+                returnString = returnString.concat(addition, map2.get(suffix));
+                currentString = "";
+                continue;
             } else {
                 addition = charOne;
                 retrieved = map.get(suffix);

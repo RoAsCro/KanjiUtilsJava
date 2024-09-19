@@ -54,3 +54,11 @@ test("Converts kag to かg", () => {
 test("Converts ig to いg", () => {
     expect(kanaConvert("ig")).toBe("いg");
 })
+
+test("Converts shyo to しょ", () => {
+    expect(kanaConvert("shyo")).toBe("しょ");
+})
+
+test("Converts syo to しょ", () => {
+    expect(kanaConvert("syo")).toBe("しょ");
+})
