@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles\styles.css" />
     <script type="text/javascript" src="javascript/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="javascript/kanaconvert.js"></script>
+    <script type="text/javascript" src="javascript/testScript.js"></script>
 
     <title>Kanji Utilities - RoAshe</title>
 </head>
 <body>
     <table>
         <input type="text" id="answerType" name="answerType"
-        onkeyup="kanaConvert();" autocomplete="off"/>
+         autocomplete="off"/>
     </table>
 
     <script>
-        var 
-
-        function kanaConvert() {
-            $.getJSON(
-                "127.0.0.1:8080/api/",
-                {search:$("answerType").val()}  
-            )
+        function callConversion() {
+            this.value = kanaConvert(this.value);
         }
+        $("#answerType").on("keyup", callConversion)
     </script>
 </body>
 </html>
