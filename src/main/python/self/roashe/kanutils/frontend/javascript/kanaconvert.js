@@ -17,8 +17,13 @@ const map = new Map([
     ["vu", "ゔ"], ["nn", "ん"]
 ]);
 
-const map２ = new Map([
+const map2 = new Map([
     ["ya", "ゃ"], ["yo", "ょ"], ["yu", "ゅ"] 
+]);
+
+const map3 = new Map([
+    ["k", "き"], ["c", "ち"], ["ch", "ち"], ["t", "ち"], ["s", "し"], ["sh", "し"], ["h", "ひ"], ["g", "ぎ"], ["d", "ぢ"],
+    ["j", "じ"], ["b", "び"], ["p", "ぴ"], ["n", "に"], ["m", "み"], ["r", "り"]
 ]);
 
 function kanaConvert(text) {
@@ -30,6 +35,18 @@ function kanaConvert(text) {
         if (retrieved !== undefined) {
             returnString = returnString.concat(retrieved);
             currentString = "";
+        } else if (currentString.length === 3) {
+            let charOne = currentString.charAt(0);
+            let charTwo = currentString.charAt(1);
+            let charThree = currentString.charAt(2);
+            if (charOne === charTwo) {
+                let sliced = currentString.slice(1, 2);
+                retrieved = map.get(currentString.slice(1, 3));
+                if (retrieved !== undefined) {
+                    returnString = returnString.concat("っ", retrieved);
+                    currentString = "";
+                }
+            }
         }
 
     }
