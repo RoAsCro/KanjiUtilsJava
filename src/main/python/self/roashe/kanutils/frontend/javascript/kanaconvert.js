@@ -26,7 +26,11 @@ function kanaConvert(text) {
     let returnString = "";
     for (let i = 0 ; i < text.length ; i++) {
         currentString = currentString.concat(text.charAt(i));
-        returnString = returnString.concat(map.get(currentString));
+        let retrieved = map.get(currentString);
+        if (retrieved !== undefined) {
+            returnString = returnString.concat(retrieved);
+            currentString = "";
+        }
 
     }
     return returnString;
