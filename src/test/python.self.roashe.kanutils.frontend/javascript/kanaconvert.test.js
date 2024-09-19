@@ -86,3 +86,11 @@ test("Converts yyo to っよ", () => {
 test("Converts okyakusamairassyaimase to おきゃくさまいらっしゃいませ", () => {
     expect(kanaConvert("okyakusamairassyaimase")).toBe("おきゃくさまいらっしゃいませ");
 })
+
+test("Converts shi to し", () => {
+    expect(kanaConvert("shi")).toBe("し");
+})
+
+test("Converts tau to たう", () => {
+    expect(kanaConvert("tau")).toBe("たう");
+})
