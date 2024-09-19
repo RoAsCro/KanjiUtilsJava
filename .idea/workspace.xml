@@ -5,17 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83089241-5286-483e-839b-a96bf14d121f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/KanjiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/KanjiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/ImportDaoImplKanshudoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/ImportDaoImplKanshudoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/WebConnection/KanjiApiUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/web_utilities/KanjiApiUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/WebConnection/SeleniumUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/web_utilities/SeleniumUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/KanjiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/KanjiServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/JapaneseLanguageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/JapaneseLanguageUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/KanjiApiUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/webutilities/KanjiApiUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/service/KanjiServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/service/KanjiServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/python/self/roashe/kanutils/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/self/roashe/kanutils/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/python/self/roashe/kanutils/frontend/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/self/roashe/kanutils/frontend/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/GeneralTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/GeneralTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/JapaneseLanguageUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/JapaneseLanguageUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/JapaneseLanguageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/JapaneseLanguageUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/TestApplicationConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/TestApplicationConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/KanjiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/KanjiController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/VocabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/VocabController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/ImportDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/ImportDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/ImportDaoImplKanshudoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/ImportDaoImplKanshudoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/KanjiDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/KanjiDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/KanjiDaoDbImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/KanjiDaoDbImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/PasswordDaoDbImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/PasswordDaoDbImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/VocabDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/VocabDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/VocabDaoDbImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/VocabDaoDbImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/mappers/KanjiMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/mappers/KanjiMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/mappers/WordMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/mappers/WordMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/web_utilities/KanjiApiUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/web_utilities/KanjiApiUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/web_utilities/SeleniumUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/dao/web_utilities/SeleniumUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/model/Kanji.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/model/Kanji.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/model/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/model/Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/IOExceptions/KanjiIOException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/IOExceptions/KanjiIOException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/KanjiService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/KanjiService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/KanjiServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/KanjiServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/VocabService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/VocabService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/VocabServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/service/VocabServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +105,7 @@
       <recent name="self.roashe.kanutils.backend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.Main" />
       <module name="KanUtils" />
@@ -97,22 +115,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KanjiApiUtilTest.testGetKanjiFromFileVSAPI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KanUtils" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.webutilities.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao.webutilities" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.webutilities.KanjiApiUtilTest" />
-      <option name="METHOD_NAME" value="testGetKanjiFromFileVSAPI" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,6 +130,22 @@
       <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao.webutilities" />
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.webutilities.KanjiApiUtilTest" />
       <option name="METHOD_NAME" value="testGetKanjiFromFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KanjiApiUtilTest.testGetKanjiFromFileVSAPI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KanUtils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.webutilities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao.webutilities" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.webutilities.KanjiApiUtilTest" />
+      <option name="METHOD_NAME" value="testGetKanjiFromFileVSAPI" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,13 +175,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
-      </set>
-    </attachedChunks>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

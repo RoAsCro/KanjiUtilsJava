@@ -135,4 +135,5 @@ public class JapaneseLanguageUtilTest {
         Assertions.assertEquals("abza--かふやぁおいaak=", JapaneseLanguageUtil.hiraganise("abza--カふヤァオイaak="));
     }
 
+
 }
