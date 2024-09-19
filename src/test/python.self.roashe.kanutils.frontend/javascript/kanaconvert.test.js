@@ -73,3 +73,12 @@ test("Converts ggyo to っぎょ", () => {
 test("Converts syo to しょ", () => {
     expect(kanaConvert("syo")).toBe("しょ");
 })
+
+test("Converts ggga to gっが", () => {
+    expect(kanaConvert("ggga")).toBe("gっが");
+})
+
+
+test("Converts yyo to っよ", () => {
+    expect(kanaConvert("yyo")).toBe("っよ");
+})

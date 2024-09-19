@@ -34,6 +34,7 @@ function kanaConvert(text) {
         let retrieved = map.get(currentString);
         let addition = "";
         let charOne = "";
+        let toAdd = "";
         if (currentString.length === 4) {
             charOne = currentString.charAt(0);
             let prefix = currentString.slice(0, 2);
@@ -41,23 +42,32 @@ function kanaConvert(text) {
             retrieved = map2.get(suffix);
             addition = map3.get(prefix);
             if (addition === undefined || retrieved === undefined) {
-                returnString = returnString.concat(charOne);
+                toAdd = charOne;
+                let charTwo = currentString.charAt(1);
+                if (charOne === charTwo) {
+                    addition = "っ";
+                } else {
+                    addition = charOne;
+                }
                 currentString = currentString.slice(1, 4);
             }
         }
         if (currentString.length === 3) {
+            
             charOne = currentString.charAt(0);
+            toAdd = toAdd.concat(charOne)
             let charTwo = currentString.charAt(1);
             let charThree = currentString.charAt(2);
             let suffix = currentString.slice(1, 3);
-            if (charOne === charTwo) {
+            if (charThree === "y") {
+                continue;
+            
+            } else if (charTwo === "y" && map3.has(charOne)) {
+                addition = addition.concat(map3.get(charOne));
+                retrieved = map2.get(suffix);
+            } else if (charOne === charTwo) {
                 addition = "っ";
                 retrieved = map.get(suffix);
-            } else if (charTwo === "y" && map3.has(charOne)) {
-                addition = map3.get(charOne);
-                retrieved = map2.get(suffix);
-            } else if (charThree === "y") {
-                continue;
             } else {
                 addition = charOne;
                 retrieved = map.get(suffix);
@@ -68,7 +78,7 @@ function kanaConvert(text) {
             returnString = returnString.concat(addition, retrieved);
             currentString = "";
         }  else {
-            returnString = returnString.concat(charOne);
+            returnString = returnString.concat(toAdd);
         }
 
     }
