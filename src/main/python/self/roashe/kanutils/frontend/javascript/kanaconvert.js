@@ -57,6 +57,7 @@ function kanaConvert(text) {
         }  
 
     }
+    returnString = returnString.concat(currentString);
     return returnString;
 }
 

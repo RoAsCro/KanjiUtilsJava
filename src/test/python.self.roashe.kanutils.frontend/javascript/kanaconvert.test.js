@@ -26,3 +26,23 @@ test("Converts dda to っだ", () => {
 test("Converts gda to gだ", () => {
     expect(kanaConvert("gda")).toBe("gだ");
 })
+
+test("Converts gdda to gっだ", () => {
+    expect(kanaConvert("ggda")).toBe("gっだ");
+})
+
+test("Converts ggda to ggだ", () => {
+    expect(kanaConvert("ggda")).toBe("ggだ");
+})
+
+test("Converts g to g", () => {
+    expect(kanaConvert("g")).toBe("g");
+})
+
+test("Converts kag to かg", () => {
+    expect(kanaConvert("kag")).toBe("かg");
+})
+
+test("Converts ig to いg", () => {
+    expect(kanaConvert("ig")).toBe("いg");
+})
