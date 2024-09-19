@@ -80,7 +80,7 @@ function kanaConvert(text) {
             returnString = returnString.concat(addition, retrieved);
             currentString = "";
         }  else {
-            returnString = returnString.concat(toAdd.replace("n", "ん"));
+            returnString = returnString.concat(toAdd);
         }
 
     }

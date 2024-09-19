@@ -91,8 +91,8 @@ test("Converts shi to し", () => {
     expect(kanaConvert("shi")).toBe("し");
 })
 
-test("Converts tau to たう", () => {
-    expect(kanaConvert("tau")).toBe("たう");
+test("Converts たu to たう", () => {
+    expect(kanaConvert("たu")).toBe("たう");
     // PASING HERE, BUT NOT WHEN USED LIVE
 })
 
@@ -106,4 +106,8 @@ test("Converts n to n", () => {
 
 test("Converts nj to nj", () => {
     expect(kanaConvert("nj")).toBe("nj");
+})
+
+test("Converts njb to njb", () => {
+    expect(kanaConvert("njb")).toBe("njb");
 })
