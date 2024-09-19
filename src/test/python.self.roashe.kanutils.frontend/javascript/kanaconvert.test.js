@@ -28,7 +28,7 @@ test("Converts gda to gだ", () => {
 })
 
 test("Converts gdda to gっだ", () => {
-    expect(kanaConvert("ggda")).toBe("gっだ");
+    expect(kanaConvert("gdda")).toBe("gっだ");
 })
 
 test("Converts ggda to ggだ", () => {
@@ -37,6 +37,14 @@ test("Converts ggda to ggだ", () => {
 
 test("Converts g to g", () => {
     expect(kanaConvert("g")).toBe("g");
+})
+
+test("Converts gg to gg", () => {
+    expect(kanaConvert("gg")).toBe("gg");
+})
+
+test("Converts ggg to ggg", () => {
+    expect(kanaConvert("ggg")).toBe("ggg");
 })
 
 test("Converts kag to かg", () => {
