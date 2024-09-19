@@ -18,7 +18,14 @@
 
     <script>
         function callConversion() {
+            var start = this.selectionStart
+            var end = this.selectionEnd;
+            var oldLength = this.value.length;
+
             this.value = kanaConvertNew(this.value);
+
+            var difference = this.value.length - oldLength;
+            this.setSelectionRange(start + difference, start + difference);
         }
         $("#answerType").on("keyup", callConversion)
     </script>
