@@ -34,18 +34,18 @@ function kanaConvert(text) {
     let returnString = "";
     for (let i = 0 ; i < text.length ; i++) {
         let current = text.charAt(i);
+        currentString = currentString.concat(current);
         if (!latin.test(current)) {
-            returnString = returnString.concat(current);
+            returnString = returnString.concat(currentString.replace("n", "ん"));
+            currentString = "";
             continue;
         }
-        currentString = currentString.concat(current);
         let retrieved = map.get(currentString);
         let addition = "";
-        let charOne = "";
+        let charOne = currentString.charAt(0);
         let toAdd = "";
         if (retrieved === undefined) {
             if (currentString.length === 4) {
-                charOne = currentString.charAt(0);
                 let prefix = currentString.slice(0, 2);
                 let suffix = currentString.slice(2, 4);
                 retrieved = map2.get(suffix);
@@ -78,7 +78,7 @@ function kanaConvert(text) {
                     addition = "っ";
                     retrieved = map.get(suffix);
                 } else {
-                    addition = charOne.replace("n", "ん");
+                    addition = charOne;
                     retrieved = map.get(suffix);
                 }
                 currentString = suffix;
@@ -88,12 +88,23 @@ function kanaConvert(text) {
             returnString = returnString.concat(addition, retrieved);
             currentString = "";
         }  else {
+            // let charTwo = currentString.charAt(1);
+            // if (charOne === "n" && currentString.length === 2 && charTwo !== "y") {
+            //     toAdd = "ん";
+            //     currentString = charTwo;
+
+            // }
             returnString = returnString.concat(toAdd);
         }
 
     }
     returnString = returnString.concat(currentString);
-    return returnString;
+    let finalChar =  returnString.charAt(returnString.length - 1);
+    let offset = 1;
+    if (finalChar == "y") {
+        offset = 2;
+    }
+    return returnString.slice(0, returnString.length - offset).replace("n", "ん").concat(returnString.slice(returnString.length - offset));
 }
 
 

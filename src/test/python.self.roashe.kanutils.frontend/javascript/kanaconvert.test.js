@@ -103,10 +103,22 @@ test("Converts n to n", () => {
     expect(kanaConvert("n")).toBe("n");
 })
 
-test("Converts nj to nj", () => {
-    expect(kanaConvert("nj")).toBe("nj");
+test("Converts nj to んj", () => {
+    expect(kanaConvert("nj")).toBe("んj");
 })
 
-test("Converts njb to njb", () => {
-    expect(kanaConvert("njb")).toBe("njb");
+test("Converts njb to んjb", () => {
+    expect(kanaConvert("njb")).toBe("んjb");
+})
+
+test("Converts nsyo to んしょ", () => {
+    expect(kanaConvert("nsyo")).toBe("んしょ");
+})
+
+test("Converts nし to んし", () => {
+    expect(kanaConvert("nし")).toBe("んし");
+})
+
+test("Converts ny to ny", () => {
+    expect(kanaConvert("ny")).toBe("ny");
 })
