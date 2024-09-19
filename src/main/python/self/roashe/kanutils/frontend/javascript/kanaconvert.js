@@ -35,50 +35,52 @@ function kanaConvert(text) {
         let addition = "";
         let charOne = "";
         let toAdd = "";
-        if (currentString.length === 4) {
-            charOne = currentString.charAt(0);
-            let prefix = currentString.slice(0, 2);
-            let suffix = currentString.slice(2, 4);
-            retrieved = map2.get(suffix);
-            addition = map3.get(prefix);
-            if (addition === undefined || retrieved === undefined) {
-                toAdd = charOne;
-                let charTwo = currentString.charAt(1);
-                if (charOne === charTwo) {
-                    addition = "っ";
-                } else {
-                    addition = charOne;
-                }
-                currentString = currentString.slice(1, 4);
-            }
-        }
-        if (currentString.length === 3) {
-            
-            charOne = currentString.charAt(0);
-            toAdd = toAdd.concat(charOne)
-            let charTwo = currentString.charAt(1);
-            let charThree = currentString.charAt(2);
-            let suffix = currentString.slice(1, 3);
-            if (charThree === "y") {
-                continue;
-            
-            } else if (charTwo === "y" && map3.has(charOne)) {
-                addition = addition.concat(map3.get(charOne));
+        if (retrieved === undefined) {
+            if (currentString.length === 4) {
+                charOne = currentString.charAt(0);
+                let prefix = currentString.slice(0, 2);
+                let suffix = currentString.slice(2, 4);
                 retrieved = map2.get(suffix);
-            } else if (charOne === charTwo) {
-                addition = "っ";
-                retrieved = map.get(suffix);
-            } else {
-                addition = charOne;
-                retrieved = map.get(suffix);
+                addition = map3.get(prefix);
+                if (addition === undefined || retrieved === undefined) {
+                    toAdd = charOne;
+                    let charTwo = currentString.charAt(1);
+                    if (charOne === charTwo) {
+                        addition = "っ";
+                    } else {
+                        addition = charOne;
+                    }
+                    currentString = currentString.slice(1, 4);
+                }
             }
-            currentString = suffix;
+            if (currentString.length === 3) {
+                
+                charOne = currentString.charAt(0);
+                toAdd = toAdd.concat(charOne)
+                let charTwo = currentString.charAt(1);
+                let charThree = currentString.charAt(2);
+                let suffix = currentString.slice(1, 3);
+                if (charThree === "y") {
+                    continue;
+                
+                } else if (charTwo === "y" && map3.has(charOne)) {
+                    addition = addition.concat(map3.get(charOne));
+                    retrieved = map2.get(suffix);
+                } else if (charOne === charTwo) {
+                    addition = "っ";
+                    retrieved = map.get(suffix);
+                } else {
+                    addition = charOne.replace("n", "ん");
+                    retrieved = map.get(suffix);
+                }
+                currentString = suffix;
+            }
         }
         if (retrieved !== undefined) {
             returnString = returnString.concat(addition, retrieved);
             currentString = "";
         }  else {
-            returnString = returnString.concat(toAdd);
+            returnString = returnString.concat(toAdd.replace("n", "ん"));
         }
 
     }
