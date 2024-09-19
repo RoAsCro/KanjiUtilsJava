@@ -59,6 +59,17 @@ test("Converts shyo to しょ", () => {
     expect(kanaConvert("shyo")).toBe("しょ");
 })
 
+test("Converts ggyk to ggyk", () => {
+    expect(kanaConvert("ggyk")).toBe("ggyk");
+})
+
+test("Converts dgyo to dぎょ", () => {
+    expect(kanaConvert("dgyo")).toBe("dぎょ");
+})
+test("Converts ggyo to っぎょ", () => {
+    expect(kanaConvert("ggyo")).toBe("っぎょ");
+})
+
 test("Converts syo to しょ", () => {
     expect(kanaConvert("syo")).toBe("しょ");
 })

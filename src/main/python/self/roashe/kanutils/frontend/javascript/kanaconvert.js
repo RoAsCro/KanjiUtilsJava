@@ -34,6 +34,17 @@ function kanaConvert(text) {
         let retrieved = map.get(currentString);
         let addition = "";
         let charOne = "";
+        if (currentString.length === 4) {
+            charOne = currentString.charAt(0);
+            let prefix = currentString.slice(0, 2);
+            let suffix = currentString.slice(2, 4);
+            retrieved = map2.get(suffix);
+            addition = map3.get(prefix);
+            if (addition === undefined || retrieved === undefined) {
+                returnString = returnString.concat(charOne);
+                currentString = currentString.slice(1, 4);
+            }
+        }
         if (currentString.length === 3) {
             charOne = currentString.charAt(0);
             let charTwo = currentString.charAt(1);
@@ -42,10 +53,10 @@ function kanaConvert(text) {
             if (charOne === charTwo) {
                 addition = "っ";
                 retrieved = map.get(suffix);
-            } else if (charTwo === "y" && map3.has(charOne) && map2.has(suffix)) {
+            } else if (charTwo === "y" && map3.has(charOne)) {
                 addition = map3.get(charOne);
-                returnString = returnString.concat(addition, map2.get(suffix));
-                currentString = "";
+                retrieved = map2.get(suffix);
+            } else if (charThree === "y") {
                 continue;
             } else {
                 addition = charOne;
