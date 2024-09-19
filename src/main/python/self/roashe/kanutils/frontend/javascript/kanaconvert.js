@@ -27,15 +27,15 @@ const map3 = new Map([
 ]);
 
 
+
 const latin = new RegExp("[a-z]", "u");
+const three = new RegExp("[kctshgdjbpnmr][y][aou]", "u");
 
-function kanaConvert(text){
-
-
-    
+function kanaConvertNew(text){
+    return text.replace(three, map3.get(text.charAt(0)).concat(map2.get(text.slice(1, 3))));
 }
 
-function kanaConvertOld(text) {
+function kanaConvert(text) {
     let currentString = "";
     let returnString = "";
     for (let i = 0 ; i < text.length ; i++) {
@@ -109,4 +109,4 @@ function kanaConvertOld(text) {
 
 
 
-module.exports = kanaConvert;
+module.exports = {kanaConvert, kanaConvertNew};

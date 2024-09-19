@@ -1,5 +1,7 @@
-const kanaConvert = require("../../../main/python/self/roashe/kanutils/frontend/javascript/kanaconvert.js")
-const testFunction = require("./testFunction.js")
+const kanaConvertModule = require("../../../main/python/self/roashe/kanutils/frontend/javascript/kanaconvert.js");
+const kanaConvert = kanaConvertModule.kanaConvert;
+const kanaConvertNew = kanaConvertModule.kanaConvertNew;
+const testFunction = require("./testFunction.js");
 
 
 test("Testing jest", () => {
@@ -121,4 +123,23 @@ test("Converts nし to んし", () => {
 
 test("Converts ny to ny", () => {
     expect(kanaConvert("ny")).toBe("ny");
+})
+
+
+
+
+test("Converts syo to しょ", () => {
+    expect(kanaConvertNew("syo")).toBe("しょ");
+})
+
+test("Converts kyo to きょ", () => {
+    expect(kanaConvertNew("kyo")).toBe("きょ");
+})
+
+test("Converts hyo to ひょ", () => {
+    expect(kanaConvertNew("hyo")).toBe("ひょ");
+})
+
+test("Converts nyo to にょ", () => {
+    expect(kanaConvertNew("nyo")).toBe("にょ");
 })
