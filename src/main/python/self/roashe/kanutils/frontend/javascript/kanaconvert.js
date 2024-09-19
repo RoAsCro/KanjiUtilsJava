@@ -23,9 +23,15 @@ const map２ = new Map([
 
 function kanaConvert(text) {
     let currentString = "";
+    let returnString = "";
     for (let i = 0 ; i < text.length ; i++) {
         currentString = currentString.concat(text.charAt(i));
-        map.get()
+        returnString = returnString.concat(map.get(currentString));
 
     }
+    return returnString;
 }
+
+
+
+module.exports = kanaConvert;
