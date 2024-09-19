@@ -32,43 +32,40 @@ const latin = new RegExp("[a-z]", "u");
 const y =  "[y][aou]";
 const sy = "([kctshgdjbpnmr]|sh|ch)";
 const three = /([kctshgdjbpnmr]|sh|ch)[y][aou]/g;
+const twoPlus = /[b-df-hj-np-tv-z]h[aeiou]/g
+const two = /[b-df-hj-np-tv-z][aeiou]/g
+const vowel = /[aeiou]/g
+const nConsonant = /n[b-df-hj-np-tv-xz]/g
+const double = /([b-df-hj-np-tv-z])\1h?[aeiou]/g
+const doubleThree = /([b-df-hj-np-tv-z])\1h?[y][aou]/g
 
 function kanaConvertNew(text){
-    // let test = text.replace(three, map3.get(text.charAt(0)).concat(map2.get(text.slice(1, 3))));
-    let threes = text.match(three);
-    const regex1 = /([kctshgdjbpnmr]|sh|ch)[y][aou]/
-    // const str1 = 'table football, foosball';
-    // let array1;
+    text = text.replaceAll("nn", "ん");
 
-    // while ((array1 = regex1.exec(str1)) !== null) {
-    //     console.log(`Found ${array1[0]}. Next starts at ${regex1.lastIndex}.`);
-    // }
-    let array = text.matchAll(three);
-    for (let match of array) {
+    text = text.replaceAll(nConsonant, (ji) => "ん".concat(ji.charAt(1)));
+
+    text = text.replaceAll(double, (ji) => map.has(ji.slice(1, ji.length)) ? "っ".concat(ji.slice(1, ji.length)) : ji);
+
+    text = text.replaceAll(doubleThree, (ji) => {
+        let string = ji.slice(1, ji.length);
+        let char1 = string.slice(0, Math.floor(string.length / 2))
+        let char2 = string.slice(string.length / 2, string.length)
+        let test = (map3.has(char1) && map2.has(char2));
+        return test ? "っ".concat(map3.get(char1).concat(map2.get(char2))) : ji;
+    });
+
+    text = text.replaceAll(three, (ji) => {
+        let char1 = ji.slice(0, Math.floor(ji.length / 2))
+        let char2 = ji.slice(ji.length / 2, ji.length)
         
-        console.log(match[0])
-        let index = match.index;
-        let found = match[0];
-        let size = found.length;
-        let half = Math.floor(size / 2);
-        let partA = found.slice(0, half);
-        let partB = found.slice(half, size);
+        return (map3.has(char1) && map2.has(char2)) ? map3.get(char1).concat(map2.get(char2)) : ji;
+    });
 
-        let replacementText = found.replace(partA, map3.get(partA)).replace(partB, map2.get(partB));
-        text = text.replace(found, replacementText);
-    }
-    // let array2 = regex1.exec(test);
-    // while ((array = regex1.exec(test)) !== null) {
-    //     let index = array.index;
-    //     let lastIndex = three.lastIndex;
-    //     let difference = lastIndex - index;
-    //     let offset = Math.floor(difference / 2);
-    //     let partA = found.slice(0, difference - offset);
-    //     let partB = found.slice(difference - offset, difference);
-    //     let found = array[0];
-    //     let replacementText = found.replace(partA, map3.get(partA)).replace(partB, map2.get(partB));
-    //     return replacementText;
-    // }
+    text = text.replaceAll(twoPlus, (ji) => map.has(ji) ? map.get(ji) : ji);
+
+    text = text.replaceAll(two, (ji) => map.has(ji) ? map.get(ji) : ji);
+    
+    text = text.replaceAll(vowel, (ji) => map.has(ji) ? map.get(ji) : ji);
 
     return text;
 }

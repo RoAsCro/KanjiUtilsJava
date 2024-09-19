@@ -155,3 +155,136 @@ test("Converts syosyo to しょしょ", () => {
 test("Converts fsyofsyof to fしょfしょf", () => {
     expect(kanaConvertNew("fsyofsyof")).toBe("fしょfしょf");
 })
+
+test("Converts fsyofchyuf to fしょfちゅf", () => {
+    expect(kanaConvertNew("fsyofchyuf")).toBe("fしょfちゅf");
+})
+
+test("Converts a to あ", () => {
+    expect(kanaConvertNew("a")).toBe("あ");
+})
+
+test("Converts u to う", () => {
+    expect(kanaConvertNew("u")).toBe("う");
+})
+
+test("Converts au to あう", () => {
+    expect(kanaConvertNew("au")).toBe("あう");
+})
+
+test("Converts aa to ああ", () => {
+    expect(kanaConvertNew("aa")).toBe("ああ");
+})
+
+test("Converts ka to か", () => {
+    expect(kanaConvertNew("ka")).toBe("か");
+})
+
+
+test("Converts nn to ん", () => {
+    expect(kanaConvertNew("ka")).toBe("か");
+})
+
+test    ("Converts dda to っだ", () => {
+    expect(kanaConvertNew("dda")).toBe("っだ");
+})
+
+test("Converts gda to gだ", () => {
+    expect(kanaConvertNew("gda")).toBe("gだ");
+})
+
+test("Converts gdda to gっだ", () => {
+    expect(kanaConvertNew("gdda")).toBe("gっだ");
+})
+
+test("Converts ggda to ggだ", () => {
+    expect(kanaConvertNew("ggda")).toBe("ggだ");
+})
+
+test("Converts g to g", () => {
+    expect(kanaConvertNew("g")).toBe("g");
+})
+
+test("Converts gg to gg", () => {
+    expect(kanaConvertNew("gg")).toBe("gg");
+})
+
+test("Converts ggg to ggg", () => {
+    expect(kanaConvertNew("ggg")).toBe("ggg");
+})
+
+test("Converts kag to かg", () => {
+    expect(kanaConvertNew("kag")).toBe("かg");
+})
+
+test("Converts ig to いg", () => {
+    expect(kanaConvertNew("ig")).toBe("いg");
+})
+
+test("Converts shyo to しょ", () => {
+    expect(kanaConvertNew("shyo")).toBe("しょ");
+})
+
+test("Converts ggyk to ggyk", () => {
+    expect(kanaConvertNew("ggyk")).toBe("ggyk");
+})
+
+test("Converts dgyo to dぎょ", () => {
+    expect(kanaConvertNew("dgyo")).toBe("dぎょ");
+})
+test("Converts ggyo to っぎょ", () => {
+    expect(kanaConvertNew("ggyo")).toBe("っぎょ");
+})
+
+test("Converts syo to しょ", () => {
+    expect(kanaConvertNew("syo")).toBe("しょ");
+})
+
+test("Converts ggga to gっが", () => {
+    expect(kanaConvertNew("ggga")).toBe("gっが");
+})
+
+
+test("Converts yyo to っよ", () => {
+    expect(kanaConvertNew("yyo")).toBe("っよ");
+})
+
+test("Converts okyakusamairassyaimase to おきゃくさまいらっしゃいませ", () => {
+    expect(kanaConvertNew("okyakusamairassyaimase")).toBe("おきゃくさまいらっしゃいませ");
+})
+
+test("Converts shi to し", () => {
+    expect(kanaConvertNew("shi")).toBe("し");
+})
+
+test("Converts たu to たう", () => {
+    expect(kanaConvertNew("たu")).toBe("たう");
+})
+
+test("Converts ndo to んど", () => {
+    expect(kanaConvertNew("ndo")).toBe("んど");
+})
+
+test("Converts n to n", () => {
+    expect(kanaConvertNew("n")).toBe("n");
+})
+
+test("Converts nj to んj", () => {
+    expect(kanaConvertNew("nj")).toBe("んj");
+})
+
+test("Converts njb to んjb", () => {
+    expect(kanaConvertNew("njb")).toBe("んjb");
+})
+
+test("Converts nsyo to んしょ", () => {
+    expect(kanaConvertNew("nsyo")).toBe("んしょ");
+})
+
+test("Converts ny to ny", () => {
+    expect(kanaConvertNew("ny")).toBe("ny");
+})
+
+test("Converts bhi to bひ", () => {
+    expect(kanaConvertNew("bhi")).toBe("bひ");
+})
