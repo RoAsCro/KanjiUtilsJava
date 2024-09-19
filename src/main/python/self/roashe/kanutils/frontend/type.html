@@ -25,9 +25,10 @@
             this.value = kanaConvertNew(this.value);
 
             var difference = this.value.length - oldLength;
-            this.setSelectionRange(start + difference, start + difference);
+            
+            this.setSelectionRange(start + difference, end + difference);
         }
-        $("#answerType").on("keyup", callConversion)
+        $("#answerType").on("input", callConversion);
     </script>
 </body>
 </html>
