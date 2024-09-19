@@ -26,11 +26,19 @@ const map3 = new Map([
     ["j", "じ"], ["b", "び"], ["p", "ぴ"], ["n", "に"], ["m", "み"], ["r", "り"]
 ]);
 
+
+const latin = new RegExp("[a-z]", "u");
+
 function kanaConvert(text) {
     let currentString = "";
     let returnString = "";
     for (let i = 0 ; i < text.length ; i++) {
-        currentString = currentString.concat(text.charAt(i));
+        let current = text.charAt(i);
+        if (!latin.test(current)) {
+            returnString = returnString.concat(current);
+            continue;
+        }
+        currentString = currentString.concat(current);
         let retrieved = map.get(currentString);
         let addition = "";
         let charOne = "";

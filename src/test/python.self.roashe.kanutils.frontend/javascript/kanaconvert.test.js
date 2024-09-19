@@ -93,7 +93,6 @@ test("Converts shi to し", () => {
 
 test("Converts たu to たう", () => {
     expect(kanaConvert("たu")).toBe("たう");
-    // PASING HERE, BUT NOT WHEN USED LIVE
 })
 
 test("Converts ndo to んど", () => {
