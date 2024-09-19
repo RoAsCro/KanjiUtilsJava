@@ -143,3 +143,7 @@ test("Converts hyo to ひょ", () => {
 test("Converts nyo to にょ", () => {
     expect(kanaConvertNew("nyo")).toBe("にょ");
 })
+
+test("Converts shyo to しょ", () => {
+    expect(kanaConvertNew("shyo")).toBe("しょ");
+})

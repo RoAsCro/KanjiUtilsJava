@@ -29,10 +29,48 @@ const map3 = new Map([
 
 
 const latin = new RegExp("[a-z]", "u");
-const three = new RegExp("[kctshgdjbpnmr][y][aou]", "u");
+const y =  "[y][aou]";
+const sy = "([kctshgdjbpnmr]|sh|ch)";
+const three = /([kctshgdjbpnmr]|sh|ch)[y][aou]/g;
 
 function kanaConvertNew(text){
-    return text.replace(three, map3.get(text.charAt(0)).concat(map2.get(text.slice(1, 3))));
+    // let test = text.replace(three, map3.get(text.charAt(0)).concat(map2.get(text.slice(1, 3))));
+    let threes = text.match(three);
+    const regex1 = /([kctshgdjbpnmr]|sh|ch)[y][aou]/
+    // const str1 = 'table football, foosball';
+    // let array1;
+
+    // while ((array1 = regex1.exec(str1)) !== null) {
+    //     console.log(`Found ${array1[0]}. Next starts at ${regex1.lastIndex}.`);
+    // }
+    let array = text.matchAll(three);
+    for (let match of array) {
+        
+        console.log(match[0])
+        let index = match.index;
+        let found = match[0];
+        let size = found.length;
+        let half = Math.floor(size / 2);
+        let partA = found.slice(0, half);
+        let partB = found.slice(half, size);
+
+        let replacementText = found.replace(partA, map3.get(partA)).replace(partB, map2.get(partB));
+        return replacementText;
+    }
+    // let array2 = regex1.exec(test);
+    // while ((array = regex1.exec(test)) !== null) {
+    //     let index = array.index;
+    //     let lastIndex = three.lastIndex;
+    //     let difference = lastIndex - index;
+    //     let offset = Math.floor(difference / 2);
+    //     let partA = found.slice(0, difference - offset);
+    //     let partB = found.slice(difference - offset, difference);
+    //     let found = array[0];
+    //     let replacementText = found.replace(partA, map3.get(partA)).replace(partB, map2.get(partB));
+    //     return replacementText;
+    // }
+
+    // return text.replace(three, map3.get(text.charAt(0)).concat(map2.get(text.slice(1, 3))));
 }
 
 function kanaConvert(text) {
