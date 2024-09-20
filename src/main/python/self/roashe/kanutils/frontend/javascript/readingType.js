@@ -27,7 +27,11 @@
 
 var words = null;
 var usedWords = [];
+var currentWord;
+
 const API = "http://127.0.0.1:8080/api/vocab/vocab";
+
+
 async function load() {
     console.log("Loading")
     if (words !== null) {
@@ -61,11 +65,20 @@ function getWord() {
     let ref = Math.floor(Math.random() * words.length);
     console.log(words)
     console.log(words[ref].japanese)
+    currentWord = words[ref];
     return words[ref].japanese;
+}
+
+function getAnswer(text){
+    if (currentWord.readings.indexOf(text) !== -1) {
+        console.log("success")
+        return true;
+    }
+    return false;
 }
 
 window.onload = function () {
     load();
 }
 
-module.exports = {getWord}
+module.exports = {getWord, getAnswer}

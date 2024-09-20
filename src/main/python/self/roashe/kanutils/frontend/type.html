@@ -11,12 +11,14 @@
     <title>Kanji Utilities - RoAshe</title>
 </head>
 <body>
-    <form id="form">
-        <p id="wordLanding"></p>
-        <input type="text" id="answerType" name="answerType"
-         autocomplete="off"/>
-         <input type="button" id="getWordNow" value="Get">
-    </form>
+    <div class="container">
+        <form id="form">
+            <p id="wordLanding"></p>
+            <input type="text" id="answerType" name="answerType"
+            autocomplete="off"/>
+            <input type="button" id="getWordNow" value="Get">
+        </form>
+    </div>
 
     <script>
         function callConversion() {
@@ -29,6 +31,13 @@
             var difference = this.value.length - oldLength;
 
             this.setSelectionRange(start + difference, end + difference);
+            if (callAnswer(this.value)) {
+                callGetWord();
+                this.value = "";
+            }
+        }
+        function callAnswer(text) {
+            return getAnswer(text);
         }
         $("#answerType").on("input", callConversion);
         
