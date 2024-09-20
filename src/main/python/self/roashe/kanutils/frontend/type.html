@@ -6,29 +6,39 @@
     <link rel="stylesheet" href="styles\styles.css" />
     <script type="text/javascript" src="javascript/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="javascript/kanaconvert.js"></script>
-    <script type="text/javascript" src="javascript/testScript.js"></script>
+    <script type="text/javascript" src="javascript/readingType.js"></script>
 
     <title>Kanji Utilities - RoAshe</title>
 </head>
 <body>
-    <table>
+    <form id="form">
+        <p id="wordLanding"></p>
         <input type="text" id="answerType" name="answerType"
          autocomplete="off"/>
-    </table>
+         <input type="button" id="getWordNow" value="Get">
+    </form>
 
     <script>
         function callConversion() {
             var start = this.selectionStart
             var end = this.selectionEnd;
             var oldLength = this.value.length;
-
+            
             this.value = kanaConvertNew(this.value);
 
             var difference = this.value.length - oldLength;
-            
+
             this.setSelectionRange(start + difference, end + difference);
         }
         $("#answerType").on("input", callConversion);
+        
+    </script>
+    <script>
+        function callGetWord() {
+                $("#wordLanding").html(getWord());
+        }
+        $("#form").on("click", "#getWordNow", callGetWord);
+    
     </script>
 </body>
 </html>

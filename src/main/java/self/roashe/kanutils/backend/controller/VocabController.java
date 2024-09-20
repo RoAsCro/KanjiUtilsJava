@@ -8,6 +8,7 @@ import self.roashe.kanutils.backend.service.VocabService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/vocab")
 public class VocabController {
