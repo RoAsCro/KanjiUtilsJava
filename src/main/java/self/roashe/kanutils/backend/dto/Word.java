@@ -1,4 +1,4 @@
-package self.roashe.kanutils.backend.model;
+package self.roashe.kanutils.backend.dto;
 
 import java.util.List;
 import java.util.Objects;

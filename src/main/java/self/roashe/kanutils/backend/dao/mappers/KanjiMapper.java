@@ -1,7 +1,7 @@
 package self.roashe.kanutils.backend.dao.mappers;
 
 import org.springframework.jdbc.core.RowMapper;
-import self.roashe.kanutils.backend.model.Kanji;
+import self.roashe.kanutils.backend.dto.Kanji;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

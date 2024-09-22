@@ -5,8 +5,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import self.roashe.kanutils.backend.dao.ImportDao;
 import self.roashe.kanutils.backend.dao.VocabDao;
-import self.roashe.kanutils.backend.model.Kanji;
-import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.dto.Kanji;
+import self.roashe.kanutils.backend.dto.Word;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 
 import java.util.List;

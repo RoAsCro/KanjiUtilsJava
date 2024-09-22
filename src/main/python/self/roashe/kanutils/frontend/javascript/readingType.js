@@ -39,7 +39,7 @@ async function load() {
         return;
     }
     
-    fetch(API, {
+    await fetch(API, {
         mode: 'cors',
         headers: {
         'Access-Control-Allow-Origin':'*'
@@ -56,29 +56,52 @@ async function load() {
             words = data
         })
         .catch(error => {
-            console.error(error);
-            words = null;
-        });
+            console.log("Failed to load")
+        })
+}
+
+async function beginLoad(ms){
+    if (words !== null) {
+        document.getElementById("wordLanding").innerHTML = getWord();
+        return;
+    }
+    console.log("Outer")
+    if (ms > 5000) {
+        console.log("returnign");
+        return;
+    }
+    await load();
+    sleep(ms).then(beginLoad(ms + 1000));
+    
+}
+
+function sleep(ms) {
+    return new Promise(() => setTimeout(() => {}, ms));
 }
 
 function getWord() {
     let ref = Math.floor(Math.random() * words.length);
-    console.log(words)
-    console.log(words[ref].japanese)
     currentWord = words[ref];
     return words[ref].japanese;
 }
 
 function getAnswer(text){
+    console.log("Trying")
+    if (words === null) {
+        return false;
+    }
     if (currentWord.readings.indexOf(text) !== -1) {
         console.log("success")
         return true;
     }
+    
     return false;
 }
 
+
+
 window.onload = function () {
-    load();
+    beginLoad(1000);
 }
 
 module.exports = {getWord, getAnswer}

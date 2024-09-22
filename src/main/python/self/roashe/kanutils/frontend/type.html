@@ -11,13 +11,17 @@
     <title>Kanji Utilities - RoAshe</title>
 </head>
 <body>
-    <div class="container">
-        <form id="form">
-            <p id="wordLanding"></p>
-            <input type="text" id="answerType" name="answerType"
+    <div class="container" style="flex-direction: column;">
+        <!-- <form class="container" id="form"> -->
+        <!-- <div> -->
+            <p class="prominentWord" id="wordLanding">Loading...</p>
+        <!-- </div> -->
+        <div id="inputContainer" >
+            <input type="text" class="prominentWord" id="answerType" name="answerType"
             autocomplete="off"/>
             <input type="button" id="getWordNow" value="Get">
-        </form>
+        </div>
+        <!-- </form> -->
     </div>
 
     <script>
@@ -31,7 +35,8 @@
             var difference = this.value.length - oldLength;
 
             this.setSelectionRange(start + difference, end + difference);
-            if (callAnswer(this.value)) {
+            let correct = callAnswer(this.value);
+            if (correct) {
                 callGetWord();
                 this.value = "";
             }
@@ -44,9 +49,9 @@
     </script>
     <script>
         function callGetWord() {
-                $("#wordLanding").html(getWord());
+            $("#wordLanding").html(getWord());
         }
-        $("#form").on("click", "#getWordNow", callGetWord);
+        $("#inputContainer").on("click", "#getWordNow", callGetWord);
     
     </script>
 </body>

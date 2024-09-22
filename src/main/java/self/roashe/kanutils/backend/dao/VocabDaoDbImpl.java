@@ -5,7 +5,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import self.roashe.kanutils.backend.dao.mappers.WordMapper;
-import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.dto.Word;
 
 import java.util.*;
 

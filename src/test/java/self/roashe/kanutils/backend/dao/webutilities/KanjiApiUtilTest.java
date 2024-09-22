@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import self.roashe.kanutils.backend.dao.web_utilities.KanjiApiUtil;
-import self.roashe.kanutils.backend.model.Kanji;
+import self.roashe.kanutils.backend.dto.Kanji;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

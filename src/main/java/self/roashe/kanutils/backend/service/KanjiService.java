@@ -1,6 +1,6 @@
 package self.roashe.kanutils.backend.service;
 
-import self.roashe.kanutils.backend.model.Kanji;
+import self.roashe.kanutils.backend.dto.Kanji;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 
 import java.util.List;

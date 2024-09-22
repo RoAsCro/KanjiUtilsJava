@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import self.roashe.kanutils.backend.TestApplicationConfiguration;
 import self.roashe.kanutils.backend.dao.mappers.KanjiMapper;
-import self.roashe.kanutils.backend.model.Kanji;
+import self.roashe.kanutils.backend.dto.Kanji;
 
 import java.util.List;
 

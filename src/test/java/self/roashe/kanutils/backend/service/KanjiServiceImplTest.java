@@ -10,7 +10,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import self.roashe.kanutils.backend.TestApplicationConfiguration;
 import self.roashe.kanutils.backend.dao.KanjiDao;
 import self.roashe.kanutils.backend.dao.web_utilities.KanjiApiUtil;
-import self.roashe.kanutils.backend.model.Kanji;
+import self.roashe.kanutils.backend.dto.Kanji;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 
 import java.io.IOException;

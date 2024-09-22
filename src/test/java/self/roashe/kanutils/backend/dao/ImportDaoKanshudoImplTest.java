@@ -3,11 +3,9 @@ package self.roashe.kanutils.backend.dao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import self.roashe.kanutils.backend.JapaneseLanguageUtil;
-import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.dto.Word;
 
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ImportDaoKanshudoImplTest {
 

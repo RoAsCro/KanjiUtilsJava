@@ -1,16 +1,8 @@
 package self.roashe.kanutils.backend;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
-import self.roashe.kanutils.backend.model.Kanji;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Set;
 
@@ -43,5 +35,10 @@ public class GeneralTest {
 //            throw new IOException("Kanji not found.");
 //        }
 //        return kanji;
+    }
+
+    @Test
+    public void testTime() {
+        System.out.println(java.time.LocalTime.now().getHour());
     }
 }

@@ -2,7 +2,7 @@ package self.roashe.kanutils.backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.dto.Word;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 import self.roashe.kanutils.backend.service.VocabService;
 

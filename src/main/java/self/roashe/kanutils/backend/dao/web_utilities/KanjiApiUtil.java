@@ -3,7 +3,7 @@ package self.roashe.kanutils.backend.dao.web_utilities;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import self.roashe.kanutils.backend.model.Kanji;
+import self.roashe.kanutils.backend.dto.Kanji;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

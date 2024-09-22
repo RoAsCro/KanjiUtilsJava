@@ -3,7 +3,7 @@ package self.roashe.kanutils.backend.dao;
 import org.springframework.stereotype.Repository;
 import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 import self.roashe.kanutils.backend.dao.web_utilities.SeleniumUtil;
-import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.dto.Word;
 
 import java.util.Arrays;
 import java.util.List;

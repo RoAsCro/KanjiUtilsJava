@@ -5,11 +5,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 import self.roashe.kanutils.backend.dao.mappers.KanjiMapper;
-import self.roashe.kanutils.backend.model.Kanji;
-import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.dto.Kanji;
+import self.roashe.kanutils.backend.dto.Word;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Repository
 public class KanjiDaoDbImpl implements KanjiDao{

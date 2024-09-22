@@ -1,7 +1,7 @@
 package self.roashe.kanutils.backend.dao;
 
-import self.roashe.kanutils.backend.model.Kanji;
-import self.roashe.kanutils.backend.model.Word;
+import self.roashe.kanutils.backend.dto.Kanji;
+import self.roashe.kanutils.backend.dto.Word;
 
 import java.util.List;
 
