@@ -12,14 +12,4 @@ public class Main {
     public static void main(String args[]) {
         SpringApplication.run(Main.class, args);
     }
-
-//    @Bean
-//    public WebMvcConfigurer corsConfigurer() {
-//        return new WebMvcConfigurer() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                registry.addMapping("vocab").allowedOrigins("http://127.0.0.1:3000");
-//            }
-//        };
-//    }
 }

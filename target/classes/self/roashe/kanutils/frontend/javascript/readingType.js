@@ -89,15 +89,13 @@ function getWord() {
     return currentWord.japanese;
 }
 
-async function getAnswer(text){
-    console.log("Trying")
+function getAnswer(text){
     if (words === null) {
         return false;
     }
 
     console.log(text.codePointAt(0));
     if (currentWord.readings.indexOf(text) !== -1) {
-        console.log("success")
         return true;
     }
     
