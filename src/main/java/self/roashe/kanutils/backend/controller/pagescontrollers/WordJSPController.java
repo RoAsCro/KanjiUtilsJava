@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import self.roashe.kanutils.backend.service.VocabService;
 
+import java.io.File;
+
 @Controller
 @RequestMapping("/words")
 public class WordJSPController  {
@@ -16,8 +18,9 @@ public class WordJSPController  {
 
     @GetMapping("/viewWords")
     public String viewWords(Model model) {
+        System.out.printf("Here");
         model.addAttribute("vocab", this.service.getAllVocab());
-        return "view words";
+        return "view-words";
     }
 
 }
