@@ -30,6 +30,7 @@ var usedWords = [];
 var currentWord;
 
 const API = "http://127.0.0.1:8080/api/vocab/vocab";
+const KATAKANISE = "http://127.0.0.1:8080/api/kana/katakanise";
 
 
 async function load() {
@@ -82,16 +83,19 @@ function sleep(ms) {
 function getWord() {
     let ref = Math.floor(Math.random() * words.length);
     currentWord = words[ref];
-    return words[ref].japanese;
+    let english = currentWord.english;
+    let length = english.length < 3 ? english.length : 3;
+    document.getElementById("englishLanding").innerHTML = (english.slice(0, 3) + "").replaceAll(",", ", ");
+    return currentWord.japanese;
 }
 
 function getAnswer(text){
-    console.log("Trying")
     if (words === null) {
         return false;
     }
+
+    console.log(text.codePointAt(0));
     if (currentWord.readings.indexOf(text) !== -1) {
-        console.log("success")
         return true;
     }
     

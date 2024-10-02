@@ -17,7 +17,7 @@ public class ImportDaoImplKanshudoImpl implements ImportDao {
     @Override
     public List<Word> getAllWords(String username, String password) {
         String rawVocab = SeleniumUtil.getFlashcards(username, password,
-                "C:\\Users\\rolly\\Documents\\geckodriver-v0.34.0-win64\\geckodriver.exe");
+                "C:\\Users\\rolly\\OneDrive\\Documents\\geckodriver-v0.34.0-win64\\geckodriver.exe");
         List<String> listVocab = stringToList(rawVocab);
 
         List<Word> wordList = listVocab.stream().map(this::stringToWord).collect(Collectors.toList());

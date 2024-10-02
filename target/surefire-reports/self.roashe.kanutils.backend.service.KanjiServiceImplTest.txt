@@ -1,0 +1,99 @@
+-------------------------------------------------------------------------------
+Test set: self.roashe.kanutils.backend.service.KanjiServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 5.098 s <<< FAILURE! - in self.roashe.kanutils.backend.service.KanjiServiceImplTest
+testAddKanjiMixedText  Time elapsed: 1.008 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+
+testAddKanjiDataSet  Time elapsed: 1.022 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+
+testAddKanji  Time elapsed: 1.032 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+
+testAddKanjiNoKanji  Time elapsed: 1.018 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+
+testAddKanjiMultiple  Time elapsed: 1.012 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.service.KanjiServiceImplTest.setup(KanjiServiceImplTest.java:33)
+

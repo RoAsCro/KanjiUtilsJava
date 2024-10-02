@@ -1,0 +1,270 @@
+-------------------------------------------------------------------------------
+Test set: self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 17.671 s <<< FAILURE! - in self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest
+testGetByKun  Time elapsed: 1.521 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testGetByKunKatakana  Time elapsed: 1.03 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testValuesAdded  Time elapsed: 1.019 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testDelte  Time elapsed: 1.018 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testGetByOn  Time elapsed: 1.014 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testAutowiring  Time elapsed: 1.006 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testAddExists  Time elapsed: 1.024 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testGetAllMissingParts  Time elapsed: 1.021 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testGetByOnMixedCharacters  Time elapsed: 1.031 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testExport  Time elapsed: 1.036 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testGetAll  Time elapsed: 1.028 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testGetByKunMixedCharacters  Time elapsed: 1.036 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testAddDoesNotExist  Time elapsed: 1.026 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+
+testGetByOnHiragana  Time elapsed: 1.033 s  <<< ERROR!
+org.springframework.jdbc.CannotGetJdbcConnectionException: 
+Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at self.roashe.kanutils.backend.dao.KanjiDaoDbImplTest.setUp(KanjiDaoDbImplTest.java:31)
+

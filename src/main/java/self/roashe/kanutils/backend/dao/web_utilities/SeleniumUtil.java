@@ -74,7 +74,7 @@ public class SeleniumUtil {
             WebElement dlButton = driver.findElement(By.cssSelector("#download_set"));
             dlButton.click();
 
-            Wait<WebDriver> waitForText = new WebDriverWait(driver, 5);
+            Wait<WebDriver> waitForText = new WebDriverWait(driver, 10);
             waitForText.until(d -> !d.findElement(By.id("dcontent")).getAttribute("value").isEmpty());
             vocab.append(driver.findElement(By.id("dcontent")).getAttribute("value"));
 

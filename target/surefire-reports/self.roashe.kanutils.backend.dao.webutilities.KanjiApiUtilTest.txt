@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: self.roashe.kanutils.backend.dao.webutilities.KanjiApiUtilTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 6, Time elapsed: 3.531 s - in self.roashe.kanutils.backend.dao.webutilities.KanjiApiUtilTest
