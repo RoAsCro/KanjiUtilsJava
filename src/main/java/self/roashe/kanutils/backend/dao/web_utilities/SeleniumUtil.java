@@ -76,7 +76,7 @@ public class SeleniumUtil {
 
             Wait<WebDriver> waitForText = new WebDriverWait(driver, 10);
             waitForText.until(d -> !d.findElement(By.id("dcontent")).getAttribute("value").isEmpty());
-            vocab.append(driver.findElement(By.id("dcontent")).getAttribute("value"));
+            vocab.append(driver.findElement(By.id("dcontent")).getAttribute("value")).append("\n");
 
         }
         driver.quit();

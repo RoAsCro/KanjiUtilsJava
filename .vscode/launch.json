@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "type",
-            "file": "c:\\Users\\rolly\\OneDrive\\Documents\\C387repos\\KanUtils\\src\\main\\python\\self\\roashe\\kanutils\\frontend\\type.html"
+            "file": "C:\\Users\\rolly\\OneDrive\\Documents\\C387repos\\KanUtils\\src\\main\\webapp\\WEB-INF\\jsp\\type.html"
             
         },
         

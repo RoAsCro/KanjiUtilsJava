@@ -74,7 +74,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "jsp",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rolly/OneDrive/Documents/C387repos/KanUtils",
+    "last_opened_file_path": "C:/Users/rolly/OneDrive/Documents/C387repos/KanUtils/src/main/webapp/WEB-INF",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
@@ -82,13 +82,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="self.roashe.kanutils.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JSPMain">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="JSPMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.JSPMain" />
       <module name="KanUtils" />
@@ -155,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JSPMain" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.JSPMain" />
         <item itemvalue="JUnit.All in KanUtils" />
         <item itemvalue="JUnit.ImportDaoKanshudoImplTest and 5 more" />
         <item itemvalue="JUnit.KanjiDaoDbImplTest" />
@@ -174,21 +175,5 @@
       <workItem from="1726595748830" duration="17000" />
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <script type="text/javascript" src="../../javascript/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../../javascript/wanakana.min.js"></script>
+    <script type="text/javascript" src="../../javascript/readingType.js"></script>
+
+    <title>Kanji Utilities - RoAshe</title>
+</head>
+<body class="container">
+    <p id="score">0/0</p>
+
+    <div class="container" style="flex-direction: column; flex-wrap: nowrap;">
+        <div class="container">
+            <p class="prominentWord" id="wordLanding">Loading...</p>
+        </div>
+        <p class="prominentWord" style="font-size: 5vh;" id="englishLanding">Loading...</p>
+        <p class="prominentWord" id="readingLanding" style="display: none;"></p>
+            
+        <div id="inputContainer" >
+            <textarea class="prominentWord" id="answerType" name="answerType"></textarea>
+        </div>
+    </div>
+    <div>
+        <button id="pass">Pass</button>
+        <button id="next" style="display: none;">Continue</button>
+    </div>
+
+    <script>
+        wanakana.bind($(answerType)[0]);
+        function answer() {
+            let correct = getAnswer(this.value);
+            if (correct) {
+                $("#wordLanding").show();
+                answerGiven();
+            }
+        }
+        function answerGiven() {
+            $("#readingLanding").show();
+            $("#answerType").hide();
+            $("#pass").hide();
+            $("#next").show();
+        }
+        
+        function callPass(){
+            answerGiven();
+            pass();
+        }
+        function nextQuestion() {
+            $("#pass").show();
+            $("#next").hide();
+            $("#readingLanding").hide();
+            $("#answerType").show();
+            $("#wordLanding").hide();
+            $("#wordLanding").html(getWord());
+
+            $("#answerType").val("");
+        }
+        $("#answerType").on("input", answer);
+        $("#pass").on("click", callPass);
+        $("#next").on("click", nextQuestion);
+    </script>
+</body>
+</html>
