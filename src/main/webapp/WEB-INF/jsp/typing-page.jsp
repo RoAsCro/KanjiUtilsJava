@@ -40,10 +40,8 @@
             }
         }
         function answerGiven() {
-            <c:if test='${showWord}'>
-                // Show word
-                $("#wordLanding").show();
-            </c:if>
+            $("#wordLanding").show();
+            
             // Swap out buttons
             $("#next").show();
             $("#pass").hide();
@@ -89,6 +87,16 @@
         $("#pass").on("click", callPass);
         $("#next").on("click", nextQuestion);
         $(document).bind("keypress.pass", k => {if (k.which === 13){callPass();}});
+        // Set variables
+        repeat = <c:choose>
+                <c:when test='${repeat}'>
+                    true
+                </c:when>
+                <c:otherwise>
+                    false
+                </c:otherwise>
+            </c:choose>
+            ;
     </script>
 </body>
 </html>

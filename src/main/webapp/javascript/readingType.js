@@ -8,6 +8,8 @@ var convertedReadings = [];
 var failed = [];
 var failedWord = false;
 
+var repeat = true;
+
 const API = "http://127.0.0.1:8080/api/vocab/vocab";
 const KATAKANISE = "http://127.0.0.1:8080/api/kana/katakanise";
 
@@ -45,9 +47,7 @@ async function beginLoad(ms){
         document.getElementById("wordLanding").innerHTML = getWord();
         return;
     }
-    console.log("Outer")
     if (ms > 5000) {
-        console.log("returnign");
         return;
     }
     await load();
@@ -60,8 +60,10 @@ function sleep(ms) {
 }
 
 function getWord() {
+    console.log(repeat);
+    console.log(words.length);
+
     if (failedWord) {
-        console.log("splicing")
         failed.splice(failed.indexOf(currentWord), 1);
         failedWord = false;
     }
@@ -69,10 +71,8 @@ function getWord() {
     let choice = Math.floor(Math.random() * 10);
 
     let usingFailed = choice > 7 && failed.length > 0;
-    console.log(choice);
-    console.log(failed);
+
     if (usingFailed) {
-        console.log("failed")
         failedWord = true;
     }
     let wordSet = usingFailed ? failed : words;
@@ -86,7 +86,10 @@ function getWord() {
     document.getElementById("englishLanding").innerHTML = (english.slice(0, 3) + "").replaceAll(",", ", ");
     document.getElementById("score").innerHTML = answers + "/" + questionCount;
     document.getElementById("readingLanding").innerHTML = (currentWord.readings + "").replaceAll(",", ", ");
-    return wanakana.isKana(currentWord.japanese) ? "?" : currentWord.japanese;
+    if (wanakana.isKana(currentWord.japanese)) {
+        $("#wordLanding").hide();
+    }
+    return currentWord.japanese;
 }
 
 function getAnswer(text){
@@ -97,6 +100,9 @@ function getAnswer(text){
     if (convertedReadings.indexOf(text) !== -1) {
         questionCount += 1;
         answers += 1;
+        if (!repeat) {
+            words.splice(words.indexOf(currentWord), 1);
+        }
         return true;
     }
     
