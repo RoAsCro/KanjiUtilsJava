@@ -32,19 +32,26 @@ public class WordJSPController  {
     @GetMapping("/readinggame")
     public String readingGame(Model  model,
                               @RequestParam(defaultValue = "true", name = "repeat") boolean repeat) {
-        return typing(model, repeat, false, "Readings Test");
+        return typing(model, false, repeat, false, "Readings Test");
     }
 
     @GetMapping("/wordgame")
     public String wordGame(Model  model,
                            @RequestParam(defaultValue = "true", name = "repeat") boolean repeat) {
-        return typing(model, repeat, true, "English to Japanese Test");
+        return typing(model, false, repeat, true, "English to Japanese Test");
     }
 
-    private String typing(Model model, boolean repeat, boolean showWord, String title) {
+    @GetMapping("/kanjireading")
+    public String kanjiReadingGame(Model  model,
+                              @RequestParam(defaultValue = "true", name = "repeat") boolean repeat) {
+        return typing(model, true, repeat, false, "Readings Test");
+    }
+
+    private String typing(Model model, boolean useKanji, boolean repeat, boolean showWord, String title) {
         model.addAttribute("repeat", repeat);
         model.addAttribute("title", title);
         model.addAttribute("showWord", showWord);
+        model.addAttribute("useKanji", useKanji);
         return "typing-page";
     }
 

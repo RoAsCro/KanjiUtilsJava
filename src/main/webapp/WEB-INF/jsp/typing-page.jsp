@@ -32,7 +32,7 @@
     </div>
 
     <script>
-        wanakana.bind($(answerType)[0]);
+        wanakana.bind($("#answerType")[0]);
         function answer() {
             let correct = getAnswer(this.value);
             if (correct) {
@@ -40,15 +40,15 @@
             }
         }
         function answerGiven() {
-            $("#wordLanding").show();
-            
+            japaneseLanding.show();
+
             // Swap out buttons
-            $("#next").show();
-            $("#pass").hide();
+            nextButton.show();
+            passButton.hide();
 
             // Swap out readings/textbox
-            $("#readingLanding").show();
-            $("#answerType").hide();
+            readingLanding.show();
+            textInput.hide();
 
             // Rebind keys
             $(document).unbind("keypress.pass")
@@ -64,30 +64,30 @@
                 $("#wordLanding").hide();
             </c:if>
             // Swap out buttons
-            $("#pass").show();
-            $("#next").hide();
+            passButton.show();
+            nextButton.hide();
 
             // Swap out readings/textbox
-            $("#readingLanding").hide();
-            $("#answerType").show();
+            readingLanding.hide();
+            textInput.show();
 
             // Place word
-            $("#wordLanding").html(getWord());
+            getWord();
 
             // Reset textarea
-            $("#answerType").val("");
-            $("#answerType").focus();
+            textInput.val("");
+            textInput.focus();
 
             // Rebind keys
             $(document).unbind("keypress.next")
             $(document).bind("keypress.pass", k => {if (k.which === 13){callPass();}});
         }
         
-        $("#answerType").on("input", answer);
-        $("#pass").on("click", callPass);
-        $("#next").on("click", nextQuestion);
-        $(document).bind("keypress.pass", k => {if (k.which === 13){callPass();}});
         // Set variables
+        const nextButton = $("#next");
+        const passButton = $("#pass");
+        const textInput = $("#answerType")
+
         repeat = <c:choose>
                 <c:when test='${repeat}'>
                     true
@@ -97,6 +97,19 @@
                 </c:otherwise>
             </c:choose>
             ;
+        <c:if test="${useKanji}">
+        APISuffix = "kanji/all/aswords"
+        </c:if>
+        englishLanding = $("#englishLanding");
+        japaneseLanding = $("#wordLanding");
+        readingLanding =  $("#readingLanding");
+        score = $("#score");
+
+        // Set events
+        textInput.on("input", answer);
+        passButton.on("click", callPass);
+        nextButton.on("click", nextQuestion);
+        $(document).bind("keypress.pass", k => {if (k.which === 13){callPass();}});
     </script>
 </body>
 </html>

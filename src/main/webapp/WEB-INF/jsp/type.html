@@ -30,7 +30,7 @@
     </div>
 
     <script>
-        wanakana.bind($(answerType)[0]);
+        wanakana.bind($("#answerType"));
         function answer() {
             let correct = getAnswer(this.value);
             if (correct) {
