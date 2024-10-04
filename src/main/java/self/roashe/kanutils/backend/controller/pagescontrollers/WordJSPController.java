@@ -28,12 +28,27 @@ public class WordJSPController  {
         return "view-words";
     }
 
+    @GetMapping("/readinggame")
+    public String readingGame(Model  model) {
+        model.addAttribute("title", "Readings Test");
+        model.addAttribute("showWord", false);
+        return "typing-page";
+    }
+
+    @GetMapping("/wordgame")
+    public String wordGame(Model  model) {
+        model.addAttribute("title", "English to Japanese Test");
+        model.addAttribute("showWord", true);
+        return "typing-page";
+    }
+
     @GetMapping("/viewWord")
     public String viewWord(Model model) {
         List<Word> words = this.service.getAllVocab();
         Random random = new Random();
         int randomNum  = random.nextInt(words.size() + 1);
         model.addAttribute("vocab", words.subList(randomNum, randomNum + 1));
+        ;
         return "view-words";
     }
 

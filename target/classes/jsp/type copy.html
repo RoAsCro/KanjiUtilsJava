@@ -15,7 +15,7 @@
 
     <div class="container" style="flex-direction: column; flex-wrap: nowrap;">
         <div class="container">
-            <p class="prominentWord" id="wordLanding">Loading...</p>
+            <p class="prominentWord" id="wordLanding" style="display: none;">Loading...</p>
         </div>
         <p class="prominentWord" style="font-size: 5vh;" id="englishLanding">Loading...</p>
         <p class="prominentWord" id="readingLanding" style="display: none;"></p>
@@ -43,6 +43,8 @@
             $("#answerType").hide();
             $("#pass").hide();
             $("#next").show();
+            $(document).unbind("keypress.pass")
+            $(document).bind("keypress.next", k => {if (k.which === 13){nextQuestion();}});
         }
         
         function callPass(){
@@ -56,12 +58,15 @@
             $("#answerType").show();
             $("#wordLanding").hide();
             $("#wordLanding").html(getWord());
-
             $("#answerType").val("");
+            $("#answerType").focus();
+            $(document).unbind("keypress.next")
+            $(document).bind("keypress.pass", k => {if (k.which === 13){callPass();}});
         }
         $("#answerType").on("input", answer);
         $("#pass").on("click", callPass);
         $("#next").on("click", nextQuestion);
+        $(document).bind("keypress.pass", k => {if (k.which === 13){callPass();}});
     </script>
 </body>
 </html>
