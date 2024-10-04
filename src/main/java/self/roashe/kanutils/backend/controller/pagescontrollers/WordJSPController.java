@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import self.roashe.kanutils.backend.dto.Word;
 import self.roashe.kanutils.backend.service.VocabService;
 
@@ -29,32 +30,22 @@ public class WordJSPController  {
     }
 
     @GetMapping("/readinggame")
-    public String readingGame(Model  model) {
-        model.addAttribute("title", "Readings Test");
-        model.addAttribute("showWord", false);
-        return "typing-page";
+    public String readingGame(Model  model,
+                              @RequestParam(defaultValue = "true", name = "repeat") boolean repeat) {
+        return typing(model, repeat, false, "Readings Test");
     }
 
     @GetMapping("/wordgame")
-    public String wordGame(Model  model) {
-        model.addAttribute("title", "English to Japanese Test");
-        model.addAttribute("showWord", true);
+    public String wordGame(Model  model,
+                           @RequestParam(defaultValue = "true", name = "repeat") boolean repeat) {
+        return typing(model, repeat, true, "English to Japanese Test");
+    }
+
+    private String typing(Model model, boolean repeat, boolean showWord, String title) {
+        model.addAttribute("repeat", repeat);
+        model.addAttribute("title", title);
+        model.addAttribute("showWord", showWord);
         return "typing-page";
-    }
-
-    @GetMapping("/viewWord")
-    public String viewWord(Model model) {
-        List<Word> words = this.service.getAllVocab();
-        Random random = new Random();
-        int randomNum  = random.nextInt(words.size() + 1);
-        model.addAttribute("vocab", words.subList(randomNum, randomNum + 1));
-        ;
-        return "view-words";
-    }
-
-    @GetMapping("/do")
-    public void doThing(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("Weee");
     }
 
 }

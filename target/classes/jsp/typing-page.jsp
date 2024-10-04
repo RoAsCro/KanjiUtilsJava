@@ -17,7 +17,7 @@
     <div class="container" style="flex-direction: column; flex-wrap: nowrap;">
         <div class="container">
             <p class="prominentWord" id="wordLanding"
-                <c:if test='${showWord}>style="display: none;"'></c:if>>Loading...</p>
+                <c:if test='${showWord}'>style="display: none;"></c:if>>Loading...</p>
         </div>
         <p class="prominentWord" style="font-size: 5vh;" id="englishLanding">Loading...</p>
         <p class="prominentWord" id="readingLanding" style="display: none;"></p>
@@ -40,10 +40,8 @@
             }
         }
         function answerGiven() {
-            <c:if test='${"showWord"}'>
-                // Show word
-                $("#wordLanding").show();
-            </c:if>
+            $("#wordLanding").show();
+            
             // Swap out buttons
             $("#next").show();
             $("#pass").hide();
@@ -61,7 +59,7 @@
             pass();
         }
         function nextQuestion() {
-            <c:if test='${"showWord"}'>
+            <c:if test='${showWord}'>
                 // Hide word
                 $("#wordLanding").hide();
             </c:if>
@@ -89,6 +87,16 @@
         $("#pass").on("click", callPass);
         $("#next").on("click", nextQuestion);
         $(document).bind("keypress.pass", k => {if (k.which === 13){callPass();}});
+        // Set variables
+        repeat = <c:choose>
+                <c:when test='${repeat}'>
+                    true
+                </c:when>
+                <c:otherwise>
+                    false
+                </c:otherwise>
+            </c:choose>
+            ;
     </script>
 </body>
 </html>
