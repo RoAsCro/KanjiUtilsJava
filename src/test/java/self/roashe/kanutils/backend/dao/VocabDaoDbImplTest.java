@@ -103,9 +103,25 @@ class VocabDaoDbImplTest {
         word.setReadings(List.of("ぜひ"));
         word.setEnglish(List.of("Very much", "Right and wrong"));
         dao.addWord(word);
+        dao.clearLocalData();
         Word retrievedWord = dao.getWord("是非");
         Assertions.assertNotNull(retrievedWord);
         Assertions.assertEquals(word, retrievedWord);
+    }
+
+    @Test
+    void testAddWithTags() {
+        Word word = new Word();
+        word.setJapanese("是非");
+        word.setReadings(List.of("ぜひ"));
+        word.setEnglish(List.of("Very much", "Right and wrong"));
+        List<String> tags = List.of("test1", "test2");
+        word.setTags(tags);
+        dao.addWord(word);
+        dao.clearLocalData();
+        Word retrievedWord = dao.getWord("是非");
+        Assertions.assertNotNull(retrievedWord);
+        Assertions.assertEquals(tags, retrievedWord.getTags());
     }
 
     @Test

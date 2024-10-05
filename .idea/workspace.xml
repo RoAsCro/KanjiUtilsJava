@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="83089241-5286-483e-839b-a96bf14d121f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dto/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dto/Word.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/VocabDaoDbImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/VocabDaoDbImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/self/roashe/kanutils/backend/dao/VocabDaoDbImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/self/roashe/kanutils/backend/dao/VocabDaoDbImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +60,7 @@
     "JUnit.VocabDaoDbImplTest.executor": "Run",
     "JUnit.VocabDaoDbImplTest.testAdd.executor": "Run",
     "JUnit.VocabDaoDbImplTest.testAddExists.executor": "Debug",
+    "JUnit.VocabDaoDbImplTest.testAddWithTags.executor": "Run",
     "JUnit.VocabDaoDbImplTest.testGetAll.executor": "Run",
     "JUnit.backend in KanUtils.executor": "Run",
     "JUnit.java in KanUtils.executor": "Run",
@@ -88,20 +91,7 @@
       <recent name="self.roashe.kanutils.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.VocabDaoDbImplTest">
-    <configuration name="JSPMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.JSPMain" />
-      <module name="KanUtils" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.VocabDaoDbImplTest.testAddWithTags">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.Main" />
       <module name="KanUtils" />
@@ -111,14 +101,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in KanUtils" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KanUtils" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,6 +120,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VocabDaoDbImplTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KanUtils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.VocabDaoDbImplTest" />
+      <option name="METHOD_NAME" value="testAdd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VocabDaoDbImplTest.testAddWithTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KanUtils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.VocabDaoDbImplTest" />
+      <option name="METHOD_NAME" value="testAddWithTags" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in KanUtils" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KanUtils" />
       <option name="TEST_OBJECT" value="directory" />
@@ -148,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VocabDaoDbImplTest.testAddWithTags" />
+        <item itemvalue="JUnit.VocabDaoDbImplTest.testAdd" />
         <item itemvalue="JUnit.VocabDaoDbImplTest" />
         <item itemvalue="JUnit.java in KanUtils" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.JSPMain" />
-        <item itemvalue="JUnit.All in KanUtils" />
       </list>
     </recent_temporary>
   </component>

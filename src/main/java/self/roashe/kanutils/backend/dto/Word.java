@@ -50,6 +50,15 @@ public class Word {
         this.id = id;
     }
 
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Word) {
@@ -66,11 +75,4 @@ public class Word {
         return Objects.hash(this.japanese, Set.copyOf(this.english), Set.copyOf(this.readings));
     }
 
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
-    }
 }
