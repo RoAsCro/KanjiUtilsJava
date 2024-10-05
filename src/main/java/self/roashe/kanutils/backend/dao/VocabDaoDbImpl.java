@@ -120,12 +120,12 @@ public class VocabDaoDbImpl implements VocabDao {
 
     }
 
-    private void pullList(Word word, String table, Consumer<List<String>> set) {
+    private void pullList(Word word, String table, Consumer<List<String>> setMethod) {
         String SELECT_ITEM = "SELECT " + table + " FROM " + table + " " +
                 "WHERE japaneseword_jpId = ?";
 
         List<String> tags = this.jdbc.queryForList(SELECT_ITEM, String.class, word.getId());
-        set.accept(tags);
+        setMethod.accept(tags);
     }
 
 }

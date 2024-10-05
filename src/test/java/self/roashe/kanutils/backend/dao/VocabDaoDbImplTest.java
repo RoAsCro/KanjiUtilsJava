@@ -136,9 +136,12 @@ class VocabDaoDbImplTest {
         word.setJapanese("是非");
         word.setReadings(List.of("ぜひ"));
         word.setEnglish(List.of("Right and wrong", "Very much"));
+        List<String> tags = List.of("test1", "test2");
+        word.setTags(tags);
         dao.addWord(word);
-        System.out.println(word.hashCode());
 
+        Word retrievedWord = dao.getWord("是非");
+        Assertions.assertEquals(List.of(), retrievedWord.getTags());
     }
 
 }
