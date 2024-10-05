@@ -117,6 +117,9 @@ function getAnswer(text){
 function pass() {
     questionCount += 1;
     failed.push(currentWord);
+    if (!repeat) {
+        words.splice(words.indexOf(currentWord));
+    }
 }
 
 

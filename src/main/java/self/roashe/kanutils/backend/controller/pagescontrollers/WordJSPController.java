@@ -44,7 +44,7 @@ public class WordJSPController  {
     @GetMapping("/kanjireading")
     public String kanjiReadingGame(Model  model,
                               @RequestParam(defaultValue = "true", name = "repeat") boolean repeat) {
-        return typing(model, true, repeat, false, "Readings Test");
+        return typing(model, true, repeat, false, "Kanji Readings Test");
     }
 
     private String typing(Model model, boolean useKanji, boolean repeat, boolean showWord, String title) {
