@@ -90,7 +90,7 @@
       <recent name="self.roashe.kanutils.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in KanUtils">
+  <component name="RunManager" selected="JUnit.VocabDaoDbImplTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.Main" />
       <module name="KanUtils" />
@@ -161,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in KanUtils" />
         <item itemvalue="JUnit.VocabDaoDbImplTest" />
+        <item itemvalue="JUnit.java in KanUtils" />
         <item itemvalue="JUnit.VocabDaoDbImplTest.testAddWithTags" />
         <item itemvalue="JUnit.VocabDaoDbImplTest.testAdd" />
         <item itemvalue="Application.Main" />

@@ -8,6 +8,7 @@ import self.roashe.kanutils.backend.dao.mappers.WordMapper;
 import self.roashe.kanutils.backend.dto.Word;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 @Repository
 public class VocabDaoDbImpl implements VocabDao {
@@ -16,6 +17,10 @@ public class VocabDaoDbImpl implements VocabDao {
     private JdbcTemplate jdbc;
 
     private final Set<Word> wordSet = new HashSet<>();
+
+    private static final String DEFINITION_TABLE = "definition";
+    private static final String READING_TABLE = "reading";
+    private static final String TAG_TABLE = "tag";
 
     @Override
     public List<Word> getWords() {
@@ -68,16 +73,16 @@ public class VocabDaoDbImpl implements VocabDao {
     }
 
     private void addDefinitions(Word word) {
-        addList(word, word.getEnglish(), "definition");
+        addList(word, word.getEnglish(), DEFINITION_TABLE);
     }
 
     private void addReadings(Word word) {
-        addList(word, word.getReadings(), "reading");
+        addList(word, word.getReadings(), READING_TABLE);
 
     }
 
     private void addTags(Word word) {
-        addList(word, word.getTags(), "tag");
+        addList(word, word.getTags(), TAG_TABLE);
     }
 
     private void addList(Word word, List<String> toAdd, String table) {
@@ -102,25 +107,25 @@ public class VocabDaoDbImpl implements VocabDao {
     }
 
     private void pullReadings(Word word) {
-        final String SELECT_READINGS = "SELECT reading FROM reading " +
-                "WHERE japaneseword_jpId = ?";
-        List<String> readings = this.jdbc.queryForList(SELECT_READINGS, String.class, word.getId());
-        word.setReadings(readings);
+        pullList(word, READING_TABLE, word::setReadings);
+
     }
 
     private void pullEnglish(Word word) {
-        final String SELECT_DEFINITIONS = "SELECT definition FROM definition " +
-                "WHERE japaneseword_jpId = ?";
-        List<String> definitions = this.jdbc.queryForList(SELECT_DEFINITIONS, String.class, word.getId());
-        word.setEnglish(definitions);
+        pullList(word, DEFINITION_TABLE, word::setEnglish);
     }
 
     private void pullTags(Word word) {
-        final String SELECT_TAGS = "SELECT tag FROM tag " +
+        pullList(word, TAG_TABLE, word::setTags);
+
+    }
+
+    private void pullList(Word word, String table, Consumer<List<String>> set) {
+        String SELECT_ITEM = "SELECT " + table + " FROM " + table + " " +
                 "WHERE japaneseword_jpId = ?";
 
-        List<String> tags = this.jdbc.queryForList(SELECT_TAGS, String.class, word.getId());
-        word.setTags(tags);
+        List<String> tags = this.jdbc.queryForList(SELECT_ITEM, String.class, word.getId());
+        set.accept(tags);
     }
 
 }
