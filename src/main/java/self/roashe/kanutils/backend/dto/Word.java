@@ -9,6 +9,7 @@ public class Word {
     private List<String> english;
     private List<String> readings;
     private int id;
+    private List<String> tags;
 
     public String getJapanese() {
         return japanese;
@@ -63,5 +64,13 @@ public class Word {
     @Override
     public int hashCode() {
         return Objects.hash(this.japanese, Set.copyOf(this.english), Set.copyOf(this.readings));
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 }

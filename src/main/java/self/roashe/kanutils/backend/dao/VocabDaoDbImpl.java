@@ -105,4 +105,8 @@ public class VocabDaoDbImpl implements VocabDao {
         word.setEnglish(definitions);
     }
 
+    private void pullTags(Word word) {
+
+    }
+
 }
