@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -76,7 +77,12 @@ public class SeleniumUtil {
 
             Wait<WebDriver> waitForText = new WebDriverWait(driver, 10);
             waitForText.until(d -> !d.findElement(By.id("dcontent")).getAttribute("value").isEmpty());
-            vocab.append(driver.findElement(By.id("dcontent")).getAttribute("value")).append("\n");
+            String wordList = driver.findElement(By.id("dcontent")).getAttribute("value");
+            String setName = driver.findElement(By.cssSelector("#currentVal_Title")).getText();
+            String toAdd = Arrays.stream(wordList.split("\n"))
+                    .map(s -> s + " TAGS<" + setName + ">")
+                    .collect(Collectors.joining("\n"));
+            vocab.append(toAdd).append("\n");
 
         }
         driver.quit();

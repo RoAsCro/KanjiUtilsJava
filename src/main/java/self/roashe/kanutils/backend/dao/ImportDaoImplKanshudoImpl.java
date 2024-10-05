@@ -33,6 +33,10 @@ public class ImportDaoImplKanshudoImpl implements ImportDao {
 
     private Word stringToWord(String entry){
         Word word = new Word();
+        String[] entryParts = entry.split("TAGS<");
+        entry = entryParts[0];
+        String tags = entryParts[1];
+        word.setTags(Arrays.stream(tags.substring(0, tags.length() - 1).split(",")).collect(Collectors.toList()));
 
         int endOfVocabWord = entry.indexOf("\t");
         String vocabWord = entry.substring(0, endOfVocabWord);
@@ -45,8 +49,7 @@ public class ImportDaoImplKanshudoImpl implements ImportDao {
                 .collect(Collectors.toList()));
 
         String english = back.replaceAll(JapaneseLanguageUtil.JAPANESE_REGEX, "");
-        word.setEnglish(Arrays.stream(english.split("; ")).collect(Collectors.toList()));
-
+        word.setEnglish(Arrays.stream(english.split("; ")).map(String::strip).collect(Collectors.toList()));
         return word;
     }
 

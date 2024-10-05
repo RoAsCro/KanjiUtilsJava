@@ -5,11 +5,11 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import self.roashe.kanutils.backend.dao.ImportDao;
 import self.roashe.kanutils.backend.dao.VocabDao;
-import self.roashe.kanutils.backend.dto.Kanji;
 import self.roashe.kanutils.backend.dto.Word;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class VocabServiceImpl implements VocabService {
@@ -35,8 +35,11 @@ public class VocabServiceImpl implements VocabService {
     }
 
     @Override
-    public List<Kanji> getAllKanji() {
-        return List.of();
+    public List<Word> getByTags(List<String> tags) {
+        return getAllVocab().stream()
+                .filter(w -> w.getTags()
+                        .stream().anyMatch(tags::contains))
+                .collect(Collectors.toList());
     }
 
     @Override
