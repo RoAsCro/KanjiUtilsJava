@@ -26,6 +26,7 @@ class VocabDaoDbImplTest {
     void setUp() {
         jdbc.update("DELETE FROM definition");
         jdbc.update("DELETE FROM reading");
+        jdbc.update("DELETE FROM tag");
         jdbc.update("DELETE FROM japaneseword");
 
         jdbc.update("INSERT INTO japaneseword(word) " +
@@ -38,6 +39,9 @@ class VocabDaoDbImplTest {
                 wordId);
         jdbc.update("INSERT INTO reading(japaneseword_jpId, reading) " +
                         "values(?, 'みず')",
+                wordId);
+        jdbc.update("INSERT INTO tag(tag, japaneseword_jpId) " +
+                "values('test', ?)",
                 wordId);
 
 
@@ -76,6 +80,14 @@ class VocabDaoDbImplTest {
         Assertions.assertEquals("水", word.getJapanese());
         Assertions.assertEquals(List.of("みず"), word.getReadings());
         Assertions.assertEquals(List.of("water"), word.getEnglish());
+        Assertions.assertEquals(List.of("test"), word.getTags());
+    }
+
+    @Test
+    void testGetNoTags(){
+        Word word = dao.getWord("叫ぶ");
+        Assertions.assertNotNull(word);
+        Assertions.assertEquals(List.of(), word.getTags());
     }
 
     @Test
@@ -110,8 +122,6 @@ class VocabDaoDbImplTest {
         word.setEnglish(List.of("Right and wrong", "Very much"));
         dao.addWord(word);
         System.out.println(word.hashCode());
-
-
 
     }
 
