@@ -99,7 +99,7 @@
       <recent name="self.roashe.kanutils.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.backend in KanUtils">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.Main" />
       <module name="KanUtils" />
@@ -124,22 +124,6 @@
       <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VocabServiceImplTest.testGetByTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KanUtils" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
-      <option name="METHOD_NAME" value="testGetByTags" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,13 +160,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="backend in KanUtils" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KanUtils" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.backend in KanUtils" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent" />
         <item itemvalue="JUnit.VocabServiceImplTest" />
         <item itemvalue="JUnit.VocabServiceImplTest.testGetByTagsMultipleOneNotPresent" />
-        <item itemvalue="JUnit.VocabServiceImplTest.testGetByTags" />
       </list>
     </recent_temporary>
   </component>
