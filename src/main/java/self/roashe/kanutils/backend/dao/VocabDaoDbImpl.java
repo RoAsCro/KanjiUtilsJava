@@ -60,6 +60,7 @@ public class VocabDaoDbImpl implements VocabDao {
         word.setId(id);
         addReadings(word);
         addDefinitions(word);
+        addTags(word);
     }
 
     public void clearLocalData() {
@@ -67,26 +68,31 @@ public class VocabDaoDbImpl implements VocabDao {
     }
 
     private void addDefinitions(Word word) {
-        final String ADD_WORD = "INSERT INTO definition(definition, japaneseword_jpId) " +
-                "values(?, ?)";
-        int id = word.getId();
-        for (String definition : word.getEnglish()) {
-            this.jdbc.update(ADD_WORD,
-                    definition,
-                    id);
-        }
+        addList(word, word.getEnglish(), "definition");
     }
 
     private void addReadings(Word word) {
-        final String ADD_WORD = "INSERT INTO reading(reading, japaneseword_jpId) " +
-                "values(?, ?)";
+        addList(word, word.getReadings(), "reading");
+
+    }
+
+    private void addTags(Word word) {
+        addList(word, word.getTags(), "tag");
+    }
+
+    private void addList(Word word, List<String> toAdd, String table) {
+        if (toAdd == null) {
+            return;
+        }
+        String ADD_ITEM = "INSERT INTO " +
+            table + "(" + table + ", japaneseword_jpId) " +
+                    "values(?, ?)";
         int id = word.getId();
-        for (String reading : word.getReadings()) {
-            this.jdbc.update(ADD_WORD,
-                    reading,
+        for (String s : toAdd) {
+            this.jdbc.update(ADD_ITEM,
+                    s,
                     id);
         }
-
     }
 
     private void pullAll(Word word) {
