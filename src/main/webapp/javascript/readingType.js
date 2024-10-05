@@ -9,12 +9,14 @@ var failed = [];
 var failedWord = false;
 
 var repeat = true;
+var params = new URLSearchParams();
 
 // JQuery DOM objects
 var englishLanding, japaneseLanding, readingLanding, score;
 
 const API = "http://127.0.0.1:8080/api/";
 var APISuffix = "vocab/vocab";
+const APIQ = "?";
 
 // Load words from backend
 async function load() {
@@ -24,7 +26,7 @@ async function load() {
         return;
     }
     
-    await fetch(API+APISuffix, {
+    await fetch(API+APISuffix+APIQ+params.toString(), {
         mode: 'cors',
         headers: {
         'Access-Control-Allow-Origin':'*'
@@ -64,6 +66,7 @@ function sleep(ms) {
 
 // Get a new word and set values in the document
 function getWord() {
+    console.log(params.get("tags"));
     console.log(repeat);
     console.log(words.length);
 

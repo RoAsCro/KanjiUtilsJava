@@ -100,6 +100,9 @@
         <c:if test="${useKanji}">
         APISuffix = "kanji/all/aswords"
         </c:if>
+        <c:if test='${not empty tags}'>
+        params.set("tags", "${tags}");
+        </c:if>
         englishLanding = $("#englishLanding");
         japaneseLanding = $("#wordLanding");
         readingLanding =  $("#readingLanding");

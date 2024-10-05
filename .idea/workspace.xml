@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="83089241-5286-483e-839b-a96bf14d121f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/ImportDaoImplKanshudoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/ImportDaoImplKanshudoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/web_utilities/SeleniumUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/web_utilities/SeleniumUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/VocabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/VocabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/typing-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/typing-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/javascript/readingType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/javascript/readingType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jsp/typing-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jsp/typing-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +43,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.JSPMain.executor": "Run",
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "JUnit.All in KanUtils.executor": "Run",
     "JUnit.GeneralTest.testCollections.executor": "Run",
@@ -63,6 +66,10 @@
     "JUnit.VocabDaoDbImplTest.testAddExists.executor": "Run",
     "JUnit.VocabDaoDbImplTest.testAddWithTags.executor": "Run",
     "JUnit.VocabDaoDbImplTest.testGetAll.executor": "Run",
+    "JUnit.VocabServiceImplTest.executor": "Run",
+    "JUnit.VocabServiceImplTest.testGetByTags.executor": "Run",
+    "JUnit.VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent.executor": "Run",
+    "JUnit.VocabServiceImplTest.testGetByTagsMultipleOneNotPresent.executor": "Run",
     "JUnit.backend in KanUtils.executor": "Run",
     "JUnit.java in KanUtils.executor": "Run",
     "JUnit.self.roashe.kanutils.backend in KanUtils.executor": "Run",
@@ -106,57 +113,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VocabDaoDbImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VocabServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KanUtils" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
+          <option name="PATTERN" value="self.roashe.kanutils.backend.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.VocabDaoDbImplTest" />
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VocabDaoDbImplTest.testAddExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VocabServiceImplTest.testGetByTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KanUtils" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
+          <option name="PATTERN" value="self.roashe.kanutils.backend.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.VocabDaoDbImplTest" />
-      <option name="METHOD_NAME" value="testAddExists" />
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
+      <option name="METHOD_NAME" value="testGetByTags" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VocabDaoDbImplTest.testAddWithTags" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KanUtils" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
+          <option name="PATTERN" value="self.roashe.kanutils.backend.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.VocabDaoDbImplTest" />
-      <option name="METHOD_NAME" value="testAddWithTags" />
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
+      <option name="METHOD_NAME" value="testGetByTagsMultipleMultiplePresentInDifferent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in KanUtils" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VocabServiceImplTest.testGetByTagsMultipleOneNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KanUtils" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="self.roashe.kanutils.backend.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
+      <option name="METHOD_NAME" value="testGetByTagsMultipleOneNotPresent" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,10 +179,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.VocabDaoDbImplTest.testAddExists" />
-        <item itemvalue="JUnit.VocabDaoDbImplTest" />
-        <item itemvalue="JUnit.java in KanUtils" />
-        <item itemvalue="JUnit.VocabDaoDbImplTest.testAddWithTags" />
+        <item itemvalue="JUnit.VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent" />
+        <item itemvalue="JUnit.VocabServiceImplTest" />
+        <item itemvalue="JUnit.VocabServiceImplTest.testGetByTagsMultipleOneNotPresent" />
+        <item itemvalue="JUnit.VocabServiceImplTest.testGetByTags" />
       </list>
     </recent_temporary>
   </component>

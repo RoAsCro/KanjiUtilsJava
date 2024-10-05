@@ -38,7 +38,8 @@ public class VocabServiceImpl implements VocabService {
     public List<Word> getByTags(List<String> tags) {
         return getAllVocab().stream()
                 .filter(w -> w.getTags()
-                        .stream().anyMatch(tags::contains))
+                        .stream()
+                        .anyMatch(tags::contains))
                 .collect(Collectors.toList());
     }
 

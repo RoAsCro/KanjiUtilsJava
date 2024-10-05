@@ -6,6 +6,7 @@ import self.roashe.kanutils.backend.dto.Word;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
 import self.roashe.kanutils.backend.service.VocabService;
 
+import java.util.Arrays;
 import java.util.List;
 
 @CrossOrigin
@@ -21,7 +22,10 @@ public class VocabController {
     }
 
     @GetMapping("/vocab")
-    public List<Word> getWords(){
+    public List<Word> getWords(@RequestParam(required = false) String[] tags){
+        if (tags != null && tags.length != 0) {
+            return this.vocabService.getByTags(Arrays.asList(tags));
+        }
         return this.vocabService.getAllVocab();
     }
 
@@ -33,5 +37,6 @@ public class VocabController {
             //TODO
         }
     }
+
 
 }
