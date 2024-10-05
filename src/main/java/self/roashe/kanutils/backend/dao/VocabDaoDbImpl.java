@@ -24,8 +24,7 @@ public class VocabDaoDbImpl implements VocabDao {
             List<Word> words = this.jdbc.query(SELECT_ALL_WORDS, new WordMapper());
 
             for (Word word : words) {
-                pullReadings(word);
-                pullEnglish(word);
+                pullAll(word);
             }
             this.wordSet.addAll(words);
         }
@@ -40,8 +39,7 @@ public class VocabDaoDbImpl implements VocabDao {
 
         try {
             Word word = this.jdbc.queryForObject(SELECT_WORD, new WordMapper(), jpWord);
-            pullReadings(word);
-            pullEnglish(word);
+            pullAll(word);
             return word;
         } catch (DataAccessException e) {
             return null;
@@ -91,6 +89,12 @@ public class VocabDaoDbImpl implements VocabDao {
 
     }
 
+    private void pullAll(Word word) {
+        pullReadings(word);
+        pullEnglish(word);
+        pullTags(word);
+    }
+
     private void pullReadings(Word word) {
         final String SELECT_READINGS = "SELECT reading FROM reading " +
                 "WHERE japaneseword_jpId = ?";
@@ -106,7 +110,11 @@ public class VocabDaoDbImpl implements VocabDao {
     }
 
     private void pullTags(Word word) {
+        final String SELECT_TAGS = "SELECT tag FROM tag " +
+                "WHERE japaneseword_jpId = ?";
 
+        List<String> tags = this.jdbc.queryForList(SELECT_TAGS, String.class, word.getId());
+        word.setTags(tags);
     }
 
 }
