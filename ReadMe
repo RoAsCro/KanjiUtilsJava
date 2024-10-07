@@ -1,6 +1,6 @@
 Fullstack project, series of utilities for my personal use to to assist with learning Japanese
 
 Backend: Java - Spring Boot - MySql - Model, View, Controller Design Pattern
-Frontend: HTML - CSS - JavaScript - JQuery
+Frontend: Java Server Pages - HTML - CSS - JavaScript - JQuery
 
 Testing: JUnit - Jest

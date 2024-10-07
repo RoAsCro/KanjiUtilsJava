@@ -43,7 +43,22 @@ public class VocabDaoDbImpl implements VocabDao {
                 "WHERE word = ?";
 
         try {
+            // TODO: this can easily pull multiple words
             Word word = this.jdbc.queryForObject(SELECT_WORD, new WordMapper(), jpWord);
+            pullAll(word);
+            return word;
+        } catch (DataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public Word getWordById(int id) {
+        final String SELECT_WORD = "SELECT * FROM japaneseword " +
+                "WHERE jpId = ?";
+
+        try {
+            Word word = this.jdbc.queryForObject(SELECT_WORD, new WordMapper(), id);
             pullAll(word);
             return word;
         } catch (DataAccessException e) {
@@ -66,6 +81,22 @@ public class VocabDaoDbImpl implements VocabDao {
         addReadings(word);
         addDefinitions(word);
         addTags(word);
+    }
+
+    @Override
+    public void updateWord(Word word) {
+        Word toUpdate = getWordById(word.getId());
+        deleteWord(word.getId());
+        addWord(word);
+    }
+
+    @Override
+    public void deleteWord(int id) {
+        final String DELETE_TAGS = "DELETE FROM tag WHERE japaneseword_jpId = ?";
+        final String DELETE_KANJI_ASSOCIATION = "DELETE FROM kanji WHERE japaneseword_jpId = ?";
+        final String DELETE_DEFINITION = "DELETE FROM definition WHERE japaneseword_jpId = ?";
+        final String DELETE_READING = "DELETE FROM reading WHERE japaneseword_jpId = ?";
+        final String DELETE_JAPANESE = "DELETE FROM japanese WHERE jpId = ?";
     }
 
     public void clearLocalData() {

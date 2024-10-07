@@ -8,10 +8,15 @@ public interface VocabDao {
     List<Word> getWords();
     Word getWord(String jpWord);
 
+    Word getWordById(int id);
+
     /**
      * Adding a word that already exists should not update tags
-     * TODO - add an edit function
      * @param word the word to be added
      */
     void addWord(Word word);
+
+    void updateWord(Word word);
+
+    void deleteWord(int id);
 }

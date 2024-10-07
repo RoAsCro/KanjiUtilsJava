@@ -11,4 +11,11 @@ public interface VocabService {
     List<Word> getAllVocab();
     List<Word> getByTags(List<String> tags);
     void extractKanjiFromVocab() throws KanjiIOException;
+
+    /**
+     * <p>Does not accept:</p>
+     * <li>[.,<>] for tags</li>
+     * @param word the word being updated
+     */
+    void update(Word word);
 }

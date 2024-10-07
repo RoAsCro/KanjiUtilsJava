@@ -8,6 +8,7 @@ import self.roashe.kanutils.backend.service.VocabService;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -19,6 +20,11 @@ public class VocabController {
     @PostMapping("/import")
     public void importWords(@RequestParam String username, @RequestParam String password) {
         this.vocabService.importAndStore(username, password);
+    }
+
+    @PutMapping("/tagkanawords")
+    public void tagKana(){
+
     }
 
     @GetMapping("/vocab")

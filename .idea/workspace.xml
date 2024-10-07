@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83089241-5286-483e-839b-a96bf14d121f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/KanUtils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/KanUtils.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadMe" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/VocabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/VocabController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/VocabDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/VocabDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/VocabDaoDbImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/VocabDaoDbImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/TestBean.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/typing-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/typing-page.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/javascript/readingType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/javascript/readingType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jsp/typing-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jsp/typing-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/classes/TestBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jsp/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jsp/type copy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jsp/type.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jsp/typing-page.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jsp/view-words.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +37,7 @@
         <option value="Python Script" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -40,58 +53,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JSPMain.executor": "Run",
-    "Application.Main.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.All in KanUtils.executor": "Run",
-    "JUnit.GeneralTest.testCollections.executor": "Run",
-    "JUnit.GeneralTest.testTime.executor": "Run",
-    "JUnit.ImportDaoKanshudoImplTest and 5 more.executor": "Run",
-    "JUnit.ImportDaoKanshudoImplTest.executor": "Run",
-    "JUnit.KanjiApiUtilTest.executor": "Run",
-    "JUnit.KanjiApiUtilTest.testGetKanjiFromFile.executor": "Run",
-    "JUnit.KanjiApiUtilTest.testGetKanjiFromFileNonKanji.executor": "Run",
-    "JUnit.KanjiApiUtilTest.testGetKanjiFromFileVSAPI.executor": "Run",
-    "JUnit.KanjiDaoDbImplTest.executor": "Run",
-    "JUnit.KanjiDaoDbImplTest.testAddDoesNotExist.executor": "Run",
-    "JUnit.KanjiDaoDbImplTest.testAddExists.executor": "Debug",
-    "JUnit.KanjiDaoDbImplTest.testDelte.executor": "Run",
-    "JUnit.KanjiDaoDbImplTest.testExport.executor": "Run",
-    "JUnit.KanjiServiceImplTest.executor": "Run",
-    "JUnit.KanjiServiceImplTest.testAddKanjiMixedText.executor": "Run",
-    "JUnit.VocabDaoDbImplTest.executor": "Run",
-    "JUnit.VocabDaoDbImplTest.testAdd.executor": "Run",
-    "JUnit.VocabDaoDbImplTest.testAddExists.executor": "Run",
-    "JUnit.VocabDaoDbImplTest.testAddWithTags.executor": "Run",
-    "JUnit.VocabDaoDbImplTest.testGetAll.executor": "Run",
-    "JUnit.VocabServiceImplTest.executor": "Run",
-    "JUnit.VocabServiceImplTest.testGetByTags.executor": "Run",
-    "JUnit.VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent.executor": "Run",
-    "JUnit.VocabServiceImplTest.testGetByTagsMultipleOneNotPresent.executor": "Run",
-    "JUnit.backend in KanUtils.executor": "Run",
-    "JUnit.java in KanUtils.executor": "Run",
-    "JUnit.self.roashe.kanutils.backend in KanUtils.executor": "Run",
-    "JUnit.self.roashe.kanutils.backend.dao in KanUtils.executor": "Debug",
-    "Maven.KanUtils [clean].executor": "Run",
-    "Maven.KanUtils [compile].executor": "Run",
-    "Maven.KanUtils [package].executor": "Run",
-    "Maven.KanUtils [test].executor": "Run",
-    "Maven.KanUtils [validate].executor": "Run",
-    "Maven.KanUtils [verify].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "jsp",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rolly/OneDrive/Documents/C387repos/KanUtils/src/main/webapp/WEB-INF",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JSPMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.All in KanUtils.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GeneralTest.testCollections.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GeneralTest.testTime.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ImportDaoKanshudoImplTest and 5 more.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ImportDaoKanshudoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiApiUtilTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiApiUtilTest.testGetKanjiFromFile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiApiUtilTest.testGetKanjiFromFileNonKanji.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiApiUtilTest.testGetKanjiFromFileVSAPI.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiDaoDbImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiDaoDbImplTest.testAddDoesNotExist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiDaoDbImplTest.testAddExists.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KanjiDaoDbImplTest.testDelte.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiDaoDbImplTest.testExport.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KanjiServiceImplTest.testAddKanjiMixedText.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabDaoDbImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabDaoDbImplTest.testAdd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabDaoDbImplTest.testAddExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabDaoDbImplTest.testAddWithTags.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabDaoDbImplTest.testGetAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabServiceImplTest.testGetByTags.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VocabServiceImplTest.testGetByTagsMultipleOneNotPresent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.backend in KanUtils.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in KanUtils.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.self.roashe.kanutils.backend in KanUtils.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.self.roashe.kanutils.backend.dao in KanUtils.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.KanUtils [clean,validate,compile,test,package,verify,install,site,deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [clean,validate,compile,test,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [clean,validate,compile,test...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [clean,validate,compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [install,site,deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KanUtils [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rolly/OneDrive/Documents/C387repos/KanUtils/src/main/webapp/WEB-INF/lib&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\webapp\WEB-INF\lib" />
       <recent name="C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\resources" />
     </key>
@@ -99,7 +123,7 @@
       <recent name="self.roashe.kanutils.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.backend in KanUtils">
+  <component name="RunManager" selected="JUnit.VocabDaoDbImplTest.testDelete">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.Main" />
       <module name="KanUtils" />
@@ -113,68 +137,133 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VocabServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VocabDaoDbImplTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KanUtils" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.service.*" />
+          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KanUtils" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
-      <option name="METHOD_NAME" value="testGetByTagsMultipleMultiplePresentInDifferent" />
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.VocabDaoDbImplTest" />
+      <option name="METHOD_NAME" value="testDelete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VocabServiceImplTest.testGetByTagsMultipleOneNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KanUtils" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="self.roashe.kanutils.backend.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.service.VocabServiceImplTest" />
-      <option name="METHOD_NAME" value="testGetByTagsMultipleOneNotPresent" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="KanUtils [clean,validate,compile]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="validate" />
+                <option value="compile" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
-    <configuration name="backend in KanUtils" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KanUtils" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="KanUtils [clean,validate,compile,test,package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="validate" />
+                <option value="compile" />
+                <option value="test" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="KanUtils [clean,validate,compile,test,package,verify,install,site,deploy]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="validate" />
+                <option value="compile" />
+                <option value="test" />
+                <option value="package" />
+                <option value="verify" />
+                <option value="install" />
+                <option value="site" />
+                <option value="deploy" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.backend in KanUtils" />
+        <item itemvalue="JUnit.VocabDaoDbImplTest.testDelete" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent" />
-        <item itemvalue="JUnit.VocabServiceImplTest" />
-        <item itemvalue="JUnit.VocabServiceImplTest.testGetByTagsMultipleOneNotPresent" />
+        <item itemvalue="Maven.KanUtils [clean,validate,compile,test,package]" />
+        <item itemvalue="Maven.KanUtils [clean,validate,compile]" />
+        <item itemvalue="Maven.KanUtils [clean,validate,compile,test,package,verify,install,site,deploy]" />
       </list>
     </recent_temporary>
   </component>
@@ -189,5 +278,56 @@
       <workItem from="1726595748830" duration="17000" />
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/FactoryFinder.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/FactoryFinder.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/FactoryFinder.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/FactoryFinder.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/FactoryFinder.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/FactoryFinder.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/FactoryFinder.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/FactoryFinder.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/3.0.3/jakarta.el-api-3.0.3-sources.jar!/javax/el/ExpressionFactory.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

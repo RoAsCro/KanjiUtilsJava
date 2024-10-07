@@ -144,4 +144,13 @@ class VocabDaoDbImplTest {
         Assertions.assertEquals(List.of(), retrievedWord.getTags());
     }
 
+    @Test
+    void testDelete(){
+        Word word = dao.getWord("水");
+        Assertions.assertEquals(2, dao.getWords().size());
+        dao.deleteWord(word.getId());
+        Assertions.assertEquals(1, dao.getWords().size());
+        Assertions.assertNull(dao.getWord("水"));
+    }
+
 }

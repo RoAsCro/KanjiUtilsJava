@@ -72,16 +72,14 @@ function getWord() {
 
     if (failedWord) {
         failed.splice(failed.indexOf(currentWord), 1);
-        failedWord = false;
     }
 
+    
     let choice = Math.floor(Math.random() * 10);
 
-    let usingFailed = choice > 7 && failed.length > 0;
+    let usingFailed = words.length == 0 || (choice > 8 && failed.length > 0);
 
-    if (usingFailed) {
-        failedWord = true;
-    }
+    failedWord = usingFailed
     let wordSet = usingFailed ? failed : words;
 
     let ref = Math.floor(Math.random() * wordSet.length);
@@ -91,11 +89,12 @@ function getWord() {
     convertedReadings = currentWord.readings.map(k => wanakana.toHiragana(k)).map(k => k.replaceAll("。", ""));
 
     console.log(convertedReadings);
-    englishLanding.html((english.slice(0, 3) + "").replaceAll(",", ", "));
+    englishLanding.html((english + "").replaceAll(",", ", "));
     japaneseLanding.html(currentWord.japanese);
     readingLanding.html((currentWord.readings + "").replaceAll(",", ", "));
     score.html(answers + "/" + questionCount);
     if (wanakana.isKana(currentWord.japanese)) {
+        englishLanding.show();
         japaneseLanding.hide();
     }
 }
@@ -121,7 +120,7 @@ function pass() {
     questionCount += 1;
     failed.push(currentWord);
     if (!repeat) {
-        words.splice(words.indexOf(currentWord));
+        words.splice(words.indexOf(currentWord), 1);
     }
 }
 

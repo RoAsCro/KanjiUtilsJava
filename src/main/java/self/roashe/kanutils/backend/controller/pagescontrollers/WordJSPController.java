@@ -34,30 +34,36 @@ public class WordJSPController  {
     @GetMapping("/readinggame")
     public String readingGame(Model  model,
                               @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
-                              @RequestParam(required = false) String[] tags) {
-        return typing(model, false, repeat, false, "Readings Test", tags);
+                              @RequestParam(required = false) String[] tags,
+                              @RequestParam(defaultValue = "false") boolean hideEnglish,
+                              @RequestParam(defaultValue = "false") boolean hideKanji) {
+        return typing(model, false, repeat, false, hideEnglish,"Readings Test", tags);
     }
 
     @GetMapping("/wordgame")
     public String wordGame(Model  model,
                            @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
                            @RequestParam(required = false) String[] tags) {
-        return typing(model, false, repeat, true, "English to Japanese Test", tags);
+        return typing(model, false, repeat, true, false, "English to Japanese Test", tags);
     }
 
     @GetMapping("/kanjireading")
     public String kanjiReadingGame(Model  model,
-                              @RequestParam(defaultValue = "true", name = "repeat") boolean repeat) {
-        return typing(model, true, repeat, false, "Kanji Readings Test", null);
+                              @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
+                                   @RequestParam(defaultValue = "false") boolean hideEnglish,
+                                   @RequestParam(defaultValue = "false") boolean hideKanji) {
+        return typing(model, true, repeat, false, hideEnglish, "Kanji Readings Test", null);
     }
 
-    private String typing(Model model, boolean useKanji, boolean repeat, boolean showWord, String title, String[] tags) {
+    private String typing(Model model, boolean useKanji, boolean repeat, boolean hideWord, boolean hideEnglish, String title, String[] tags) {
+        // TODO Convert to String/Object map?
         if (tags != null) {
             model.addAttribute("tags", String.join(",", tags));
         }
+        model.addAttribute("hideEnglish", hideEnglish);
         model.addAttribute("repeat", repeat);
         model.addAttribute("title", title);
-        model.addAttribute("showWord", showWord);
+        model.addAttribute("hideWord", hideWord);
         model.addAttribute("useKanji", useKanji);
         return "typing-page";
     }

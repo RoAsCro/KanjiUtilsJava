@@ -3,10 +3,12 @@ package self.roashe.kanutils.backend.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import self.roashe.kanutils.backend.JapaneseLanguageUtil;
 import self.roashe.kanutils.backend.dao.ImportDao;
 import self.roashe.kanutils.backend.dao.VocabDao;
 import self.roashe.kanutils.backend.dto.Word;
 import self.roashe.kanutils.backend.service.IOExceptions.KanjiIOException;
+import self.roashe.kanutils.backend.service.IOExceptions.VocabIOException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -60,4 +62,33 @@ public class VocabServiceImpl implements VocabService {
         }
         this.kanjiService.export();
     }
+
+    @Override
+    public void update(Word word) {
+        validateWord(word);
+        this.vocabDao.updateWord(word);
+    }
+
+    private boolean validateWord(Word word) {
+        String jp = word.getJapanese();
+        if (jp == null || jp.isEmpty()){
+            throw new VocabIOException("Word needs Japanese.");
+        }
+        List<String> en = word.getEnglish();
+        if (en == null || en.isEmpty()) {
+            throw new VocabIOException("Word needs meanings.");
+        }
+        List<String> readings = word.getReadings();
+        if (readings == null || readings.isEmpty()) {
+            throw new VocabIOException("Word needs readings.");
+        }
+        List<String> tags = word.getTags();
+        if (tags != null && !tags.isEmpty()) {
+            if (tags.stream().anyMatch(t -> t.contains("[,.<>]"))){
+                throw new VocabIOException("Tags may not contain any of the following characters:,.<>");
+            }
+        }
+        return true;
+    }
+
 }
