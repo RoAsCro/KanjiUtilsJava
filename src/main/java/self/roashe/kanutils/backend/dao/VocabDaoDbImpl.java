@@ -85,18 +85,24 @@ public class VocabDaoDbImpl implements VocabDao {
 
     @Override
     public void updateWord(Word word) {
-        Word toUpdate = getWordById(word.getId());
         deleteWord(word.getId());
         addWord(word);
     }
 
     @Override
     public void deleteWord(int id) {
+        Word word = getWordById(id);
         final String DELETE_TAGS = "DELETE FROM tag WHERE japaneseword_jpId = ?";
-        final String DELETE_KANJI_ASSOCIATION = "DELETE FROM kanji WHERE japaneseword_jpId = ?";
+        this.jdbc.update(DELETE_TAGS, id);
+        final String DELETE_KANJI_ASSOCIATION = "DELETE FROM word_has_kanji WHERE japaneseword_jpId = ?";
+        this.jdbc.update(DELETE_KANJI_ASSOCIATION, id);
         final String DELETE_DEFINITION = "DELETE FROM definition WHERE japaneseword_jpId = ?";
+        this.jdbc.update(DELETE_DEFINITION, id);
         final String DELETE_READING = "DELETE FROM reading WHERE japaneseword_jpId = ?";
-        final String DELETE_JAPANESE = "DELETE FROM japanese WHERE jpId = ?";
+        this.jdbc.update(DELETE_READING, id);
+        final String DELETE_JAPANESE = "DELETE FROM japaneseword WHERE jpId = ?";
+        this.jdbc.update(DELETE_JAPANESE, id);
+        this.wordSet.remove(word);
     }
 
     public void clearLocalData() {

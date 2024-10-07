@@ -150,6 +150,8 @@ class VocabDaoDbImplTest {
         Assertions.assertEquals(2, dao.getWords().size());
         dao.deleteWord(word.getId());
         Assertions.assertEquals(1, dao.getWords().size());
+        dao.clearLocalData();
+        Assertions.assertEquals(1, dao.getWords().size());
         Assertions.assertNull(dao.getWord("水"));
     }
 
