@@ -87,6 +87,14 @@ public class VocabDaoDbImpl implements VocabDao {
     public void updateWord(Word word) {
         deleteWord(word.getId());
         addWord(word);
+        if (!this.wordSet.isEmpty()) {
+            Word existingWord = this.wordSet.stream()
+                    .filter(w -> w.getId() == word.getId())
+                    .findAny()
+                    .orElse(null);
+            this.wordSet.remove(existingWord);
+            this.wordSet.add(word);
+        }
     }
 
     @Override
