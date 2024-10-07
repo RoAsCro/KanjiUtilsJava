@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83089241-5286-483e-839b-a96bf14d121f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/VocabDaoDbImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/dao/VocabDaoDbImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/VocabDaoDbImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/VocabDaoDbImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +106,7 @@
       <recent name="self.roashe.kanutils.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.VocabDaoDbImplTest.testDeleteDoesNotExist">
+  <component name="RunManager" selected="JUnit.VocabDaoDbImplTest.testUpdate">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.Main" />
       <module name="KanUtils" />
@@ -152,37 +152,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KanUtils [clean,validate,compile]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="cmdOptions" />
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="validate" />
-                <option value="compile" />
-              </list>
-            </option>
-            <option name="multimoduleDir" />
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="projectsCmdOptionValues">
-              <list />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
+    <configuration name="VocabDaoDbImplTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KanUtils" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="self.roashe.kanutils.backend.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="self.roashe.kanutils.backend.dao" />
+      <option name="MAIN_CLASS_NAME" value="self.roashe.kanutils.backend.dao.VocabDaoDbImplTest" />
+      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="KanUtils [clean,validate,compile,test,package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
@@ -220,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VocabDaoDbImplTest.testUpdate" />
         <item itemvalue="JUnit.VocabDaoDbImplTest.testDeleteDoesNotExist" />
         <item itemvalue="JUnit.VocabDaoDbImplTest.testDelete" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Maven.KanUtils [clean,validate,compile,test,package]" />
-        <item itemvalue="Maven.KanUtils [clean,validate,compile]" />
       </list>
     </recent_temporary>
   </component>

@@ -162,4 +162,29 @@ class VocabDaoDbImplTest {
         Assertions.assertEquals(2, dao.getWords().size());
     }
 
+    @Test
+    void testUpdateData() {
+        Word word = dao.getWord("水");
+        Word newWord = new Word();
+        newWord.setEnglish(List.copyOf(word.getEnglish()));
+        newWord.setReadings(List.copyOf(word.getReadings()));
+        newWord.setTags(List.copyOf(word.getTags()));
+        newWord.setJapanese("調査");
+        newWord.setId(word.getId());
+        dao.updateWord(newWord);
+        Assertions.assertFalse(dao.getWords()
+                .stream()
+                .anyMatch(w -> w.getJapanese().equals(word.getJapanese())));
+        Assertions.assertTrue(dao.getWords()
+                .stream()
+                .anyMatch(w -> w.getJapanese().equals(newWord.getJapanese())));
+        dao.clearLocalData();
+        Assertions.assertFalse(dao.getWords()
+                .stream()
+                .anyMatch(w -> w.getJapanese().equals(word.getJapanese())));
+        Assertions.assertTrue(dao.getWords()
+                .stream()
+                .anyMatch(w -> w.getJapanese().equals(newWord.getJapanese())));
+    }
+
 }
