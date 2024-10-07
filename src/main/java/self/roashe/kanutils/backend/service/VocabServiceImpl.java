@@ -68,7 +68,7 @@ public class VocabServiceImpl implements VocabService {
     public void updateByCondition(Consumer<Word> update, Predicate<Word> condition) throws VocabIOException {
         List<Word> filteredList = getAllVocab().stream().filter(condition).collect(Collectors.toList());
         filteredList.forEach(update);
-        filteredList.forEach(this.vocabDao::updateWord);
+        filteredList.forEach(this::update);
     }
 
     @Override
