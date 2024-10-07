@@ -155,4 +155,11 @@ class VocabDaoDbImplTest {
         Assertions.assertNull(dao.getWord("水"));
     }
 
+    @Test
+    void testDeleteDoesNotExist() {
+        Assertions.assertEquals(2, dao.getWords().size());
+        dao.deleteWord(-1);
+        Assertions.assertEquals(2, dao.getWords().size());
+    }
+
 }
