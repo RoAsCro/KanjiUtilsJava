@@ -57,6 +57,7 @@
             // Rebind keys
             $(document).unbind("keypress.pass")
             $(document).bind("keypress.next", k => {if (k.which === 13){nextQuestion();}});
+            $(document).bind("keypress.fail", k => {if (k.which === 75){pass();nextQuestion();}});
         }
         function callPass(){
             answerGiven();
@@ -88,6 +89,7 @@
 
             // Rebind keys
             $(document).unbind("keypress.next")
+            $(document).unbind("keypress.fail")
             $(document).bind("keypress.pass", k => {if (k.which === 13){callPass();}});
         }
         
@@ -96,6 +98,15 @@
         const passButton = $("#pass");
         const textInput = $("#answerType")
 
+        reverseKana = <c:choose>
+                <c:when test='${reverseKana}'>
+                    true
+                </c:when>
+                <c:otherwise>
+                    false
+                </c:otherwise>
+            </c:choose>
+            ;
         repeat = <c:choose>
                 <c:when test='${repeat}'>
                     true

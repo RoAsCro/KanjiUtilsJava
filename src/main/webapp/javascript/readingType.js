@@ -9,6 +9,7 @@ var failed = [];
 var failedWord = false;
 
 var repeat = true;
+var reverseKana = true;
 var params = new URLSearchParams();
 
 // JQuery DOM objects
@@ -66,9 +67,12 @@ function sleep(ms) {
 
 // Get a new word and set values in the document
 function getWord() {
+    if (!repeat) {
+        words.splice(words.indexOf(currentWord), 1);
+    }
     console.log(params.get("tags"));
     console.log(repeat);
-    console.log(words.length);
+    console.log(words.length + ";" + failed.length);
 
     if (failedWord) {
         failed.splice(failed.indexOf(currentWord), 1);
@@ -93,7 +97,7 @@ function getWord() {
     japaneseLanding.html(currentWord.japanese);
     readingLanding.html((currentWord.readings + "").replaceAll(",", ", "));
     score.html(answers + "/" + questionCount);
-    if (wanakana.isKana(currentWord.japanese)) {
+    if (reverseKana && wanakana.isKana(currentWord.japanese)) {
         englishLanding.show();
         japaneseLanding.hide();
     }
@@ -105,11 +109,9 @@ function getAnswer(text){
     }
     text = wanakana.toHiragana(text);
     if (convertedReadings.indexOf(text) !== -1) {
+        // TODO - succeed on pressing enter instead
         questionCount += 1;
         answers += 1;
-        if (!repeat) {
-            words.splice(words.indexOf(currentWord), 1);
-        }
         return true;
     }
     
@@ -117,10 +119,9 @@ function getAnswer(text){
 }
 
 function pass() {
-    questionCount += 1;
-    failed.push(currentWord);
-    if (!repeat) {
-        words.splice(words.indexOf(currentWord), 1);
+    if (failed.indexOf(currentWord) == -1) {
+        questionCount += 1;
+        failed.push(currentWord);
     }
 }
 
