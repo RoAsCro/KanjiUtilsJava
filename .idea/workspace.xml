@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83089241-5286-483e-839b-a96bf14d121f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/VocabDaoDbImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/self/roashe/kanutils/backend/dao/VocabDaoDbImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/service/VocabServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +64,7 @@
     "JUnit.VocabDaoDbImplTest.testDelete.executor": "Run",
     "JUnit.VocabDaoDbImplTest.testDeleteDoesNotExist.executor": "Run",
     "JUnit.VocabDaoDbImplTest.testGetAll.executor": "Run",
+    "JUnit.VocabDaoDbImplTest.testUpdate.executor": "Run",
     "JUnit.VocabServiceImplTest.executor": "Run",
     "JUnit.VocabServiceImplTest.testGetByTags.executor": "Run",
     "JUnit.VocabServiceImplTest.testGetByTagsMultipleMultiplePresentInDifferent.executor": "Run",
