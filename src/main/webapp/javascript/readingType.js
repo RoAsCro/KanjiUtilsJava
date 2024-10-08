@@ -8,6 +8,8 @@ var convertedReadings = [];
 var failed = [];
 var failedWord = false;
 
+var questionRight = true;
+
 var repeat = true;
 var reverseKana = true;
 var params = new URLSearchParams();
@@ -67,9 +69,16 @@ function sleep(ms) {
 
 // Get a new word and set values in the document
 function getWord() {
-    if (!repeat) {
-        words.splice(words.indexOf(currentWord), 1);
+    if (currentWord != null) {
+        questionCount += 1;
+        if (questionRight) {
+            answers += 1;
+        }
+        if (!repeat) {
+            words.splice(words.indexOf(currentWord), 1);
+        }
     }
+    
     console.log(params.get("tags"));
     console.log(repeat);
     console.log(words.length + ";" + failed.length);
@@ -111,8 +120,7 @@ function getAnswer(text){
     text = wanakana.toHiragana(text);
     if (convertedReadings.indexOf(text) !== -1) {
         // TODO - succeed on pressing enter instead
-        questionCount += 1;
-        answers += 1;
+        questionRight = true;
         return true;
     }
     
@@ -121,7 +129,7 @@ function getAnswer(text){
 
 function pass() {
     if (failed.indexOf(currentWord) == -1) {
-        questionCount += 1;
+        questionRight = false;
         failed.push(currentWord);
     }
 }
