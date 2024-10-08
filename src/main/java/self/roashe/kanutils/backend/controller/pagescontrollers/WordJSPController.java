@@ -45,11 +45,27 @@ public class WordJSPController  {
     public String flashcards(Model model,
                              @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
                              @RequestParam(required = false) String[] tags,
-                             @RequestParam(defaultValue = "false") boolean hideEnglish,
+                             @RequestParam(defaultValue = "custom") String mode,
+                             @RequestParam(defaultValue = "true") boolean hideEnglish,
                              @RequestParam(defaultValue = "true") boolean hideReadings,
                              @RequestParam(defaultValue = "false") boolean hideWord,
                              @RequestParam(defaultValue = "true") boolean reverseKana) {
         tags = tags == null ? DEFAULT_TAGS : tags;
+        switch (mode) {
+            case "english":
+                hideEnglish = false;
+                hideWord = true;
+                break;
+            case "kana":
+                hideWord = true;
+                hideReadings = false;
+                reverseKana = false;
+                break;
+            case "kanji":
+                reverseKana = false;
+                break;
+            default:
+        }
         model.addAttribute("attributes",
                 new AttributesMap()
                         .setRepeat(repeat)
