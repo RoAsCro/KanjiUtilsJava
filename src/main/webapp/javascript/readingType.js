@@ -132,8 +132,8 @@ function getAnswer(text){
 }
 
 function pass() {
+    questionRight = false;
     if (failed.indexOf(currentWord) == -1) {
-        questionRight = false;
         failed.push(currentWord);
     }
 }
