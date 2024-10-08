@@ -29,7 +29,6 @@ public class WordJSPController  {
                               @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
                               @RequestParam(required = false) String[] tags,
                               @RequestParam(defaultValue = "false") boolean hideEnglish,
-                              @RequestParam(defaultValue = "true") boolean hideReadings,
                               @RequestParam(defaultValue = "true") boolean reverseKana) {
         tags = tags == null ? DEFAULT_TAGS : tags;
         model.addAttribute("attributes",
@@ -37,7 +36,6 @@ public class WordJSPController  {
                         .setRepeat(repeat)
                         .setTags(String.join(",", tags))
                         .setHideEnglish(hideEnglish)
-                        .setHideReadings(hideReadings)
                         .setReverseKana(reverseKana)
                         .setTitle("Readings Test"));
         return TYPING_PAGE;
@@ -48,6 +46,8 @@ public class WordJSPController  {
                              @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
                              @RequestParam(required = false) String[] tags,
                              @RequestParam(defaultValue = "false") boolean hideEnglish,
+                             @RequestParam(defaultValue = "true") boolean hideReadings,
+                             @RequestParam(defaultValue = "false") boolean hideWord,
                              @RequestParam(defaultValue = "true") boolean reverseKana) {
         tags = tags == null ? DEFAULT_TAGS : tags;
         model.addAttribute("attributes",
@@ -55,6 +55,8 @@ public class WordJSPController  {
                         .setRepeat(repeat)
                         .setTags(String.join(",", tags))
                         .setHideEnglish(hideEnglish)
+                        .setHideReadings(hideReadings)
+                        .setHideWord(hideWord)
                         .setReverseKana(reverseKana)
                         .setTitle("Flashcards"));
         return TYPING_PAGE;
@@ -179,7 +181,7 @@ public class WordJSPController  {
             return this;
         }
 
-        public boolean setHideReadings() {
+        public boolean getHideReadings() {
             return hideReadings;
         }
 

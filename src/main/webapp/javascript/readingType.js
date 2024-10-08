@@ -91,11 +91,12 @@ function getWord() {
 
     let english = currentWord.english;
     convertedReadings = currentWord.readings.map(k => wanakana.toHiragana(k)).map(k => k.replaceAll("。", ""));
+    let readings = currentWord.readings.map(k => k.replaceAll("。", "")).filter(k => wanakana.isKana(k));
 
     console.log(convertedReadings);
     englishLanding.html((english + "").replaceAll(",", ", "));
     japaneseLanding.html(currentWord.japanese);
-    readingLanding.html((currentWord.readings + "").replaceAll(",", ", "));
+    readingLanding.html((readings + "").replaceAll(",", ", "));
     score.html(answers + "/" + questionCount);
     if (reverseKana && wanakana.isKana(currentWord.japanese)) {
         englishLanding.show();

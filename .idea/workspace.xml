@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/typing-page-two.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/typing-page-two.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController$Attributes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/javascript/readingType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/javascript/readingType.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController$AttributesMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController$AttributesMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/roashe/kanutils/backend/controller/pagescontrollers/WordJSPController.class" afterDir="false" />
     </list>

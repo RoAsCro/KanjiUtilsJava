@@ -20,8 +20,8 @@
                 <c:if test='${attributes.getHideWord()}'>style="display: none;"></c:if>>Loading...</p>
         </div>
         <p class="prominentWord" style="font-size: 5vh; <c:if test='${attributes.getHideEnglish()}'>display: none;</c:if>" id="englishLanding">Loading...</p>
-        <p class="prominentWord" id="readingLanding" style="display: none;"></p>
-            
+        <p class="prominentWord" id="readingLanding" 
+            <c:if test='${attributes.getHideReadings()}'>style="display: none;"></c:if></p>
         <div id="inputContainer" >
             <textarea class="prominentWord" id="answerType" name="answerType"></textarea>
         </div>
@@ -45,7 +45,7 @@
             // Hide word
             englishLanding.show();
             </c:if>
-
+            
             // Swap out buttons
             nextButton.show();
             passButton.hide();
@@ -77,7 +77,9 @@
             nextButton.hide();
 
             // Swap out readings/textbox
+            <c:if test='${attributes.getHideReadings()}'>
             readingLanding.hide();
+            </c:if>
             textInput.show();
 
             // Place word
