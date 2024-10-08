@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import self.roashe.kanutils.backend.service.VocabService;
 
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @Controller
 @RequestMapping("/words")
 public class WordJSPController  {
@@ -29,13 +33,23 @@ public class WordJSPController  {
                               @RequestParam(defaultValue = "true") boolean reverseKana) {
         return typing(model, false, repeat, false, hideEnglish, reverseKana,
                 "Readings Test", tags);
+
     }
 
-//    @GetMapping("/flashcard")
-//    public String flashcards(Model model,
-//                             @RequestParam(defaultValue = "true", name = "repeat") boolean repeat) {
-//        return typing(model, false, repeat, false, true, )
-//    }
+    @GetMapping("/flashcard")
+    public String flashcards(Model model,
+                             @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
+                             @RequestParam(required = false) String[] tags,
+                             @RequestParam(defaultValue = "false") boolean hideEnglish,
+                             @RequestParam(defaultValue = "true") boolean reverseKana) {
+        model.addAttribute("attributes",
+                new AttributesMap()
+                        .setRepeat(repeat)
+                        .setTags(String.join(",", tags))
+                        .setHideEnglish(hideEnglish)
+                        .setReverseKana(reverseKana));
+        return "typing-page-two";
+    }
 
     @GetMapping("/wordgame")
     public String wordGame(Model  model,
@@ -68,6 +82,79 @@ public class WordJSPController  {
         model.addAttribute("reverseKana", reverseKana);
 
         return "typing-page";
+    }
+
+    public class AttributesMap {
+        private boolean hideEnglish =  false;
+        private boolean hideWord =  false;
+        private boolean repeat =  true;
+        private boolean reverseKana =  true;
+        private boolean useKanji = false;
+        private String tags = "";
+        private String title = "KanUtils";
+
+
+        public boolean getHideEnglish() {
+            return hideEnglish;
+        }
+
+        public AttributesMap setHideEnglish(boolean hideEnglish) {
+            this.hideEnglish = hideEnglish;
+            return this;
+        }
+
+        public boolean getHideWord() {
+            return hideWord;
+        }
+
+        public AttributesMap setHideWord(boolean hideWord) {
+            this.hideWord = hideWord;
+            return this;
+        }
+
+        public boolean getRepeat() {
+            return repeat;
+        }
+
+        public AttributesMap setRepeat(boolean repeat) {
+            this.repeat = repeat;
+            return this;
+        }
+
+        public boolean getReverseKana() {
+            return reverseKana;
+        }
+
+        public AttributesMap setReverseKana(boolean reverseKana) {
+            this.reverseKana = reverseKana;
+            return this;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public AttributesMap setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public String getTags() {
+            return tags;
+        }
+
+        public AttributesMap setTags(String tags) {
+            this.tags = tags;
+            return this;
+        }
+
+        public boolean getUseKanji() {
+            return useKanji;
+        }
+
+        public void setUseKanji(boolean useKanji) {
+            this.useKanji = useKanji;
+        }
     }
 
 }

@@ -12,6 +12,7 @@ C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\java\self\roashe\k
 C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\java\self\roashe\kanutils\backend\dao\ImportDao.java
 C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\java\self\roashe\kanutils\backend\dao\VocabDaoDbImpl.java
 C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\java\self\roashe\kanutils\backend\JapaneseLanguageUtil.java
+C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\java\self\roashe\kanutils\backend\service\IOExceptions\VocabIOException.java
 C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\java\self\roashe\kanutils\backend\JSPMain.java
 C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\java\self\roashe\kanutils\backend\controller\KanjiController.java
 C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\src\main\java\self\roashe\kanutils\backend\dao\web_utilities\SeleniumUtil.java

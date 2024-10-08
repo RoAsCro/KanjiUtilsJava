@@ -13,9 +13,11 @@ self\roashe\kanutils\backend\Main.class
 self\roashe\kanutils\backend\controller\VocabController.class
 self\roashe\kanutils\backend\dto\Word.class
 self\roashe\kanutils\backend\dao\VocabDao.class
+self\roashe\kanutils\backend\service\IOExceptions\VocabIOException.class
 self\roashe\kanutils\backend\controller\KanaController.class
 self\roashe\kanutils\backend\dao\PasswordDaoDbImpl.class
 self\roashe\kanutils\backend\dao\KanjiDaoDbImpl.class
+self\roashe\kanutils\backend\controller\pagescontrollers\WordJSPController$Attributes.class
 self\roashe\kanutils\backend\service\VocabService.class
 self\roashe\kanutils\backend\dao\mappers\KanjiMapper.class
 self\roashe\kanutils\backend\dto\Kanji.class

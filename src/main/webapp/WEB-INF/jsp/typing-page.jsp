@@ -57,7 +57,7 @@
             // Rebind keys
             $(document).unbind("keypress.pass")
             $(document).bind("keypress.next", k => {if (k.which === 13){nextQuestion();}});
-            $(document).bind("keypress.fail", k => {if (k.which === 75){pass();nextQuestion();}});
+            $(document).bind("keypress.fail", k => {if (k.which === 107){pass();nextQuestion();}});
         }
         function callPass(){
             answerGiven();
