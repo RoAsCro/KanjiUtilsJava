@@ -116,9 +116,7 @@
                 </c:otherwise>
             </c:choose>
             ;
-        <c:if test="${attributes.getUseKanji()}">
-        APISuffix = "kanji/all/aswords"
-        </c:if>
+        APISuffix = "${attributes.getEndpoint()}";
         <%-- <c:if test='${not empty tags}'> --%>
         params.set("tags", "${attributes.getTags()}");
         <%-- </c:if> --%>

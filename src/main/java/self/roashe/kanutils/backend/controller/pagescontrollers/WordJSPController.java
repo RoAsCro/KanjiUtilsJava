@@ -8,16 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import self.roashe.kanutils.backend.service.VocabService;
 
-import java.util.Arrays;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 @Controller
 @RequestMapping("/words")
 public class WordJSPController  {
 
     @Autowired
     private VocabService service;
+
+    private static final String TYPING_PAGE = "typing-page-two";
+    private static final String[] DEFAULT_TAGS = new String[0];
 
     @GetMapping("/viewWords")
     public String viewWords(Model model) {
@@ -30,10 +29,18 @@ public class WordJSPController  {
                               @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
                               @RequestParam(required = false) String[] tags,
                               @RequestParam(defaultValue = "false") boolean hideEnglish,
+                              @RequestParam(defaultValue = "true") boolean hideReadings,
                               @RequestParam(defaultValue = "true") boolean reverseKana) {
-        return typing(model, false, repeat, false, hideEnglish, reverseKana,
-                "Readings Test", tags);
-
+        tags = tags == null ? DEFAULT_TAGS : tags;
+        model.addAttribute("attributes",
+                new AttributesMap()
+                        .setRepeat(repeat)
+                        .setTags(String.join(",", tags))
+                        .setHideEnglish(hideEnglish)
+                        .setHideReadings(hideReadings)
+                        .setReverseKana(reverseKana)
+                        .setTitle("Readings Test"));
+        return TYPING_PAGE;
     }
 
     @GetMapping("/flashcard")
@@ -42,29 +49,43 @@ public class WordJSPController  {
                              @RequestParam(required = false) String[] tags,
                              @RequestParam(defaultValue = "false") boolean hideEnglish,
                              @RequestParam(defaultValue = "true") boolean reverseKana) {
+        tags = tags == null ? DEFAULT_TAGS : tags;
         model.addAttribute("attributes",
                 new AttributesMap()
                         .setRepeat(repeat)
                         .setTags(String.join(",", tags))
                         .setHideEnglish(hideEnglish)
-                        .setReverseKana(reverseKana));
-        return "typing-page-two";
+                        .setReverseKana(reverseKana)
+                        .setTitle("Flashcards"));
+        return TYPING_PAGE;
     }
 
     @GetMapping("/wordgame")
     public String wordGame(Model  model,
                            @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
                            @RequestParam(required = false) String[] tags) {
-        return typing(model, false, repeat, true, true,
-                false, "English to Japanese Test", tags);
+        tags = tags == null ? DEFAULT_TAGS : tags;
+        model.addAttribute("attributes",
+                new AttributesMap()
+                        .setRepeat(repeat)
+                        .setTags(String.join(",", tags))
+                        .setHideWord(true)
+                        .setTitle("English to Japanese Test"));
+        return TYPING_PAGE;
     }
 
     @GetMapping("/kanjireading")
     public String kanjiReadingGame(Model  model,
                               @RequestParam(defaultValue = "true", name = "repeat") boolean repeat,
                                    @RequestParam(defaultValue = "false") boolean hideEnglish) {
-        return typing(model, true, repeat, false, hideEnglish, true,
-                "Kanji Readings Test", null);
+
+        model.addAttribute("attributes",
+                new AttributesMap()
+                        .setRepeat(repeat)
+                        .setHideEnglish(hideEnglish)
+                        .setEndpoint("kanji/all/aswords")
+                        .setTitle("Kanji Readings Test"));
+        return TYPING_PAGE;
     }
 
     private String typing(Model model, boolean useKanji, boolean repeat,
@@ -89,7 +110,8 @@ public class WordJSPController  {
         private boolean hideWord =  false;
         private boolean repeat =  true;
         private boolean reverseKana =  true;
-        private boolean useKanji = false;
+        private boolean hideReadings =  true;
+        private String endpoint = "vocab/vocab";
         private String tags = "";
         private String title = "KanUtils";
 
@@ -148,12 +170,22 @@ public class WordJSPController  {
             return this;
         }
 
-        public boolean getUseKanji() {
-            return useKanji;
+        public String getEndpoint() {
+            return endpoint;
         }
 
-        public void setUseKanji(boolean useKanji) {
-            this.useKanji = useKanji;
+        public AttributesMap setEndpoint(String endpoint) {
+            this.endpoint = endpoint;
+            return this;
+        }
+
+        public boolean setHideReadings() {
+            return hideReadings;
+        }
+
+        public AttributesMap setHideReadings(boolean hideReadings) {
+            this.hideReadings = hideReadings;
+            return this;
         }
     }
 
