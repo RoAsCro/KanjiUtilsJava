@@ -74,18 +74,22 @@ function getWord() {
         if (questionRight) {
             answers += 1;
         }
-        if (!repeat) {
+        if (!repeat && !failedWord) {
+            console.log("Splicing")
             words.splice(words.indexOf(currentWord), 1);
         }
     }
     
+    
+    if (failedWord && questionRight) {
+        console.log("Splicing 2")
+
+        failed.splice(failed.indexOf(currentWord), 1);
+    }
     console.log(params.get("tags"));
     console.log(repeat);
     console.log(words.length + ";" + failed.length);
 
-    if (failedWord) {
-        failed.splice(failed.indexOf(currentWord), 1);
-    }
 
     
     let choice = Math.floor(Math.random() * 10);
