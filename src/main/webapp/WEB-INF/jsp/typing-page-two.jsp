@@ -21,7 +21,7 @@
         </div>
         <p class="prominentWord" style="font-size: 5vh; <c:if test='${attributes.getHideEnglish()}'>display: none;</c:if>" id="englishLanding">Loading...</p>
         <p class="prominentWord" id="readingLanding" 
-            <c:if test='${attributes.getHideReadings()}'>style="display: none;"></c:if></p>
+            <c:if test='${attributes.getHideReadings()}'>style="display: none;"</c:if>></p>
         <div id="inputContainer" >
             <textarea class="prominentWord" id="answerType" name="answerType"></textarea>
         </div>

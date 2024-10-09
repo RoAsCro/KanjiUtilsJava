@@ -36,7 +36,11 @@ public class ImportDaoImplKanshudoImpl implements ImportDao {
         String[] entryParts = entry.split("TAGS<");
         entry = entryParts[0];
         String tags = entryParts[1];
-        word.setTags(Arrays.stream(tags.substring(0, tags.length() - 1).split(",")).collect(Collectors.toList()));
+        word.setTags(Arrays.stream(
+                tags.substring(0, tags.length() - 1)
+                        .replaceAll("\\.", "")
+                        .split(","))
+                .collect(Collectors.toList()));
 
         int endOfVocabWord = entry.indexOf("\t");
         String vocabWord = entry.substring(0, endOfVocabWord);
