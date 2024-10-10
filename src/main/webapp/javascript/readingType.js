@@ -6,6 +6,7 @@ var currentWord;
 var convertedReadings = [];
 
 var failed = [];
+const allFailed = new Map();
 var failedWord = false;
 
 var questionRight = true;
@@ -86,9 +87,40 @@ function getWord() {
 
         failed.splice(failed.indexOf(currentWord), 1);
     }
+
+    if (words.length == 0 && failed.length == 0) {
+        currentWord = null;
+        failedWord = false;
+        score.html(answers + "/" + questionCount);
+   
+        japaneseLanding.html("Finished - " + answers + "/" + questionCount);
+        japaneseLanding.show();
+        let htmlString = "<ol>";
+        for (keyValue of allFailed) {
+            let w = keyValue[0];
+            console.log(w.id);
+            htmlString = htmlString.concat("<li>")
+                .concat("<div>")
+                .concat(w.japanese)
+                .concat(" ")
+                .concat(w.readings + "")
+                .concat(" ")
+                .concat(w.english + "")
+                .concat(" ")
+                .concat(keyValue[1])
+            htmlString = htmlString.concat("</div>").concat("</li>");
+        }
+        htmlString = htmlString.concat("</ol>");
+        englishLanding.html(htmlString);
+        englishLanding.show();
+        readingLanding.hide();
+        return;
+    }
+
     console.log(params.get("tags"));
     console.log(repeat);
     console.log(words.length + ";" + failed.length);
+    console.log(allFailed);
 
 
     
@@ -136,6 +168,12 @@ function pass() {
     if (failed.indexOf(currentWord) == -1) {
         failed.push(currentWord);
     }
+    let failCount = 0;
+    if (allFailed.has(currentWord)) {
+        failCount = allFailed.get(currentWord);
+    }
+    allFailed.set(currentWord, failCount + 1);
+
 }
 
 
