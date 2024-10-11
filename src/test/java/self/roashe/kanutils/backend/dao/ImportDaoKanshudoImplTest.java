@@ -13,7 +13,7 @@ public class ImportDaoKanshudoImplTest {
 
     @Test
     public void testWordCreation(){
-        final boolean RUN = false;
+        final boolean RUN = true;
         if (!RUN) {
             return;
         }

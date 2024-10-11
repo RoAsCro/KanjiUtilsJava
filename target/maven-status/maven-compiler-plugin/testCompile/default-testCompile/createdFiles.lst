@@ -1,3 +1,8 @@
+self\roashe\kanutils\backend\GeneralTest.class
+self\roashe\kanutils\backend\JapaneseLanguageUtilTest.class
+self\roashe\kanutils\backend\dao\KanjiDaoDbImplTest.class
 self\roashe\kanutils\backend\dao\webutilities\KanjiApiUtilTest.class
 self\roashe\kanutils\backend\service\VocabServiceImplTest.class
+self\roashe\kanutils\backend\dao\ImportDaoKanshudoImplTest.class
+self\roashe\kanutils\backend\dao\VocabDaoDbImplTest.class
 self\roashe\kanutils\backend\service\KanjiServiceImplTest.class
