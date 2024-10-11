@@ -9,6 +9,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -58,7 +60,7 @@ public class SeleniumUtil {
 
 
         // /dashboard -> /srs
-        Wait<WebDriver> waitForLogin = new WebDriverWait(driver, 5);
+        Wait<WebDriver> waitForLogin = new WebDriverWait(driver, Duration.of(5, ChronoUnit.SECONDS));
         waitForLogin.until(d -> d.getTitle().equals(DASHBOARD_TITLE));
 
         driver.get(URL_KANSHUDO + URL_FLASHCARDS);
@@ -75,7 +77,7 @@ public class SeleniumUtil {
             WebElement dlButton = driver.findElement(By.cssSelector("#download_set"));
             dlButton.click();
 
-            Wait<WebDriver> waitForText = new WebDriverWait(driver, 10);
+            Wait<WebDriver> waitForText = new WebDriverWait(driver, Duration.of(10, ChronoUnit.SECONDS));
             waitForText.until(d -> !d.findElement(By.id("dcontent")).getAttribute("value").isEmpty());
             String wordList = driver.findElement(By.id("dcontent")).getAttribute("value");
             String setName = driver.findElement(By.cssSelector("#currentVal_Title")).getText();
