@@ -42,6 +42,11 @@ public class VocabController {
         return this.vocabService.getAllVocab();
     }
 
+    @PutMapping("/updateTag")
+    public void update(@RequestBody Word word) {
+        this.vocabService.update(word);
+    }
+
     @GetMapping("/kanjiextract")
     public void extractKanji() {
         try {

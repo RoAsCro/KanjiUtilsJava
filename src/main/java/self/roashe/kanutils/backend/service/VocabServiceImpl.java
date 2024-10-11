@@ -90,12 +90,12 @@ public class VocabServiceImpl implements VocabService {
         if (readings == null || readings.isEmpty()) {
             throw new VocabIOException("Word needs readings.");
         }
-        List<String> tags = word.getTags();
-        if (tags != null && !tags.isEmpty()) {
-            if (tags.stream().anyMatch(t -> t.contains("[,.<>]"))){
-                throw new VocabIOException("Tags may not contain any of the following characters:,.<>");
-            }
-        }
+//        List<String> tags = word.getTags();
+//        if (tags != null && !tags.isEmpty()) {
+//            if (tags.stream().anyMatch(t -> t.contains("[,.<>]"))){
+//                throw new VocabIOException("Tags may not contain any of the following characters:,.<>");
+//            }
+//        }
     }
 
 }

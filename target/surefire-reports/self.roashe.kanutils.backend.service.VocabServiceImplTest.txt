@@ -1,28 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: self.roashe.kanutils.backend.service.VocabServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.39 s <<< FAILURE! - in self.roashe.kanutils.backend.service.VocabServiceImplTest
-testGetByTagsNotPresent  Time elapsed: 0.003 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 60
-Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 60
-Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 60
-
-testGetByTagsMultipleMultiplePresentInDifferent  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 60
-Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 60
-Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 60
-
-testGetByTags  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 60
-Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 60
-Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 60
-
-testGetByTagsMultipleOneNotPresent  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 60
-Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\Users\rolly\OneDrive\Documents\C387repos\KanUtils\target\test-classes\self\roashe\kanutils\backend\GeneralTest.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 60
-Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 60
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s - in self.roashe.kanutils.backend.service.VocabServiceImplTest
